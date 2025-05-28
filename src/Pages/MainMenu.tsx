@@ -9,7 +9,7 @@ function MainMenu() {
         <div className='fixed top-0 right-0 bg-amber-300 m-4 text-xl '>
           <p className='flex cursor-pointer' onClick={() => setOpen(!open)}> Menu</p>
           {open && (
-            <div className="absolute top-full right-0 mt-2 bg-white shadow-lg z-10 rounded w-80 border border-black">
+            <div className="absolute top-full right-0 mt-2 bg-white shadow-lg z-10 rounded-4xl w-80 border-2 border-rose-900 overflow-hidden">
               <ul>
                 {Menu.map((menu) => (
                   <li className="cursor-pointer px-4 py-2 hover:bg-stone-200" key={menu}>
@@ -23,14 +23,17 @@ function MainMenu() {
         
         <div className='flex-col bg-sky-950/50'>
           
-          <div className='flex justify-center items-center text-xl bg-sky-50 min-h-40'>
+          <div className='flex justify-center items-center text-xl bg-sky-400 min-h-40'>
             Insert the Animated Banner Here 
           </div>
 
-          <div className ='flex-col bg-sky-50'>
+          <div className ='flex-col bg-sky-400'>
             <p className='flex justify-center items-center text-xl bg-blue-600 py-4'>Illustrations</p>
-            <div className='flex justify-center items-center text-xl bg-sky-50 min-h-40'>
-              Insert the illustrations list here
+            {/* Try using Grid for this and figure out how size of the image I want to display */}
+            <div className='flex justify-center items-center text-xl bg-blue-50 min-h-40'>
+              <img src="Artwork/Archetto.png" alt='Archetto' className='w-full h-64 rounded-4xl my-4 object-contain'/>
+              <img src="Artwork/Irene.png" alt='Irene' className='w-full h-64 rounded-4xl my-4 object-contain'/>
+              <img src="Artwork/Practice.png" alt='Practice' className='w-full h-64 rounded-4xl my-4 object-contain'/>
             </div>
           </div>
 

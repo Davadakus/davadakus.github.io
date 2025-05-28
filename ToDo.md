@@ -1,10 +1,30 @@
 # ToDo
 1. ~~Brainstorm content of the main menu page~~
-2. Brainstorm design of layout
+2. ~~Brainstorm design of layout~~ 
 3. Add relevant data based of heading
 4. Add twitter link of artwork
 5. Custom icons for social media
-5. More to come...
+6. Pick a Font Style
+    - Cascadia Code <-- Safe
+    - Arvo <-- Safe
+    - Oxanium <-- Square
+    - Audiowide <-- Square
+    - Aldrich <-- Square
+    - Megrim <-- Unique
+7. Decide on the dark color pattern or light background
+    - Dark Rose (Hex: #843857 not exact) <rose-900>
+    - Dark Violet-blue (Hex: #1B004E)
+    - Gold (Hex: #FFFA00)
+8. Make actual style look nice
+9. Decide on Background to have nice contrast
+
+# Art Related ToDo
+1. Create Animated Banner
+2. Put all artwork into github and put it into the list to display <-- <b>In progress<b>
+3. Small screenshot of the game in development
+4. Insert art of my OC and update text on right
+5. Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames
+
 
 
 # Goal/Brainstorm
