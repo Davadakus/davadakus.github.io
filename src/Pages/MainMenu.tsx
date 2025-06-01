@@ -29,12 +29,19 @@ function MainMenu() {
 
           <div className ='flex-col bg-sky-400'>
             <p className='flex justify-center items-center text-xl bg-blue-600 py-4'>Illustrations</p>
+            
+            
+
+            
             {/* Try using Grid for this and figure out how size of the image I want to display */}
+
             <div className='flex justify-center items-center text-xl bg-blue-50 min-h-40'>
               <img src="Artwork/Archetto.png" alt='Archetto' className='w-full h-64 rounded-4xl my-4 object-contain'/>
               <img src="Artwork/Irene.png" alt='Irene' className='w-full h-64 rounded-4xl my-4 object-contain'/>
               <img src="Artwork/Practice.png" alt='Practice' className='w-full h-64 rounded-4xl my-4 object-contain'/>
             </div>
+          
+          
           </div>
 
           <div className ='flex-col bg-sky-50'>

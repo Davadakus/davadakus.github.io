@@ -17,6 +17,8 @@
     - Gold (Hex: #FFFA00)
 8. Make actual style look nice
 9. Decide on Background to have nice contrast
+10. Rename website on name
+11. Get domain for website `lylinling.com` (maybe idk lol)
 
 # Art Related ToDo
 1. Create Animated Banner
