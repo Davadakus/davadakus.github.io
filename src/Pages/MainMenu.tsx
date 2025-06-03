@@ -30,12 +30,19 @@ function MainMenu() {
           <div className ='flex-col bg-sky-400'>
             <p className='flex justify-center items-center text-xl bg-blue-600 py-4'>Illustrations</p>
             
-            <div className='grid grid-cols-3 my-4 gap-x-10'>
-              <img src="Artwork/Archetto.webp" alt='Archetto' className='w-full h-128 object-contain max-w-380 min-w-140'/>
+
+            <div className='flex my-4'>
+              <img src="Artwork/Irene.webp" alt='Archetto' className='w-full h-128 object-contain max-w-380 min-w-140 p=[10px]'/>
               {/* <img src="Artwork/Irene.webp" alt='Irene' className='w-full h-128 object-contain'/> */}
-              <img src="Artwork/Practice.webp" alt='Practice' className='w-full h-128  max-w-380 min-w-140 object-contain'/>
-              <img src="Artwork/Practice2.webp" alt='Practice' className='w-full h-128  max-w-380 min-w-140 object-contain'/>
+              <img src="Artwork/Archetto.webp" alt='Practice' className='w-full h-128 max-w-380 min-w-140 object-contain p=[10px]'/>
+              <img src="Artwork/Practice.webp" alt='Practice' className='w-full h-128 max-w-380 min-w-140 object-contain p=[10px]'/>
             </div>
+
+            {/* <div className='grid grid-cols-3 my-4 gap-x-10'>
+              <img src="Artwork/Irene.webp" alt='Archetto' className='w-full h-128 object-cover max-w-380 min-w-140 p=[10px]'/>
+              <img src="Artwork/Archetto.webp" alt='Practice' className='w-full h-128 max-w-380 min-w-140 object-cover p=[10px]'/>
+              <img src="Artwork/Practice.webp" alt='Practice' className='w-full h-128 max-w-380 min-w-140 object-cover p=[10px]'/>
+            </div> */}
 
 
             {/* Try using Grid for this and figure out how size of the image I want to display */}
