@@ -31,29 +31,19 @@ function MainMenu() {
             <p className='flex justify-center items-center text-xl bg-blue-600 py-4'>Illustrations</p>
             
 
-            <div className='flex my-4'>
-              <img src="Artwork/Irene.webp" alt='Archetto' className='w-full h-128 object-contain max-w-380 min-w-140 p=[10px]'/>
-              {/* <img src="Artwork/Irene.webp" alt='Irene' className='w-full h-128 object-contain'/> */}
-              <img src="Artwork/Archetto.webp" alt='Practice' className='w-full h-128 max-w-380 min-w-140 object-contain p=[10px]'/>
-              <img src="Artwork/Practice.webp" alt='Practice' className='w-full h-128 max-w-380 min-w-140 object-contain p=[10px]'/>
-            </div>
+            <ul className='flex justify-evenly'>
+              <li className='flex border border-amber-800 p-[10px]'>
+                <img src="Artwork/Irene.webp" alt='Irene' className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
+              </li>
 
-            {/* <div className='grid grid-cols-3 my-4 gap-x-10'>
-              <img src="Artwork/Irene.webp" alt='Archetto' className='w-full h-128 object-cover max-w-380 min-w-140 p=[10px]'/>
-              <img src="Artwork/Archetto.webp" alt='Practice' className='w-full h-128 max-w-380 min-w-140 object-cover p=[10px]'/>
-              <img src="Artwork/Practice.webp" alt='Practice' className='w-full h-128 max-w-380 min-w-140 object-cover p=[10px]'/>
-            </div> */}
+              <li className='flex border border-amber-800 p-[10px]'>
+                <img src="Artwork/Archetto.webp" alt='Archetto' className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
+              </li>
 
-
-            {/* Try using Grid for this and figure out how size of the image I want to display */}
-
-            {/* <div className='flex justify-center items-center text-xl bg-blue-50 min-h-40'>
-              <img src="Artwork/Archetto.png" alt='Archetto' className='w-full h-64 rounded-4xl my-4 object-contain'/>
-              <img src="Artwork/Irene.png" alt='Irene' className='w-full h-64 rounded-4xl my-4 object-contain'/>
-              <img src="Artwork/Practice.png" alt='Practice' className='w-full h-64 rounded-4xl my-4 object-contain'/>
-            </div> */}
-          
-          
+              <li className='flex border border-amber-800 p-[10px]'>
+                <img src="Artwork/Practice.webp" alt='Practice' className='max-w-[380px] min-w-[140px] h-full  object-cover rounded-4xl'/>
+              </li>
+            </ul>
           </div>
 
           <div className ='flex-col bg-sky-50'>
