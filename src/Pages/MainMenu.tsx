@@ -30,18 +30,20 @@ function MainMenu() {
           <div className ='flex-col bg-sky-400'>
             <p className='flex justify-center items-center text-xl bg-blue-600 py-4'>Illustrations</p>
             
-            
 
-            
-            {/* Try using Grid for this and figure out how size of the image I want to display */}
+            <ul className='flex justify-evenly'>
+              <li className='flex border border-amber-800 p-[10px]'>
+                <img src="Artwork/Irene.webp" alt='Irene' className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
+              </li>
 
-            <div className='flex justify-center items-center text-xl bg-blue-50 min-h-40'>
-              <img src="Artwork/Archetto.png" alt='Archetto' className='w-full h-64 rounded-4xl my-4 object-contain'/>
-              <img src="Artwork/Irene.png" alt='Irene' className='w-full h-64 rounded-4xl my-4 object-contain'/>
-              <img src="Artwork/Practice.png" alt='Practice' className='w-full h-64 rounded-4xl my-4 object-contain'/>
-            </div>
-          
-          
+              <li className='flex border border-amber-800 p-[10px]'>
+                <img src="Artwork/Archetto.webp" alt='Archetto' className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
+              </li>
+
+              <li className='flex border border-amber-800 p-[10px]'>
+                <img src="Artwork/Practice.webp" alt='Practice' className='max-w-[380px] min-w-[140px] h-full  object-cover rounded-4xl'/>
+              </li>
+            </ul>
           </div>
 
           <div className ='flex-col bg-sky-50'>
