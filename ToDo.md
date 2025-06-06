@@ -21,11 +21,16 @@
 11. Get domain for website `lylinling.com` (maybe idk lol)
 
 # Art Related ToDo
-1. Create Animated Banner
-2. Put all artwork into github and put it into the list to display <-- <b>In progress<b>
+1. Create Animated Banner <-- <b>In-Progress</b>
+2. ~~Put all artwork into github and put it into the list to display~~ 
 3. Small screenshot of the game in development
 4. Insert art of my OC and update text on right
 5. Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames
+Sections:
+- Illustration: OC with tablet pen
+- Games: OC with controller
+- About: OC with question mark
+- Other Projects: OC with glasses idk
 
 
 
