@@ -6,10 +6,10 @@ function MainMenu() {
   const [open, setOpen] = useState(false);
     return (
       <>
-        <div className='fixed top-0 right-0 bg-amber-300 m-4 text-xl '>
+        <div className='fixed top-0 right-0 bg-amber-300 m-4 text-xl z-20'>
           <p className='flex cursor-pointer' onClick={() => setOpen(!open)}> Menu</p>
           {open && (
-            <div className="absolute top-full right-0 mt-2 bg-white shadow-lg z-10 rounded-4xl w-80 border-2 border-rose-900 overflow-hidden">
+            <div className="absolute top-full right-0 mt-2 bg-white shadow-lg rounded-4xl w-80 border-2 border-rose-900 overflow-hidden z-20">
               <ul>
                 {Menu.map((menu) => (
                   <li className="cursor-pointer px-4 py-2 hover:bg-stone-200" key={menu}>
@@ -23,8 +23,9 @@ function MainMenu() {
         
         <div className='flex-col bg-sky-950/50'>
           
-          <div className='flex justify-center items-center text-xl bg-sky-400 min-h-40'>
-            Insert the Animated Banner Here 
+          <div className='flex justify-center items-center text-xl bg-white min-h-40  overflow-hidden'>
+            {/* <img src="Artwork/LynLinLing.gif" alt='banner' className='max-h-[650px] min-h-[500px] w-full  object-cover object-top'/> */}
+            <video src="Artwork/LynLinLing_3.mp4" autoPlay muted playsInline loop className='z-0 max-h-[650px] min-h-[500px] w-full object-[0%_10%] object-cover relative ml-20 mt-20'/>
           </div>
 
           <div className ='flex-col bg-sky-400'>
