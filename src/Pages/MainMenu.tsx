@@ -23,9 +23,23 @@ function MainMenu() {
         
         <div className='flex-col bg-sky-950/50'>
           
-          <div className='flex justify-center items-center text-xl bg-white min-h-40  overflow-hidden'>
-            {/* <img src="Artwork/LynLinLing.gif" alt='banner' className='max-h-[650px] min-h-[500px] w-full  object-cover object-top'/> */}
-            <video src="Artwork/LynLinLing_3.mp4" autoPlay muted playsInline loop className='z-0 max-h-[650px] min-h-[500px] w-full object-[0%_10%] object-cover relative ml-20 mt-20'/>
+          <div className='relative flex items-center text-xl bg-white min-h-40 overflow-hidden'>
+            <div className='absolute border start-0 top-40 min-h-[0px] max-h-[520px] w-auto z-10 ml-3'>
+              <img src="Artwork/Logo/LogoHor.png"/>
+            </div>
+
+
+            {/* <video src="Artwork/LynLinLing_3.mp4" autoPlay muted playsInline loop className='z-0 max-h-[850px] w-full object-[50%_50%] object-cover relative ml-20 mt-25 border'/> */}
+            <div className="w-full h-[650px] overflow-hidden ml-20 pt-[70px] border relative">
+              <video 
+                src="Artwork/LynLinLing_3.mp4" 
+                autoPlay 
+                muted 
+                playsInline 
+                loop 
+                className="w-full h-full object-[50%_50%] object-cover aspect-auto"
+              />
+            </div>
           </div>
 
           <div className ='flex-col bg-sky-400'>
@@ -58,7 +72,7 @@ function MainMenu() {
             <p className='flex justify-center items-center text-xl bg-blue-600 py-4'>About</p>
             <div className='flex w-full justify-center items-center text-xl bg-sky-50 min-h-40'>
               <div className='bg-red-600 w-1/2 justify-end text-center flex'>
-                This is my OC
+                <img src="Artwork/LynLinLing.webp"/>
               </div>
               <div className='bg-green-600 w-1/2 flex flex-col items-start justify-center text-center'>
                 <div className='text-center'>

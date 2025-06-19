@@ -4,13 +4,13 @@
 3. Add relevant data based of heading
 4. Add twitter link of artwork
 5. Custom icons for social media
-6. Pick a Font Style
-    - Cascadia Code <-- Safe
-    - Arvo <-- Safe
-    - Oxanium <-- Square
-    - Audiowide <-- Square
-    - Aldrich <-- Square
-    - Megrim <-- Unique
+6. ~~Pick a Font Style~~
+    - ~~Cascadia Code <-- Safe~~
+    - ~~Arvo <-- Safe~~
+    - Oxanium <-- Square [1st choice]
+    - ~~Audiowide <-- Square~~
+    - ~~Aldrich <-- Square~~ [2nd choice]
+    - ~~Megrim <-- Unique~~
 7. Decide on the dark color pattern or light background
     - Dark Rose (Hex: #843857 not exact) <rose-900>
     - Dark Violet-blue (Hex: #1B004E)
@@ -19,6 +19,7 @@
 9. Decide on Background to have nice contrast
 10. Rename website on name
 11. Get domain for website `lylinling.com` (maybe idk lol)
+12. Fix sizing of the intro video probably in the future to scale better on small devices
 
 # Art Related ToDo
 1. Create Animated Banner <-- <b>In-Progress</b>
