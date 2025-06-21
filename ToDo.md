@@ -20,6 +20,7 @@
 10. Rename website on name
 11. Get domain for website `lylinling.com` (maybe idk lol)
 12. Fix sizing of the intro video probably in the future to scale better on small devices
+13. Darken the background of the video whites to make it contrast with the background (White)
 
 # Art Related ToDo
 1. Create Animated Banner <-- <b>In-Progress</b>
