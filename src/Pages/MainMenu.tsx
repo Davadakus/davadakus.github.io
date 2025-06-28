@@ -6,6 +6,7 @@ import Dropdown from '../Components/dropdown';
 function MainMenu() {
   // const Menu = ["Illustration", "Games", "About", "Other Projects"];
   // const [open, setOpen] = useState(false);
+    const [count, setCount] = useState(0)
 
     return (
       <>
@@ -32,7 +33,13 @@ function MainMenu() {
           </div>
 
           <div className ='flex-col py-[50px]'>
-            <SectionHeader>Illustrations</SectionHeader>
+            <div className="flex justify-center items-center">
+              {/* <SectionHeader>Illustrations</SectionHeader> */}
+              <div className='flex justify-center items-center text-[35px] mb-[30px] font-semibold border border-transparent relative'>
+                Illustrations
+                <img src="Artwork/Chibi/ChibiDraw.webp" className='absolute max-w-[120px] left-[120%]'/>
+              </div>
+            </div>
             
             <ul className='flex justify-evenly'>
               <li className='flex p-[10px]'>
@@ -49,11 +56,40 @@ function MainMenu() {
             </ul>
           </div>
 
-          <div className ='flex-col py-[50px] bg-gray-300'>
+          <div className ='flex-col py-[50px] bg-zinc-300 animated-grid'>
            <SectionHeader>Games</SectionHeader>
-            <div className='flex justify-center items-center text-xl min-h-40'>
-              Insert the game you are working on rn
+            
+            <div className ="flex flex-row justify-center gap-6 mx-20">
+              <div className="items-center justify-center max-w-1/2 pr-[20px]">
+                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" className="object-contain"/>
+              </div>
+              <div className="flex flex-col gap-10">
+                <div className="flex-auto">
+                  <h1 className="block font-semibold text-[30px]">ProjectIrene</h1>
+                  <p className="inline-block text-[20px]">Game inspired by Arknights that I made as my first game. Single player and combat takes inspiration from Hollow Knight</p>
+                </div>
+                <div className="">
+                  {/* <button onClick={() => setCount((count) => count + 1)}>
+                    count is {count}
+                  </button> */}
+                  <button className="px-6 py-2 rounded-2xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
+                    Click me
+                  </button>
+                </div>
+              </div>
             </div>
+
+            {/* <div className='flex flex-row text-xl min-h-40 max-w-[1000px] gap-6 mx-auto'>
+              <div className="bg-amber-300">
+                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" className='max-w-[500px] min-w-[140px] object-cover '/>
+              </div>
+              <div className="bg-green-400 w-[500px]">
+                <h1 className="block font-semibold text-[24px]">ProjectIrene</h1>
+
+                <p className="block">Game inspired by Arknights that I made as my first game. Single player and combat takes inspiration from Hollow Knight</p>
+              </div>
+            </div> */}
+
           </div>
 
           <div className ='flex-col py-[50px]'>

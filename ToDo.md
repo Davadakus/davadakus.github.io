@@ -1,20 +1,7 @@
 # ToDo
-1. ~~Brainstorm content of the main menu page~~
-2. ~~Brainstorm design of layout~~ 
 3. Add relevant data based of heading
 4. Add twitter link of artwork
 5. Custom icons for social media
-6. ~~Pick a Font Style~~
-    - ~~Cascadia Code <-- Safe~~
-    - ~~Arvo <-- Safe~~
-    - Oxanium <-- Square [1st choice]
-    - ~~Audiowide <-- Square~~
-    - ~~Aldrich <-- Square~~ [2nd choice]
-    - ~~Megrim <-- Unique~~
-7. Decide on the dark color pattern or light background
-    - Dark Rose (Hex: #843857 not exact) <rose-900>
-    - Dark Violet-blue (Hex: #1B004E)
-    - Gold (Hex: #FFFA00)
 8. Make actual style look nice
 9. Decide on Background to have nice contrast
 10. Rename website on name
@@ -23,17 +10,34 @@
 13. Darken the background of the video whites to make it contrast with the background (White)
 
 # Art Related ToDo
-1. Create Animated Banner <-- <b>In-Progress</b>
-2. ~~Put all artwork into github and put it into the list to display~~ 
 3. Small screenshot of the game in development
 4. Insert art of my OC and update text on right
 5. Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames
 Sections:
-- Illustration: OC with tablet pen
+- ~~Illustration: OC with tablet pen~~
 - Games: OC with controller
 - About: OC with question mark
 - Other Projects: OC with glasses idk
 
+
+
+# Done
+1. ~~Brainstorm content of the main menu page~~
+2. ~~Brainstorm design of layout~~ 
+6. ~~Pick a Font Style~~
+    - ~~Cascadia Code <-- Safe~~
+    - ~~Arvo <-- Safe~~
+    - Oxanium <-- Square [1st choice]
+    - ~~Audiowide <-- Square~~
+    - ~~Aldrich <-- Square~~ [2nd choice]
+    - ~~Megrim <-- Unique~~
+7. ~~Decide on the dark color pattern or light background~~
+    ~~- Dark Rose (Hex: #843857 not exact) <rose-900>~~
+    ~~- Dark Violet-blue (Hex: #1B004E)~~
+    ~~- Gold (Hex: #FFFA00)~~
+
+1. ~~Create Animated Banner ~~
+2. ~~Put all artwork into github and put it into the list to display~~ 
 
 
 # Goal/Brainstorm
