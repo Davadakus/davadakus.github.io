@@ -3,10 +3,16 @@ import { useState } from "react"
 import SectionHeader from "../Components/SectionHeader";
 import Dropdown from '../Components/dropdown';
 
+
 function MainMenu() {
   // const Menu = ["Illustration", "Games", "About", "Other Projects"];
   // const [open, setOpen] = useState(false);
     const [count, setCount] = useState(0)
+    useEffect(() => {
+      if (window.twttr) {
+        window.twttr.widgets.load();
+      }
+        }, []);
 
     return (
       <>
@@ -35,9 +41,9 @@ function MainMenu() {
           <div className ='flex-col py-[50px]'>
             <div className="flex justify-center items-center">
               {/* <SectionHeader>Illustrations</SectionHeader> */}
-              <div className='flex justify-center items-center text-[35px] mb-[30px] font-semibold border border-transparent relative'>
+              <div id="illustration" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
                 Illustrations
-                <img src="Artwork/Chibi/ChibiDraw.webp" className='absolute max-w-[120px] left-[120%]'/>
+                <img src="Artwork/Chibi/ChibiDraw.webp" className='absolute max-w-[120px] translate-x-40'/>
               </div>
             </div>
             
@@ -57,16 +63,23 @@ function MainMenu() {
           </div>
 
           <div className ='flex-col py-[50px] bg-zinc-300 animated-grid'>
-           <SectionHeader>Games</SectionHeader>
-            
+           {/* <SectionHeader>Games</SectionHeader> */}
+            <div id="games" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
+              Games
+              <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/>
+            </div>
+
             <div className ="flex flex-row justify-center gap-6 mx-20">
               <div className="items-center justify-center max-w-1/2 pr-[20px]">
-                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" className="object-contain"/>
+                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" className="object-contain min-w-[314px]"/>
               </div>
               <div className="flex flex-col gap-10">
                 <div className="flex-auto">
                   <h1 className="block font-semibold text-[30px]">ProjectIrene</h1>
-                  <p className="inline-block text-[20px]">Game inspired by Arknights that I made as my first game. Single player and combat takes inspiration from Hollow Knight</p>
+                  <div className="inline-block text-[20px]">
+                    <p>Game inspired by Arknights that I made as my first game</p>
+                    <p>Single player and combat takes inspiration from Hollow Knight</p>
+                  </div>
                 </div>
                 <div className="">
                   {/* <button onClick={() => setCount((count) => count + 1)}>
@@ -93,26 +106,37 @@ function MainMenu() {
           </div>
 
           <div className ='flex-col py-[50px]'>
-            <SectionHeader>About</SectionHeader>
+            {/* <SectionHeader>About</SectionHeader> */}
+             <div id="about" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
+              About
+              {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
+            </div>
             <div className='flex flex-wrap justify-evenly text-xl h-[800px] max-w-[1000px] mx-auto'>
-              <div className='bg-red-600 justify-end text-center flex relative w-[500px] max-h-[800px]'>
-                <img src="Artwork/LynLinLing.webp" className='object-contain flex'/>
+              <div className='flex relative w-[500px] max-h-[800px]'>
+                <img src="Artwork/LynLinLing.webp" className='object-contain'/>
               </div>
-              <div className='bg-green-600 flex items-start justify-center text-center w-[500px] max-h-[800px]'>
+              <div className='flex items-start justify-center text-center w-[500px] max-h-[800px]'>
                 <div className='text-center'>
-                  <p className='text-3xl'>LynLinLing/Davadakus</p>
+                  <p className='text-3xl font-semibold'>LynLinLing/Davadakus</p>
                   <p className='text-base'>Game Developer, Artist, and Software Developer</p>
                   <br />
                   <p>I want to create games and draw characters I like.</p>
                   <p>Follow me for updates on my games here: blog</p>
+                  <br />
+                  <p className="text-xl font-semibold">Twitter/X</p>
+                  <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
               </div>
             </div>
           </div>
 
 
-          <div className ='flex-col py-[50px] bg-gray-300'>
-           <SectionHeader>Other Projects</SectionHeader>
+          <div className ='flex-col py-[50px] bg-zinc-300 animated-grid'>
+           {/* <SectionHeader>Other Projects</SectionHeader> */}
+            <div id="other-projects" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
+              Other Projects
+              {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
+            </div>
             <div className='flex justify-center items-center text-xl min-h-40'>
               Insert Projects
             </div>
