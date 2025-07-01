@@ -21,7 +21,7 @@ function MainMenu() {
         <div className='flex-col'> 
           <div className='relative flex items-center text-xl min-h-40 overflow-hidden pt-[70px] bg-white'>
             <div className='absolute start-0 top-40 min-h-[0px] max-h-[520px] w-auto z-10 ml-3'>
-              <img src="Artwork/Logo/LogoVer2.png"/>
+              <img src="Artwork/Logo/LogoVer2.png" draggable="false"/>
             </div>
 
 
@@ -43,21 +43,21 @@ function MainMenu() {
               {/* <SectionHeader>Illustrations</SectionHeader> */}
               <div id="illustration" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
                 Illustrations
-                <img src="Artwork/Chibi/ChibiDraw.webp" className='absolute max-w-[120px] translate-x-40'/>
+                <img src="Artwork/Chibi/ChibiDraw.webp" draggable="false" className='wiggle-right absolute max-w-[150px] translate-x-45'/>
               </div>
             </div>
             
             <ul className='flex justify-evenly'>
               <li className='flex p-[10px]'>
-                <img src="Artwork/Irene.webp" alt='Irene' className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
+                <img src="Artwork/Irene.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
               </li>
 
               <li className='flex p-[10px]'>
-                <img src="Artwork/Archetto.webp" alt='Archetto' className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
+                <img src="Artwork/Archetto.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
               </li>
 
               <li className='flex p-[10px]'>
-                <img src="Artwork/Practice.webp" alt='Practice' className='max-w-[380px] min-w-[140px] h-full  object-cover rounded-4xl'/>
+                <img src="Artwork/Practice.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full  object-cover rounded-4xl'/>
               </li>
             </ul>
           </div>
@@ -66,12 +66,12 @@ function MainMenu() {
            {/* <SectionHeader>Games</SectionHeader> */}
             <div id="games" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
               Games
-              <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/>
+              <img src="Artwork/Chibi/ChibiGame.webp" draggable="false" className='wiggle-left absolute max-w-[150px] -translate-x-40'/>
             </div>
 
             <div className ="flex flex-row justify-center gap-6 mx-20">
               <div className="items-center justify-center max-w-1/2 pr-[20px]">
-                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" className="object-contain min-w-[314px]"/>
+                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" draggable="false" className="object-contain min-w-[314px]"/>
               </div>
               <div className="flex flex-col gap-10">
                 <div className="flex-auto">
@@ -109,13 +109,13 @@ function MainMenu() {
             {/* <SectionHeader>About</SectionHeader> */}
              <div id="about" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
               About
-              {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
+              <img src="Artwork/Chibi/ChibiAbout2.webp" draggable="false" className='wiggle-right absolute max-w-[150px] translate-x-35'/>
             </div>
-            <div className='flex flex-wrap justify-evenly text-xl h-[800px] max-w-[1000px] mx-auto'>
+            <div className='flex flex-wrap justify-evenly text-xl h-[1200px] lg:h-[800px] max-w-[1000px] mx-auto'>
               <div className='flex relative w-[500px] max-h-[800px]'>
-                <img src="Artwork/LynLinLing.webp" className='object-contain'/>
+                <img src="Artwork/LynLinLing.webp" draggable="false" className='object-contain translate-x-5'/>
               </div>
-              <div className='flex items-start justify-center text-center w-[500px] max-h-[800px]'>
+              <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
                 <div className='text-center'>
                   <p className='text-3xl font-semibold'>LynLinLing/Davadakus</p>
                   <p className='text-base'>Game Developer, Artist, and Software Developer</p>

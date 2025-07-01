@@ -13,6 +13,26 @@ html {
     background-position: 40px 40px;
   }
 }
+
+@keyframes wiggle-right {
+  0%, 100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes wiggle-left {
+  0%, 100% {
+    transform: rotate(8deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+
 @layer components {
   .animated-grid {
     background-image:
@@ -21,6 +41,13 @@ html {
     background-size: clamp(40px, 3.33vw, 42px) clamp(40px, 3.33vw, 42px);
     background-repeat: repeat;
     animation: gridScroll 4s linear infinite;
+  }
+  
+  .wiggle-right {
+    animation: wiggle-right 5s ease-in-out infinite;
+  }
+  .wiggle-left {
+    animation: wiggle-left 5s ease-in-out infinite;
   }
 }
 

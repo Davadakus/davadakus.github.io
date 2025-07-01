@@ -3,14 +3,25 @@
 11. Get domain for website `lylinling.com` (maybe idk lol)
 12. Fix sizing of the intro video probably in the future to scale better on small devices
 13. Darken the background of the video whites to make it contrast with the background (White)
+14. Add contact bottom website
+15. Add another section in about like a button to do an anim. of going to extra details (maybe)
+16. Revamp the dropdown to look nicer 
+    - Nice scroll down
+    - Custom animation maybe when hover
+    - Links to socials
+        - Twitter
+        - GitHub
 
 # Art Related ToDo
 5. Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames
 Sections:
 - ~~Illustration: OC with tablet pen~~
 - ~~Games: Irene facing the right with a controller at hand~~
-- About: Archetto Peace Signs :3
+- ~~About: Archetto Peace Signs :3~~
 - Other Projects: OC with glasses idk
+6. Decorate some sections to make it less empty
+7. About section needs more things beside the avatar
+8. game section could have fragments of irenes weapon
 
 
 
