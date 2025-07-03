@@ -6,11 +6,11 @@
 14. Add contact bottom website
 15. Add another section in about like a button to do an anim. of going to extra details (maybe)
 16. Revamp the dropdown to look nicer 
-    - Nice scroll down
+    - ~~Nice scroll down~~
     - Custom animation maybe when hover
     - Links to socials
-        - Twitter
-        - GitHub
+        - ~~Twitter~~
+        - ~~GitHub~~
 
 # Art Related ToDo
 5. Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames

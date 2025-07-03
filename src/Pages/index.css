@@ -32,6 +32,37 @@ html {
   }
 }
 
+@keyframes dropdownSlideIn {
+  0% {
+    max-height: 0;
+    margin-top: 0;
+    border-color: transparent;
+  }
+  1% {
+    border-color: var(--color-rose-900);
+  }
+  100% {
+    max-height: 600px;
+    margin-top: 60px;
+  }
+}
+
+@keyframes dropdownSlideOut {
+  0% {
+    max-height: 600px;
+    margin-top: 60px;
+  }
+  99% {
+    border-color: var(--color-rose-900);
+  }
+  100% {
+    max-height: 0;
+    margin-top: 0;
+    border-color: transparent;
+  }
+}
+
+
 
 @layer components {
   .animated-grid {
@@ -49,6 +80,16 @@ html {
   .wiggle-left {
     animation: wiggle-left 5s ease-in-out infinite;
   }
+  .dropdown-in {
+    animation: dropdownSlideIn 0.5s ease-out forwards;
+    /* pointer-events: auto; */
+}
+  .dropdown-out {
+    animation: dropdownSlideOut 0.5s ease-out forwards;
+    /* pointer-events: none; */
+    
+}
+
 }
 
 @layer base {
