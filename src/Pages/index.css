@@ -36,10 +36,10 @@ html {
   0% {
     max-height: 0;
     margin-top: 0;
-    border-color: transparent;
+    opacity: 0;
   }
   1% {
-    border-color: var(--color-rose-900);
+    opacity: 1;
   }
   100% {
     max-height: 600px;
@@ -53,12 +53,12 @@ html {
     margin-top: 60px;
   }
   99% {
-    border-color: var(--color-rose-900);
+    opacity: 1;
   }
   100% {
     max-height: 0;
     margin-top: 0;
-    border-color: transparent;
+    opacity: 0;
   }
 }
 
