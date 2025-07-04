@@ -41,7 +41,7 @@ function MainMenu() {
           <div className ='flex-col py-[50px]'>
             <div className="flex justify-center items-center">
               {/* <SectionHeader>Illustrations</SectionHeader> */}
-              <div id="illustration" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
+              <div id="illustrations" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
                 Illustrations
                 <img src="Artwork/Chibi/ChibiDraw.webp" draggable="false" className='wiggle-right absolute max-w-[150px] translate-x-45'/>
               </div>
