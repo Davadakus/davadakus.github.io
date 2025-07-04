@@ -32,6 +32,15 @@ html {
   }
 }
 
+/* @keyframes tilt {
+  0%{
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+} */
+
 @keyframes dropdownSlideIn {
   0% {
     max-height: 0;
@@ -79,6 +88,9 @@ html {
   }
   .wiggle-left {
     animation: wiggle-left 5s ease-in-out infinite;
+  }
+  .hover\:tilt:hover {
+    transform: rotate(3deg);
   }
   .dropdown-in {
     animation: dropdownSlideIn 0.5s ease-out forwards;

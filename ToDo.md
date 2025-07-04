@@ -5,12 +5,7 @@
 13. Darken the background of the video whites to make it contrast with the background (White)
 14. Add contact bottom website
 15. Add another section in about like a button to do an anim. of going to extra details (maybe)
-16. Revamp the dropdown to look nicer 
-    - ~~Nice scroll down~~
-    - Custom animation maybe when hover
-    - Links to socials
-        - ~~Twitter~~
-        - ~~GitHub~~
+
 
 # Art Related ToDo
 5. Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames
@@ -20,8 +15,9 @@ Sections:
 - ~~About: Archetto Peace Signs :3~~
 - Other Projects: OC with glasses idk
 6. Decorate some sections to make it less empty
-7. About section needs more things beside the avatar
-8. game section could have fragments of irenes weapon
+    - About section: needs more things beside the avatar
+    - Game section: could have fragments of irenes weapon
+    - Illustration Section: Could have effect on illust when hovered
 
 
 
@@ -44,6 +40,12 @@ Sections:
 8. ~~Make actual style look nice~~
 9. ~~Decide on Background to have nice contrast~~
 10. ~~Rename website on name~~
+16. ~~Revamp the dropdown to look nicer ~~
+    - ~~Nice scroll down~~
+    - ~~Custom animation maybe when hover~~
+    - Links to socials
+        - ~~Twitter~~
+        - ~~GitHub~~
 
 1. ~~Create Animated Banner ~~
 2. ~~Put all artwork into github and put it into the list to display~~ 

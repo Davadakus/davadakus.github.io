@@ -49,15 +49,15 @@ function MainMenu() {
             
             <ul className='flex justify-evenly'>
               <li className='flex p-[10px]'>
-                <img src="Artwork/Irene.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
+                <img src="Artwork/Irene.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
 
               <li className='flex p-[10px]'>
-                <img src="Artwork/Archetto.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl'/>
+                <img src="Artwork/Archetto.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
 
               <li className='flex p-[10px]'>
-                <img src="Artwork/Practice.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full  object-cover rounded-4xl'/>
+                <img src="Artwork/Practice.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full  object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
             </ul>
           </div>
