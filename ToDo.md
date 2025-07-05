@@ -8,7 +8,7 @@
 
 
 # Art Related ToDo
-5. Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames
+
 Sections:
 - ~~Illustration: OC with tablet pen~~
 - ~~Games: Irene facing the right with a controller at hand~~
@@ -51,6 +51,7 @@ Sections:
 2. ~~Put all artwork into github and put it into the list to display~~ 
 3. ~~Small screenshot of the game in development~~
 4. ~~Insert art of my OC and update text on right~~
+5. ~~Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames~~
 
 # Goal/Brainstorm
 Create page to display my portfolio of education, projects, skills, About Me, and art
