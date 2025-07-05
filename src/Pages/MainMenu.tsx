@@ -49,15 +49,15 @@ function MainMenu() {
             
             <ul className='flex justify-evenly'>
               <li className='flex p-[10px]'>
-                <img src="Artwork/Irene.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
+                <img src="Artwork/Irene.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
 
               <li className='flex p-[10px]'>
-                <img src="Artwork/Archetto.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
+                <img src="Artwork/Archetto.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
 
               <li className='flex p-[10px]'>
-                <img src="Artwork/Practice.webp" draggable="false" className='max-w-[380px] min-w-[140px] h-full  object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
+                <img src="Artwork/Practice.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full  object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
             </ul>
           </div>
@@ -69,26 +69,27 @@ function MainMenu() {
               <img src="Artwork/Chibi/ChibiGame.webp" draggable="false" className='wiggle-left absolute max-w-[150px] -translate-x-40'/>
             </div>
 
-            <div className ="flex flex-row justify-center gap-6 mx-20">
-              <div className="items-center justify-center max-w-1/2 pr-[20px]">
-                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" draggable="false" className="object-contain min-w-[314px]"/>
+            <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
+              <div className="w-[45%] min-w-[435px]">
+                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" draggable="false" className="object-contain"/>
               </div>
-              <div className="flex flex-col gap-10">
+              <div className="flex flex-col w-[45%] gap-10">
                 <div className="flex-auto">
                   <h1 className="block font-semibold text-[30px]">ProjectIrene</h1>
                   <div className="inline-block text-[20px]">
                     <p>Game inspired by Arknights that I made as my first game</p>
                     <p>Single player and combat takes inspiration from Hollow Knight</p>
+                    <br></br>
+                    <p>Stay Tuned for a blog post (´• ω •`)...</p>
                   </div>
                 </div>
-                <div className="">
-                  {/* <button onClick={() => setCount((count) => count + 1)}>
-                    count is {count}
-                  </button> */}
+                
+                {/* <div className="">
                   <button className="px-6 py-2 rounded-2xl bg-blue-600 text-white font-semibold hover:bg-blue-700 transition duration-300 shadow-md">
                     Click me
-                  </button>
-                </div>
+                  </button> 
+                </div> */}
+
               </div>
             </div>
 
@@ -137,9 +138,62 @@ function MainMenu() {
               Other Projects
               {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
             </div>
-            <div className='flex justify-center items-center text-xl min-h-40'>
-              Insert Projects
+            <div className="space-y-20">
+              <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
+                <div className="w-[45%]">
+                  <img src="Artwork/OtherProject/BeaconVisualizer.png" draggable="false" className="object-contain"/>
+                </div>
+                <div className="flex flex-col w-[45%] gap-10">
+                  <div className="flex-auto">
+                    <h1 className="block font-semibold text-[30px]">Beacon Visualizer (2024)</h1>
+                    <div className="inline-block text-[20px]">
+                      <p>A React Project me and my friend made for a Hackathon in 24 Hours</p>
+                      <p>Simulates live tracking of a beacon travelling in a rocket displaying relevant data</p>
+                      <br></br>
+                      <p>Tech: React, TailWindCSS, Vite, D3.js, Three.js, GitHub</p>
+                    </div>
+                  </div>
+                  
+                  <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank"  rel="noopener noreferrer">
+                    <img src="Artwork/DropDown/GitHub.png"/>
+                  </a>  
+
+                </div>
+              </div>
+              
+              <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
+
+                <div className="flex flex-col w-[45%] gap-10">
+                  <div className="flex-auto text-end">
+                    <h1 className="block font-semibold text-[30px]">Game Based Learning Website (2024)</h1>
+                    <div className="inline-block text-[20px]">
+                      <p>A React Project made by a group of 7 for a University Capstone Project</p>
+                      <p>Website that allows you to categorize and upload your class materials PDF to an AI Tutor (Gemini)</p>
+                      <p>The AI will generate short answer and MCQ questions for the users to quiz themselves</p>
+                      <p>You are able to talk to the AI regarding specific questions on screen and they will give you feedback on your answers</p>
+                      
+                      <br></br>
+                      <p>I was responsible for leading the frontend team, designing and making the pages, certain features, and code review</p>
+                      
+                      <br></br>
+                      <p>Tech: React, TailWindCSS, Vite, FastAPI, Docker, GitHub</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-row-reverse">
+                    <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank" rel="noopener noreferrer">
+                      <img src="Artwork/DropDown/GitHub.png"/>
+                    </a>  
+                  </div>
+                </div>
+                <div className="w-[45%]">
+                  <img src="Artwork/OtherProject/GBL.png" draggable="false" className="object-contain"/>
+                </div>
+                
+              </div>
+
             </div>
+            
           </div>
 
 
