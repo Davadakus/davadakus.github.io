@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from "react"
 import SectionHeader from "../Components/SectionHeader";
 import Dropdown from '../Components/dropdown';
-
+// import Magnifier from '../Components/Magnifier';
 
 function MainMenu() {
   // const Menu = ["Illustration", "Games", "About", "Other Projects"];
@@ -47,16 +47,16 @@ function MainMenu() {
               </div>
             </div>
             
-            <ul className='flex justify-evenly'>
-              <li className='flex p-[10px]'>
+            <ul className='flex items-center justify-evenly w-[90%] max-w-[2000px] mx-auto gap-5 overflow-hidden'>
+              <li>
                 <img src="Artwork/Irene.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
 
-              <li className='flex p-[10px]'>
+              <li>
                 <img src="Artwork/Archetto.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
 
-              <li className='flex p-[10px]'>
+              <li>
                 <img src="Artwork/Practice.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full  object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
               </li>
             </ul>
@@ -114,16 +114,18 @@ function MainMenu() {
             </div>
             <div className='flex flex-wrap justify-evenly text-xl h-[1200px] lg:h-[800px] max-w-[1000px] mx-auto'>
               <div className='flex relative w-[500px] max-h-[800px]'>
+                <img src="Artwork/About/MeText.png" draggable="false" className='absolute object-contain w-[200px] translate-x-2 wiggle'/>
                 <img src="Artwork/LynLinLing.webp" draggable="false" className='object-contain translate-x-5'/>
+                {/* <Magnifier src="Artwork/LynLinLing.webp" zoom={2} className="translate-x-5" /> */}
               </div>
               <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
                 <div className='text-center'>
                   <p className='text-3xl font-semibold'>LynLinLing/Davadakus</p>
                   <p className='text-base'>Game Developer, Artist, and Software Developer</p>
-                  <br />
+                    <br />
                   <p>I want to create games and draw characters I like.</p>
                   <p>Follow me for updates on my games here: blog</p>
-                  <br />
+                    <br />
                   <p className="text-xl font-semibold">Twitter/X</p>
                   <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
@@ -150,13 +152,15 @@ function MainMenu() {
                       <p>A React Project me and my friend made for a Hackathon in 24 Hours</p>
                       <p>Simulates live tracking of a beacon travelling in a rocket displaying relevant data</p>
                       <br></br>
+                      <p>Role: Website design & layout, simulation of beacon, and managing simulated data</p>
+                      <br></br>
                       <p>Tech: React, TailWindCSS, Vite, D3.js, Three.js, GitHub</p>
                     </div>
                   </div>
                   
                   <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank"  rel="noopener noreferrer">
                     <img src="Artwork/DropDown/GitHub.png"/>
-                  </a>  
+                  </a>
 
                 </div>
               </div>
@@ -168,13 +172,12 @@ function MainMenu() {
                     <h1 className="block font-semibold text-[30px]">Game Based Learning Website (2024)</h1>
                     <div className="inline-block text-[20px]">
                       <p>A React Project made by a group of 7 for a University Capstone Project</p>
-                      <p>Website that allows you to categorize and upload your class materials PDF to an AI Tutor (Gemini)</p>
-                      <p>The AI will generate short answer and MCQ questions for the users to quiz themselves</p>
-                      <p>You are able to talk to the AI regarding specific questions on screen and they will give you feedback on your answers</p>
+                      <p>Allows you to upload your class materials PDF to an AI Tutor (Gemini) and group them</p>
+                      <p>The AI generates questions for users to test themselves</p>
+                      <p>You can ask the AI regarding specific questions on screen and will give you feedback</p>
                       
                       <br></br>
-                      <p>I was responsible for leading the frontend team, designing and making the pages, certain features, and code review</p>
-                      
+                      <p>Role: Responsible for leading the frontend team, designing and making the pages, certain features, and code review</p>
                       <br></br>
                       <p>Tech: React, TailWindCSS, Vite, FastAPI, Docker, GitHub</p>
                     </div>
@@ -182,7 +185,7 @@ function MainMenu() {
                   
                   <div className="flex flex-row-reverse">
                     <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank" rel="noopener noreferrer">
-                      <img src="Artwork/DropDown/GitHub.png"/>
+                      <img src="Artwork/DropDown/YouTube.png"/>
                     </a>  
                   </div>
                 </div>

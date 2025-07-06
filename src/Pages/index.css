@@ -5,6 +5,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 @keyframes gridScroll {
   0% {
     background-position: 0 0;
@@ -29,6 +30,15 @@ html {
   }
   50% {
     transform: rotate(-8deg);
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-3deg);
   }
 }
 
@@ -89,6 +99,11 @@ html {
   .wiggle-left {
     animation: wiggle-left 5s ease-in-out infinite;
   }
+  .wiggle {
+    animation: wiggle 5s ease-in-out infinite;
+  }
+
+
   .hover\:tilt:hover {
     transform: rotate(3deg);
   }
