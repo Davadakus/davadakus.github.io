@@ -7,6 +7,9 @@ import Dropdown from '../Components/dropdown';
 function MainMenu() {
   // const Menu = ["Illustration", "Games", "About", "Other Projects"];
   // const [open, setOpen] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
+
+
     const [count, setCount] = useState(0)
     useEffect(() => {
       if (window.twttr) {
@@ -92,26 +95,15 @@ function MainMenu() {
 
               </div>
             </div>
-
-            {/* <div className='flex flex-row text-xl min-h-40 max-w-[1000px] gap-6 mx-auto'>
-              <div className="bg-amber-300">
-                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" className='max-w-[500px] min-w-[140px] object-cover '/>
-              </div>
-              <div className="bg-green-400 w-[500px]">
-                <h1 className="block font-semibold text-[24px]">ProjectIrene</h1>
-
-                <p className="block">Game inspired by Arknights that I made as my first game. Single player and combat takes inspiration from Hollow Knight</p>
-              </div>
-            </div> */}
-
           </div>
 
-          <div className ='flex-col py-[50px]'>
+          <div className ='relative flex-col py-[50px] overflow-clip'>
             {/* <SectionHeader>About</SectionHeader> */}
              <div id="about" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
               About
               <img src="Artwork/Chibi/ChibiAbout2.webp" draggable="false" className='wiggle-right absolute max-w-[150px] translate-x-35'/>
             </div>
+
             <div className='flex flex-wrap justify-evenly text-xl h-[1200px] lg:h-[800px] max-w-[1000px] mx-auto'>
               <div className='flex relative w-[500px] max-h-[800px]'>
                 <img src="Artwork/About/MeText.png" draggable="false" className='absolute object-contain w-[200px] translate-x-2 wiggle'/>
@@ -130,6 +122,41 @@ function MainMenu() {
                   <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
               </div>
+              
+              {/* Extra Hidden Section Start*/}
+              {/* This is the whole area */}
+              <div
+                className={`absolute top-[145px] left-0 w-full h-[792px] bg-zinc-500 rounded-2xl z-15 transition-transform duration-700 ease-in-out 
+                  ${showOverlay ? "translate-x-1/2" : "translate-x-full"}
+                `}
+              >
+                {/* This is the content */}
+                <div className="flex flex-row z-15">
+                  <button
+                  onClick={() => setShowOverlay(!showOverlay)}
+                  className="bg-zinc-400 text-white h-fit px-4 py-2 translate-y-[350px] -translate-x-[52px] rounded hover:bg-zinc-800 transition text-[52px] duration-700 ease-in-out"
+                  >
+                    {showOverlay ? ">" : "<"}
+                  </button>
+
+                  <div className='flex items-start justify-center text-center text-black pt-10 w-[500px] max-h-[800px]'>
+                    <div className='text-center'>
+                      <p className='text-3xl font-semibold'>Education</p>
+                      <p className='text-xl font-semibold'>Bachelor of Computing (2021-2024)</p>
+                      <p className='text-base'>Major in Software Development</p>
+                      <p className='text-sm'>Minor in Digital Music</p>
+                        <br />
+                      <p className='text-3xl font-semibold'>Technical Skills</p>
+                        <br />
+                     
+
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+
+              {/* Extra Hidden Section End*/}
             </div>
           </div>
 
@@ -157,10 +184,11 @@ function MainMenu() {
                       <p>Tech: React, TailWindCSS, Vite, D3.js, Three.js, GitHub</p>
                     </div>
                   </div>
-                  
-                  <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank"  rel="noopener noreferrer">
-                    <img src="Artwork/DropDown/GitHub.png"/>
-                  </a>
+                  <div className="flex flex-row">
+                    <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank"  rel="noopener noreferrer">
+                      <img src="Artwork/DropDown/GitHub.png"/>
+                    </a>
+                  </div>
 
                 </div>
               </div>
