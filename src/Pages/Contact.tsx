@@ -1,11 +1,11 @@
 import React from "react"
-import Dropdown from "../Components/dropdown";
+import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
 function Contact() {
     return (
       <>
-        <Dropdown/>
+        <Header/>
         <div className='flex justify-center min-h-screen items-center '>
           <div className="text-2xl inline-block text-center">
             <p>This page is currently in progress</p>

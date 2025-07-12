@@ -7,6 +7,7 @@
 15. Add another section in about like a button to do an anim. of going to extra details (maybe)
 16. Extra About section need to scale well when zoomed 
 17. Have it compatible for mobile
+18. Home button go to top page without scrolling
 
 # Art Related ToDo
 6. Decorate some sections to make it less empty

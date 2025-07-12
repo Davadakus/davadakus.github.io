@@ -1,12 +1,31 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react";
 
-function Dropdown() {
+function Header() {
     const Menu = ["Illustrations", "Games", "About", "Other Projects"];
     const [open, setOpen] = useState(false);
-    
+    const [showButton, setShowButton] = useState(false);
+
+    useEffect(() => {
+      const handleScroll = () => {
+        setShowButton(window.scrollY > 500); // show after 100px
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-      <>
+      <div className="w-full h-[70px]">
+        <div className={`fixed top-0 left-0 max-w-[40px] z-20 m-3 transition-opacity duration-500 ease-in-out
+          ${showButton ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}>
+          <a href="/"> 
+            <img src="Artwork/DropDown/home.png" alt="Home" />
+          </a>
+        </div>
+        
+        
         <div draggable="false" className="fixed top-0 right-0 m-4 text-[24px] font-semibold z-20">
           <p className="cursor-pointer" onClick={() => setOpen(!open)}>MENU</p>
           
@@ -52,8 +71,8 @@ function Dropdown() {
             </div>
           
         </div>
-      </>
+      </div>
     )
   }
   
-  export default Dropdown;
+  export default Header;

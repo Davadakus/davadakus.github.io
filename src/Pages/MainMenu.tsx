@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from "react"
 import SectionHeader from "../Components/SectionHeader";
-import Dropdown from '../Components/dropdown';
+import Header from '../Components/Header';
 import SkillTable from '../Components/SkillTable';
 import Footer from '../Components/Footer';
 // import Magnifier from '../Components/Magnifier';
@@ -21,10 +21,10 @@ function MainMenu() {
 
     return (
       <>
-        <Dropdown/>
+        <Header/>
         
         <div className='flex-col'> 
-          <div className='relative flex items-center text-xl min-h-40 overflow-hidden pt-[70px] bg-white'>
+          <div className='relative flex items-center text-xl min-h-40 overflow-hidden bg-white'>
             <div className='absolute start-0 top-40 min-h-[0px] max-h-[520px] w-auto z-10 ml-3'>
               <img src="Artwork/Logo/LogoVer2.png" draggable="false"/>
             </div>
