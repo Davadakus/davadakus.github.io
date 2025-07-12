@@ -5,19 +5,15 @@
 13. Darken the background of the video whites to make it contrast with the background (White)
 14. Add contact bottom website
 15. Add another section in about like a button to do an anim. of going to extra details (maybe)
-
+16. Extra About section need to scale well when zoomed 
+17. Have it compatible for mobile
 
 # Art Related ToDo
-
-Sections:
-- ~~Illustration: OC with tablet pen~~
-- ~~Games: Irene facing the right with a controller at hand~~
-- ~~About: Archetto Peace Signs :3~~
-- Other Projects: OC with glasses idk
 6. Decorate some sections to make it less empty
     - About section: needs more things beside the avatar
     - Game section: could have fragments of irenes weapon
     - Illustration Section: Could have effect on illust when hovered
+7. Add small offcentered rectangle behind h1's to make them pop 
 
 
 
@@ -52,6 +48,13 @@ Sections:
 3. ~~Small screenshot of the game in development~~
 4. ~~Insert art of my OC and update text on right~~
 5. ~~Mini chibi artwork of OC beside specific category of the heading an animate it to wiggle every 5 frames~~
+Sections:
+- ~~Illustration: OC with tablet pen~~
+- ~~Games: Irene facing the right with a controller at hand~~
+- ~~About: Archetto Peace Signs :3~~
+- Other Projects: OC with glasses idk <-- future maybe
+
+
 
 # Goal/Brainstorm
 Create page to display my portfolio of education, projects, skills, About Me, and art
