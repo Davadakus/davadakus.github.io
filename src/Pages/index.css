@@ -1,9 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxanium&display=swap');
 @import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  body {
+    font-family: 'Oxanium', sans-serif;
+    @apply bg-gray-100;
+    background-image:
+      linear-gradient(0deg, transparent calc(100% - 1px), #fff calc(100% - 1px)),
+      linear-gradient(90deg, transparent calc(100% - 1px), #fff calc(100% - 1px));
+    background-repeat: repeat;
+    background-position: 50%;
+    background-size: clamp(40px, 3.33vw, 42px) clamp(40px, 3.33vw, 42px);
+    animation: gridScroll 4s linear infinite;
+
+    /* background-image:
+    repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 1px, transparent 40px);
+    background-size: 100% 100%;
+    background-repeat: repeat; */
+  }
 }
+
 
 
 @keyframes gridScroll {
@@ -84,6 +101,30 @@ html {
 
 
 @layer components {
+  .illustration-anim {
+    @apply max-w-[380px] min-w-[140px] w-full h-full object-cover rounded-4xl transition-transform duration-1000 ease-out
+  }
+  
+  .skill-section {
+    @apply flex flex-row flex-wrap items-start border-b-2 border-black ;
+  }
+  
+  .skill-header {
+    @apply flex font-semibold w-[150px] justify-start items-start text-2xl;
+  }
+  
+  .skill-grid {
+    @apply grid grid-cols-3 gap-2 p-2 grow text-lg;
+  }
+  
+  .projects-link {
+    @apply flex flex-row gap-3 
+  }
+  
+  .projects-link-reverse {
+    @apply flex flex-row-reverse gap-3 
+  }
+
   .animated-grid {
     background-image:
       linear-gradient(0deg, transparent calc(100% - 1px), #fff calc(100% - 1px)),
@@ -110,31 +151,14 @@ html {
   .dropdown-in {
     animation: dropdownSlideIn 0.5s ease-out forwards;
     /* pointer-events: auto; */
-}
+  }
   .dropdown-out {
     animation: dropdownSlideOut 0.5s ease-out forwards;
     /* pointer-events: none; */
     
-}
-
-}
-
-@layer base {
-  body {
-    font-family: 'Oxanium', sans-serif;
-    @apply bg-gray-100;
-    background-image:
-      linear-gradient(0deg, transparent calc(100% - 1px), #fff calc(100% - 1px)),
-      linear-gradient(90deg, transparent calc(100% - 1px), #fff calc(100% - 1px));
-    background-repeat: repeat;
-    background-position: 50%;
-    background-size: clamp(40px, 3.33vw, 42px) clamp(40px, 3.33vw, 42px);
-    animation: gridScroll 4s linear infinite;
-
-    /* background-image:
-    repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 40px),
-    repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 1px, transparent 40px);
-    background-size: 100% 100%;
-    background-repeat: repeat; */
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }

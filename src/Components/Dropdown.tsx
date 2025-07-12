@@ -13,7 +13,8 @@ function Dropdown() {
             <div className={`fixed top-0 right-0 mr-5 bg-white shadow-lg rounded-4xl border-2 border-rose-900 overflow-hidden z-30
               ${open ? 'dropdown-in' : 'dropdown-out' }`}>
 
-              <div className="px-4 py-8 pr-30">
+              <div className="px-4 py-8 pr-8">
+                {/* pr-30 for fuuture when have artwork */}
                 <ul>
                   {Menu.map((menu) => (
                     <li key={menu} className="group mx-4 py-2 transition-all duration-300 -translate-x-2">
@@ -31,7 +32,7 @@ function Dropdown() {
                 {/* <button className="mx-4 px-3 py-1 text-base rounded-3xl bg-white font-semibold hover:bg-gray-200 border-2 border-gray-500 transition duration-300 ">
                   Click me
                 </button> */}
-                <div className="mx-8 my-5 text-base font-semibold">
+                <div className="mx-8 my-2 text-base font-semibold">
                   <ul>
                     <li>My Socials</li>
                     <li className="mb-1">

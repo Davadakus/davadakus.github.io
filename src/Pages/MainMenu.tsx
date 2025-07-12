@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useState } from "react"
 import SectionHeader from "../Components/SectionHeader";
 import Dropdown from '../Components/dropdown';
+import SkillTable from '../Components/SkillTable';
+import Footer from '../Components/Footer';
 // import Magnifier from '../Components/Magnifier';
 
 function MainMenu() {
@@ -27,7 +29,6 @@ function MainMenu() {
               <img src="Artwork/Logo/LogoVer2.png" draggable="false"/>
             </div>
 
-
             {/* <video src="Artwork/LynLinLing_3.mp4" autoPlay muted playsInline loop className='z-0 max-h-[850px] w-full object-[50%_50%] object-cover relative ml-20 mt-25 border'/> */}
             <div className="w-full h-[650px] overflow-hidden ml-20 relative">
               <video 
@@ -52,15 +53,15 @@ function MainMenu() {
             
             <ul className='flex items-center justify-evenly w-[90%] max-w-[2000px] mx-auto gap-5 overflow-hidden'>
               <li>
-                <img src="Artwork/Irene.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
+                <img src="Artwork/Irene.webp" draggable="false" className="illustration-anim hover:tilt"/>
               </li>
 
               <li>
-                <img src="Artwork/Archetto.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
+                <img src="Artwork/Archetto.webp" draggable="false" className="illustration-anim hover:tilt"/>
               </li>
 
               <li>
-                <img src="Artwork/Practice.webp" draggable="false" className='max-w-[380px] min-w-[140px] w-full h-full  object-cover rounded-4xl hover:tilt transition-transform duration-1000 ease-out'/>
+                <img src="Artwork/Practice.webp" draggable="false" className="illustration-anim hover:tilt"/>
               </li>
             </ul>
           </div>
@@ -83,6 +84,7 @@ function MainMenu() {
                     <p>Game inspired by Arknights that I made as my first game</p>
                     <p>Single player and combat takes inspiration from Hollow Knight</p>
                     <br></br>
+                    <p>Still in development</p>
                     <p>Stay Tuned for a blog post (´• ω •`)...</p>
                   </div>
                 </div>
@@ -126,7 +128,7 @@ function MainMenu() {
               {/* Extra Hidden Section Start*/}
               {/* This is the whole area */}
               <div
-                className={`absolute top-[145px] left-0 w-full h-[792px] bg-zinc-500 rounded-2xl z-15 transition-transform duration-700 ease-in-out 
+                className={`absolute top-[145px] w-full h-[792px] bg-zinc-400 rounded-2xl z-15 transition-transform duration-700 ease-in-out 
                   ${showOverlay ? "translate-x-1/2" : "translate-x-full"}
                 `}
               >
@@ -134,28 +136,25 @@ function MainMenu() {
                 <div className="flex flex-row z-15">
                   <button
                   onClick={() => setShowOverlay(!showOverlay)}
-                  className="bg-zinc-400 text-white h-fit px-4 py-2 translate-y-[350px] -translate-x-[52px] rounded hover:bg-zinc-800 transition text-[52px] duration-700 ease-in-out"
+                  className="bg-zinc-400 text-white h-fit px-4 py-2 translate-y-[350px] -translate-x-[52px] rounded hover:bg-zinc-800 transition text-[52px] duration-500 ease-in-out"
                   >
                     {showOverlay ? ">" : "<"}
                   </button>
 
-                  <div className='flex items-start justify-center text-center text-black pt-10 w-[500px] max-h-[800px]'>
+                  <div className='flex flex-grow items-start justify-start text-center text-black pt-10 w-[650px] max-h-[800px]'>
                     <div className='text-center'>
-                      <p className='text-3xl font-semibold'>Education</p>
-                      <p className='text-xl font-semibold'>Bachelor of Computing (2021-2024)</p>
+                      <p className='text-3xl font-semibold mb-2'>Education</p>
+                      <p className='text-2xl font-semibold'>University of Sydney (2021-2024)</p>
+                      <p className='text-xl font-semibold'>Bachelor of Computing</p>
                       <p className='text-base'>Major in Software Development</p>
                       <p className='text-sm'>Minor in Digital Music</p>
                         <br />
                       <p className='text-3xl font-semibold'>Technical Skills</p>
-                        <br />
-                     
-
+                        <SkillTable/>
                     </div>
                   </div>
                 </div>
-              
               </div>
-
               {/* Extra Hidden Section End*/}
             </div>
           </div>
@@ -184,10 +183,13 @@ function MainMenu() {
                       <p>Tech: React, TailWindCSS, Vite, D3.js, Three.js, GitHub</p>
                     </div>
                   </div>
-                  <div className="flex flex-row">
+                  <div className="projects-link">
                     <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank"  rel="noopener noreferrer">
                       <img src="Artwork/DropDown/GitHub.png"/>
                     </a>
+                    <a href="https://www.youtube.com/watch?v=Cik_anyDUuw" target="_blank" rel="noopener noreferrer">
+                      <img src="Artwork/DropDown/YouTube.png"/>
+                    </a>  
                   </div>
 
                 </div>
@@ -211,8 +213,8 @@ function MainMenu() {
                     </div>
                   </div>
                   
-                  <div className="flex flex-row-reverse">
-                    <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank" rel="noopener noreferrer">
+                  <div className="projects-link-reverse">
+                    <a href="https://youtu.be/gqQlONmrvE4" target="_blank" rel="noopener noreferrer">
                       <img src="Artwork/DropDown/YouTube.png"/>
                     </a>  
                   </div>
@@ -220,16 +222,47 @@ function MainMenu() {
                 <div className="w-[45%]">
                   <img src="Artwork/OtherProject/GBL.png" draggable="false" className="object-contain"/>
                 </div>
-                
               </div>
+
+              <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
+                <div className="w-[45%]">
+                  <img src="Artwork/OtherProject/Haato's Diary.png" draggable="false" className="object-contain"/>
+                </div>
+                <div className="flex flex-col w-[45%] gap-10">
+                  <div className="flex-auto">
+                    <h1 className="block font-semibold text-[30px]">Haato's Diary (2022)</h1>
+                    <div className="inline-block text-[20px]">
+                      <p>An open-source, fan-made, visual novel I had a small hand in</p>
+                      <p>First experience working with others through GitHub Forks and coordinating through a trello board</p>
+                      <br></br>
+                      <p>Role: Implement some translations for Japanese Users</p>
+                      <br></br>
+                      <p>Tech: Python, RenPy</p>
+                    </div>
+                  </div>
+                  <div className="projects-link">
+                    <a href="https://wws-haato.itch.io/haatos-diary" target="_blank"  rel="noopener noreferrer">
+                      <img src="Artwork/DropDown/Website.png"/>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=tRLvKY_WZwU" target="_blank" rel="noopener noreferrer">
+                      <img src="Artwork/DropDown/YouTube.png"/>
+                    </a>  
+                  </div>
+
+                </div>
+              </div>
+                  
+
 
             </div>
             
           </div>
 
-
+          <Footer/>
         
         </div>
+
+      
       </>
       
     )
