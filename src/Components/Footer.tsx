@@ -7,19 +7,19 @@ function Footer() {
             <div className="flex flex-col py-5 pb-2">
                 <ul className="flex flex-row py-4 space-x-3">
                     <li>
-                        <a href="#illustrations">Illustrations</a>
+                        <a href="/#illustrations">Illustrations</a>
                     </li>
                     <li>
-                        <a href="#games">Games</a>
+                        <a href="/#games">Games</a>
                     </li>
                     <li>
-                        <a href="#about">About</a>
+                        <a href="/#about">About</a>
                     </li>
                     <li>
-                        <a href="#other-projects">Other Projects</a>
+                        <a href="/#other-projects">Other Projects</a>
                     </li>
                     <li>
-                        <a href="">Contact</a>
+                        <a href="/contact">Contact</a>
                     </li>
                 </ul>
                 <p>© 2025 LynLinLing</p>

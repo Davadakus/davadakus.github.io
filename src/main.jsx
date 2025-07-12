@@ -5,6 +5,7 @@ import './Pages/index.css'
 import Error from './Pages/Error.tsx'
 import MainMenu from './Pages/MainMenu'
 import TestPage from './Pages/TestPage';
+import Contact from './Pages/Contact.tsx';
 
 const router = createBrowserRouter([
 {
@@ -15,7 +16,12 @@ const router = createBrowserRouter([
 {
   path: '/Test',
   element: <TestPage />
+},
+{
+  path: '/contact',
+  element: <Contact />
 }
+
 ])
 
 createRoot(document.getElementById('root')).render(
