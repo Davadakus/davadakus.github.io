@@ -8,6 +8,15 @@
 16. Extra About section need to scale well when zoomed 
 17. Have it compatible for mobile
 18. Home button go to top page without scrolling
+19. Have the illustration just focus on one artwork. Have it so that you press a button left or right
+20. Change text for mobile
+- ~~Headers~~
+- ~~Stickers~~
+- Games text
+- ~~About text~~
+- Other projects texts
+- Other Project images
+
 
 # Art Related ToDo
 6. Decorate some sections to make it less empty

@@ -41,13 +41,14 @@ function MainMenu() {
               />
             </div>
           </div>
-
-          <div className ='flex-col py-[50px]'>
+          
+          <div className ='header-section'>
             <div className="flex justify-center items-center">
+              
               {/* <SectionHeader>Illustrations</SectionHeader> */}
-              <div id="illustrations" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
+              <div id="illustrations" className='header-title'>
                 Illustrations
-                <img src="Artwork/Chibi/ChibiDraw.webp" draggable="false" className='wiggle-right absolute max-w-[150px] translate-x-45'/>
+                <img src="Artwork/Chibi/ChibiDraw.webp" draggable="false" className="header-sticker wiggle-right translate-x-32 sm:translate-x-45"/>
               </div>
             </div>
             
@@ -66,11 +67,11 @@ function MainMenu() {
             </ul>
           </div>
 
-          <div className ='flex-col py-[50px] bg-zinc-300 animated-grid'>
+          <div className ='header-section bg-zinc-300 animated-grid'>
            {/* <SectionHeader>Games</SectionHeader> */}
-            <div id="games" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
+            <div id="games" className='header-title'>
               Games
-              <img src="Artwork/Chibi/ChibiGame.webp" draggable="false" className='wiggle-left absolute max-w-[150px] -translate-x-40'/>
+              <img src="Artwork/Chibi/ChibiGame.webp" draggable="false" className='header-sticker-2 wiggle-left -translate-x-30 sm:-translate-x-40 '/>
             </div>
 
             <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
@@ -99,11 +100,11 @@ function MainMenu() {
             </div>
           </div>
 
-          <div className ='relative flex-col py-[50px] overflow-clip'>
+          <div className ='header-section'>
             {/* <SectionHeader>About</SectionHeader> */}
-             <div id="about" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
+             <div id="about" className='header-title'>
               About
-              <img src="Artwork/Chibi/ChibiAbout2.webp" draggable="false" className='wiggle-right absolute max-w-[150px] translate-x-35'/>
+              <img src="Artwork/Chibi/ChibiAbout2.webp" draggable="false" className='header-sticker-2 wiggle-right translate-x-28 sm:translate-x-35'/>
             </div>
 
             <div className='flex flex-wrap justify-evenly text-xl h-[1200px] lg:h-[800px] max-w-[1000px] mx-auto'>
@@ -114,13 +115,12 @@ function MainMenu() {
               </div>
               <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
                 <div className='text-center'>
-                  <p className='text-3xl font-semibold'>LynLinLing/Davadakus</p>
-                  <p className='text-base'>Game Developer, Artist, and Software Developer</p>
+                  <p className='text-header'>LynLinLing/Davadakus</p>
+                  <p className='text-subheader'>Game Developer, Artist, and Software Developer</p>
                     <br />
-                  <p>I want to create games and draw characters I like.</p>
-                  <p>Follow me for updates on my games here: blog</p>
+                  <p className='text-body'>I want to create games and draw characters I like.</p>
                     <br />
-                  <p className="text-xl font-semibold">Twitter/X</p>
+                  <p className="text-header2">Twitter/X</p>
                   <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
               </div>
@@ -160,9 +160,9 @@ function MainMenu() {
           </div>
 
 
-          <div className ='flex-col py-[50px] bg-zinc-300 animated-grid'>
+          <div className ='header-section bg-zinc-300 animated-grid'>
            {/* <SectionHeader>Other Projects</SectionHeader> */}
-            <div id="other-projects" className='flex justify-center items-center text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]'>
+            <div id="other-projects" className='header-title'>
               Other Projects
               {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
             </div>

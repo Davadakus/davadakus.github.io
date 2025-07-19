@@ -101,10 +101,27 @@
 
 
 @layer components {
+  .header-section {
+    @apply relative flex-col py-[50px] overflow-clip
+  }
+
+  .header-sticker {
+    @apply absolute max-w-[90px] sm:max-w-[150px]
+  }
+
+  .header-sticker-2 {
+    @apply absolute max-w-[110px] sm:max-w-[150px]
+  }
+
+  .header-title {
+    @apply flex justify-center items-center text-[28px] sm:text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]
+  }
+
   .illustration-anim {
-    @apply max-w-[380px] min-w-[140px] w-full h-full object-cover rounded-4xl transition-transform duration-1000 ease-out
+    @apply max-w-[380px] min-w-[120px] w-full h-full object-cover rounded-4xl transition-transform duration-1000 ease-out
   }
   
+
   .skill-section {
     @apply flex flex-row flex-wrap items-start border-b-2 border-black ;
   }
@@ -124,6 +141,23 @@
   .projects-link-reverse {
     @apply flex flex-row-reverse gap-3 
   }
+
+  .text-header {
+    @apply font-semibold text-2xl sm:text-3xl
+  }
+  
+  .text-header2 {
+    @apply font-semibold text-lg sm:text-xl
+  }
+
+  .text-subheader {
+    @apply text-sm sm:text-base
+  }
+  
+  .text-body {
+    @apply text-base sm:text-xl
+  }
+  
 
   .animated-grid {
     background-image:
