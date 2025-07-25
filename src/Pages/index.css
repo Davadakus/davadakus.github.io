@@ -106,15 +106,15 @@
   }
 
   .header-sticker {
-    @apply absolute max-w-[90px] sm:max-w-[150px]
+    @apply absolute max-w-[90px] md:max-w-[150px]
   }
 
   .header-sticker-2 {
-    @apply absolute max-w-[110px] sm:max-w-[150px]
+    @apply absolute max-w-[110px] md:max-w-[150px]
   }
 
   .header-title {
-    @apply flex justify-center items-center text-[28px] sm:text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]
+    @apply flex justify-center items-center text-[28px] md:text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]
   }
 
   .illustration-anim {
@@ -134,6 +134,22 @@
     @apply grid grid-cols-3 gap-2 p-2 grow text-lg;
   }
   
+  .projects-card {
+    @apply flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto
+  }
+
+  .projects-card-reverse {
+    @apply flex flex-wrap-reverse justify-center max-w-[2000px] gap-6 mx-auto
+  }
+
+  .projects-card-image {
+    @apply w-[90%] md:w-[45%]
+  }
+  
+  .projects-card-body {
+    @apply flex flex-col w-[85%] md:w-[45%] gap-10 flex-wrap
+  }
+
   .projects-link {
     @apply flex flex-row gap-3 
   }
@@ -143,19 +159,23 @@
   }
 
   .text-header {
-    @apply font-semibold text-2xl sm:text-3xl
+    @apply font-semibold text-2xl md:text-3xl
   }
   
   .text-header2 {
-    @apply font-semibold text-lg sm:text-xl
+    @apply font-semibold text-lg md:text-xl
   }
 
   .text-subheader {
-    @apply text-sm sm:text-base
+    @apply text-sm md:text-base
   }
   
   .text-body {
-    @apply text-base sm:text-xl
+    @apply text-base md:text-xl
+  }
+
+  .text-tiny {
+    @apply text-sm md:text-base
   }
   
 

@@ -75,13 +75,13 @@ function MainMenu() {
             </div>
 
             <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
-              <div className="w-[45%] min-w-[435px]">
+              <div className="projects-card-image">
                 <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" draggable="false" className="object-contain"/>
               </div>
-              <div className="flex flex-col w-[45%] gap-10">
+              <div className="projects-card-body">
                 <div className="flex-auto">
-                  <h1 className="block font-semibold text-[30px]">ProjectIrene</h1>
-                  <div className="inline-block text-[20px]">
+                  <h1 className="text-header">ProjectIrene</h1>
+                  <div className="text-body">
                     <p>Game inspired by Arknights that I made as my first game</p>
                     <p>Single player and combat takes inspiration from Hollow Knight</p>
                     <br></br>
@@ -167,20 +167,21 @@ function MainMenu() {
               {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
             </div>
             <div className="space-y-20">
-              <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
-                <div className="w-[45%]">
+              <div className ="projects-card">
+                <div className="projects-card-image">
                   <img src="Artwork/OtherProject/BeaconVisualizer.png" draggable="false" className="object-contain"/>
                 </div>
-                <div className="flex flex-col w-[45%] gap-10">
+                <div className="projects-card-body">
                   <div className="flex-auto">
-                    <h1 className="block font-semibold text-[30px]">Beacon Visualizer (2024)</h1>
-                    <div className="inline-block text-[20px]">
+                    <h1 className="text-header">Beacon Visualizer (2024)</h1>
+                    <div className="text-body">
                       <p>A React Project me and my friend made for a Hackathon in 24 Hours</p>
                       <p>Simulates live tracking of a beacon travelling in a rocket displaying relevant data</p>
                       <br></br>
-                      <p>Role: Website design & layout, simulation of beacon, and managing simulated data</p>
-                      <br></br>
-                      <p>Tech: React, TailWindCSS, Vite, D3.js, Three.js, GitHub</p>
+                      <div className="text-tiny">
+                        <p><strong>Role:</strong> Website design & layout, simulation of beacon, and managing simulated data</p>
+                        <p><strong>Tech</strong>: React, TailWindCSS, Vite, D3.js, Three.js, GitHub</p>
+                      </div>
                     </div>
                   </div>
                   <div className="projects-link">
@@ -195,21 +196,20 @@ function MainMenu() {
                 </div>
               </div>
               
-              <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
-
-                <div className="flex flex-col w-[45%] gap-10">
+              <div className ="projects-card-reverse">
+                <div className="projects-card-body">
                   <div className="flex-auto text-end">
-                    <h1 className="block font-semibold text-[30px]">Game Based Learning Website (2024)</h1>
-                    <div className="inline-block text-[20px]">
+                    <h1 className="text-header">Game Based Learning Website (2024)</h1>
+                    <div className="text-body">
                       <p>A React Project made by a group of 7 for a University Capstone Project</p>
                       <p>Allows you to upload your class materials PDF to an AI Tutor (Gemini) and group them</p>
                       <p>The AI generates questions for users to test themselves</p>
                       <p>You can ask the AI regarding specific questions on screen and will give you feedback</p>
-                      
                       <br></br>
-                      <p>Role: Responsible for leading the frontend team, designing and making the pages, certain features, and code review</p>
-                      <br></br>
-                      <p>Tech: React, TailWindCSS, Vite, FastAPI, Docker, GitHub</p>
+                      <div className="text-tiny">
+                        <p><strong>Role:</strong> Responsible for leading the frontend team, designing and making the pages, certain features, and code review</p>
+                        <p><strong>Tech:</strong> React, TailWindCSS, Vite, FastAPI, Docker, GitHub</p>
+                      </div>
                     </div>
                   </div>
                   
@@ -219,25 +219,27 @@ function MainMenu() {
                     </a>  
                   </div>
                 </div>
-                <div className="w-[45%]">
+                <div className="projects-card-image">
                   <img src="Artwork/OtherProject/GBL.png" draggable="false" className="object-contain"/>
                 </div>
               </div>
 
-              <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
-                <div className="w-[45%]">
+              <div className ="projects-card">
+                <div className="projects-card-image">
                   <img src="Artwork/OtherProject/Haato's Diary.png" draggable="false" className="object-contain"/>
                 </div>
-                <div className="flex flex-col w-[45%] gap-10">
+                <div className="projects-card-body">
                   <div className="flex-auto">
-                    <h1 className="block font-semibold text-[30px]">Haato's Diary (2022)</h1>
-                    <div className="inline-block text-[20px]">
+                    <h1 className="text-header">Haato's Diary (2022)</h1>
+                    <div className="text-body">
                       <p>An open-source, fan-made, visual novel I had a small hand in</p>
                       <p>First experience working with others through GitHub Forks and coordinating through a trello board</p>
                       <br></br>
-                      <p>Role: Implement some translations for Japanese Users</p>
-                      <br></br>
-                      <p>Tech: Python, RenPy</p>
+                      
+                      <div className="text-tiny">
+                        <p ><strong>Role:</strong> Implement some translations for Japanese Users</p>
+                        <p><strong>Tech:</strong> Python, RenPy</p>
+                      </div>
                     </div>
                   </div>
                   <div className="projects-link">
