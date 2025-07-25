@@ -6,8 +6,10 @@
 14. Add contact bottom website
 15. Add another section in about like a button to do an anim. of going to extra details (maybe)
 16. Extra About section need to scale well when zoomed 
-17. Have it compatible for mobile
 18. Home button go to top page without scrolling
+19. Have the illustration just focus on one artwork. Have it so that you press a button left or right
+
+
 
 # Art Related ToDo
 6. Decorate some sections to make it less empty
@@ -43,6 +45,15 @@
     - Links to socials
         - ~~Twitter~~
         - ~~GitHub~~
+17. ~~Have it compatible for mobile~~
+20. ~~Change text for mobile~~
+- ~~Headers~~
+- ~~Stickers~~
+- Games text
+- ~~About text~~
+- ~~Other projects texts~~
+- ~~Other Project images~~
+
 
 1. ~~Create Animated Banner ~~
 2. ~~Put all artwork into github and put it into the list to display~~ 
