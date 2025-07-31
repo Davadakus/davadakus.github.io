@@ -127,11 +127,11 @@
   }
   
   .skill-header {
-    @apply flex font-semibold w-[150px] justify-start items-start text-2xl;
+    @apply flex font-semibold w-[110px] justify-start items-start lg:text-2xl text-lg;
   }
   
   .skill-grid {
-    @apply grid grid-cols-3 gap-2 p-2 grow text-lg;
+    @apply grid grid-cols-3 gap-2 p-1 grow lg:text-lg text-[12px];
   }
   
   .projects-card {

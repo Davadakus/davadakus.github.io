@@ -3,9 +3,7 @@
 11. Get domain for website `lylinling.com` (maybe idk lol)
 12. Fix sizing of the intro video probably in the future to scale better on small devices
 13. Darken the background of the video whites to make it contrast with the background (White)
-14. Add contact bottom website
 15. Add another section in about like a button to do an anim. of going to extra details (maybe)
-16. Extra About section need to scale well when zoomed 
 18. Home button go to top page without scrolling
 19. Have the illustration just focus on one artwork. Have it so that you press a button left or right
 
@@ -39,6 +37,8 @@
 8. ~~Make actual style look nice~~
 9. ~~Decide on Background to have nice contrast~~
 10. ~~Rename website on name~~
+14. ~~Add contact bottom website~~
+16. ~~Extra About section need to scale well when zoomed ~~
 16. ~~Revamp the dropdown to look nicer ~~
     - ~~Nice scroll down~~
     - ~~Custom animation maybe when hover~~

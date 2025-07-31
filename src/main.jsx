@@ -1,13 +1,13 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import './Pages/index.css'
 import Error from './Pages/Error.tsx'
 import MainMenu from './Pages/MainMenu'
 import TestPage from './Pages/TestPage';
 import Contact from './Pages/Contact.tsx';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
 {
   path: '/',
   element: <MainMenu />,
