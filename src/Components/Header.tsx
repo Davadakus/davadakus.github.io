@@ -1,5 +1,6 @@
 import React from "react"
 import { useState, useEffect } from "react";
+import Button from "./Button";
 
 function Header() {
     const Menu = ["Illustrations", "Games", "About", "Other Projects"];
@@ -55,21 +56,21 @@ function Header() {
                   <ul>
                     <li>My Socials</li>
                     <li className="mb-1">
-                      <a href="https://x.com/LyNLinLing" target="_blank"  rel="noopener noreferrer">
-                        <img src="Artwork/DropDown/Twitter.png"/>
-                      </a>  
+                      <Button
+                        link="https://x.com/LyNLinLing"
+                        path="Artwork/DropDown/Twitter.png"
+                      />
                     </li>
                     <li className="mb-1">
-                      <a href="https://github.com/Davadakus" target="_blank"  rel="noopener noreferrer">
-                        <img src="Artwork/DropDown/GitHub.png"/>
-                      </a>  
+                      <Button
+                        link="https://github.com/Davadakus"
+                        path="Artwork/DropDown/GitHub.png"
+                      />
                     </li>
                   </ul>
                 </div>
               </div>
-              
             </div>
-          
         </div>
       </div>
     )

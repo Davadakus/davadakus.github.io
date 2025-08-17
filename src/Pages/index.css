@@ -114,7 +114,18 @@
   }
 
   .header-title {
-    @apply flex justify-center items-center text-[28px] md:text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]
+    @apply flex justify-center items-center text-[28px] md:text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px];
+    z-index: 0;
+  }
+  .header-title::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    bottom: 10px;
+    right: 2px;
+    z-index: -1;
   }
 
   .illustration-anim {
@@ -209,8 +220,30 @@
   .dropdown-out {
     animation: dropdownSlideOut 0.5s ease-out forwards;
     /* pointer-events: none; */
-    
   }
+
+  .button-anim {
+    position: relative; 
+    display: inline-block; 
+    overflow: hidden; 
+    border-radius: 3rem;
+  }
+
+  .button-anim:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-image: linear-gradient(130deg,hsla(0,0%,100%,0) 25%,hsla(0,0%,100%,.5) 50%,hsla(0,0%,100%,0) 75%);
+    transition: .5s
+  }
+  .button-anim:hover:before {
+    left: 100%
+  }
+
 }
 
 html {

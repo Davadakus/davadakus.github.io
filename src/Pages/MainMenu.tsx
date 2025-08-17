@@ -4,6 +4,7 @@ import SectionHeader from "../Components/SectionHeader";
 import Header from '../Components/Header';
 import SkillTable from '../Components/SkillTable';
 import Footer from '../Components/Footer';
+import Button from '../Components/Button';
 // import Magnifier from '../Components/Magnifier';
 
 function MainMenu() {
@@ -69,9 +70,11 @@ function MainMenu() {
 
           <div className ='header-section bg-zinc-300 animated-grid'>
            {/* <SectionHeader>Games</SectionHeader> */}
-            <div id="games" className='header-title'>
-              Games
-              <img src="Artwork/Chibi/ChibiGame.webp" draggable="false" className='header-sticker-2 wiggle-left -translate-x-30 sm:-translate-x-40 '/>
+            <div className="flex justify-center items-center">
+              <div id="games" className='header-title'>
+                Games
+                <img src="Artwork/Chibi/ChibiGame.webp" draggable="false" className='header-sticker-2 wiggle-left -translate-x-30 sm:-translate-x-40 '/>
+              </div>
             </div>
 
             <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
@@ -102,9 +105,11 @@ function MainMenu() {
 
           <div className ='header-section'>
             {/* <SectionHeader>About</SectionHeader> */}
-            <div id="about" className='header-title'>
-              About
-              <img src="Artwork/Chibi/ChibiAbout2.webp" draggable="false" className='header-sticker-2 wiggle-right translate-x-28 sm:translate-x-35'/>
+            <div className="flex justify-center items-center">
+              <div id="about" className='header-title'>
+                About
+                <img src="Artwork/Chibi/ChibiAbout2.webp" draggable="false" className='header-sticker-2 wiggle-right translate-x-28 sm:translate-x-35'/>
+              </div>
             </div>
 
             <div className="absolute flex flex-wrap flex-row w-full h-[1200px] lg:h-[800px] z-10">
@@ -160,9 +165,11 @@ function MainMenu() {
 
           <div className ='header-section bg-zinc-300 animated-grid'>
            {/* <SectionHeader>Other Projects</SectionHeader> */}
-            <div id="other-projects" className='header-title'>
-              Other Projects
-              {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
+            <div className="flex justify-center items-center">
+              <div id="other-projects" className='header-title'>
+                Other Projects
+                {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
+              </div>
             </div>
             <div className="space-y-20">
               <div className ="projects-card">
@@ -183,12 +190,14 @@ function MainMenu() {
                     </div>
                   </div>
                   <div className="projects-link">
-                    <a href="https://github.com/Davadakus/ANT61Hackathon" target="_blank"  rel="noopener noreferrer">
-                      <img src="Artwork/DropDown/GitHub.png"/>
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=Cik_anyDUuw" target="_blank" rel="noopener noreferrer">
-                      <img src="Artwork/DropDown/YouTube.png"/>
-                    </a>  
+                    <Button
+                      link="https://github.com/Davadakus/ANT61Hackathon"
+                      path="Artwork/DropDown/GitHub.png"
+                    />
+                    <Button
+                      link="https://www.youtube.com/watch?v=Cik_anyDUuw"
+                      path="Artwork/DropDown/YouTube.png"
+                    />
                   </div>
 
                 </div>
@@ -212,9 +221,10 @@ function MainMenu() {
                   </div>
                   
                   <div className="projects-link-reverse">
-                    <a href="https://youtu.be/gqQlONmrvE4" target="_blank" rel="noopener noreferrer">
-                      <img src="Artwork/DropDown/YouTube.png"/>
-                    </a>  
+                    <Button
+                      link="https://youtu.be/gqQlONmrvE4"
+                      path="Artwork/DropDown/YouTube.png"
+                    />
                   </div>
                 </div>
                 <div className="projects-card-image">
@@ -241,12 +251,14 @@ function MainMenu() {
                     </div>
                   </div>
                   <div className="projects-link">
-                    <a href="https://wws-haato.itch.io/haatos-diary" target="_blank"  rel="noopener noreferrer">
-                      <img src="Artwork/DropDown/Website.png"/>
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=tRLvKY_WZwU" target="_blank" rel="noopener noreferrer">
-                      <img src="Artwork/DropDown/YouTube.png"/>
-                    </a>  
+                    <Button
+                      link="https://wws-haato.itch.io/haatos-diary"
+                      path="Artwork/DropDown/Website.png"
+                    />
+                    <Button
+                      link="https://www.youtube.com/watch?v=tRLvKY_WZwU"
+                      path="Artwork/DropDown/YouTube.png"
+                    />
                   </div>
 
                 </div>
