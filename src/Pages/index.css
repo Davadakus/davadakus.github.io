@@ -3,32 +3,26 @@
 
 @layer base {
   body {
+    --grid-size: clamp(40px, 3.33vw, 42px);
+
     font-family: 'Oxanium', sans-serif;
     @apply bg-gray-100;
     background-image:
       linear-gradient(0deg, transparent calc(100% - 1px), #fff calc(100% - 1px)),
       linear-gradient(90deg, transparent calc(100% - 1px), #fff calc(100% - 1px));
     background-repeat: repeat;
-    background-position: 50%;
-    background-size: clamp(40px, 3.33vw, 42px) clamp(40px, 3.33vw, 42px);
-    animation: gridScroll 4s linear infinite;
-
-    /* background-image:
-    repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 40px),
-    repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 1px, transparent 40px);
-    background-size: 100% 100%;
-    background-repeat: repeat; */
-  }
-}
-
-
-
-@keyframes gridScroll {
-  0% {
     background-position: 0 0;
+    background-size: var(--grid-size) var(--grid-size);
+    animation: gridScroll 4s linear infinite;
   }
-  100% {
-    background-position: 40px 40px;
+
+  @keyframes gridScroll {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: var(--grid-size) var(--grid-size);
+    }
   }
 }
 
