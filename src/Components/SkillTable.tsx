@@ -24,6 +24,8 @@ function SkillTable() {
             <li>PostgreSQL</li>
             <li>MySQL</li>
             <li>FastAPI</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
           </ul>
         </li>
         

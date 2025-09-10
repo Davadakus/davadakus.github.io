@@ -153,6 +153,7 @@ function MainMenu() {
                   <p className='text-header'>LynLinLing/Davadakus</p>
                   <p className='text-subheader'>Game Developer, Artist, and Software Developer</p>
                     <br />
+                  <p className='text-body'>I'm a software developer learning Web Development</p>
                   <p className='text-body'>I want to create games and draw characters I like.</p>
                     <br />
                   <p className="text-header2">Twitter/X</p>
@@ -172,6 +173,39 @@ function MainMenu() {
               </div>
             </div>
             <div className="space-y-20">
+              <div className ="projects-card-reverse">
+                <div className="projects-card-body">
+                  <div className="flex-auto text-end">
+                    <h1 className="text-header">Recreating Discord (2025)</h1>
+                    <div className="text-body">
+                      <p>Replicating Discord's layout and DM functionality; experimenting full-stack development</p>
+                      <p>React + Vite for Frontend; Node.js and Express.js for backend</p>
+                      <p>Able to send messages and view chat history </p>
+                      <p>Links below show just the frontend implementation for now</p>
+
+                      <br></br>
+                      <div className="text-tiny">
+                        <p><strong>Role:</strong> Fullstack</p>
+                        <p><strong>Tech:</strong> React, TailWindCSS, Vite, Express.js, Node.js, GitHub</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="projects-link-reverse">
+                    <Button
+                      link="https://github.com/Davadakus/discord-demo"
+                      path="Artwork/DropDown/GitHub.png"
+                    />
+                    <Button
+                      link="https://youtu.be/Iu_dQNK4H24"
+                      path="Artwork/DropDown/YouTube.png"
+                    />
+                  </div>
+                </div>
+                <div className="projects-card-image">
+                  <img src="Artwork/OtherProject/DiscordDemo.png" draggable="false" className="object-contain"/>
+                </div>
+              </div>
               <div className ="projects-card">
                 <div className="projects-card-image">
                   <img src="Artwork/OtherProject/BeaconVisualizer.png" draggable="false" className="object-contain"/>
@@ -260,16 +294,10 @@ function MainMenu() {
                       path="Artwork/DropDown/YouTube.png"
                     />
                   </div>
-
                 </div>
               </div>
-                  
-
-
             </div>
-            
           </div>
-
           <Footer/>
         
         </div>
