@@ -2,7 +2,7 @@ import React from "react"
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 
-function Contact() {
+export default function Contact() {
     return (
       <>
         <Header/>
@@ -18,5 +18,3 @@ function Contact() {
       </>
     )
   }
-  
-  export default Contact;

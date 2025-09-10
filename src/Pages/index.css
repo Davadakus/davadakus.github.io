@@ -3,32 +3,26 @@
 
 @layer base {
   body {
+    --grid-size: clamp(40px, 3.33vw, 42px);
+
     font-family: 'Oxanium', sans-serif;
     @apply bg-gray-100;
     background-image:
       linear-gradient(0deg, transparent calc(100% - 1px), #fff calc(100% - 1px)),
       linear-gradient(90deg, transparent calc(100% - 1px), #fff calc(100% - 1px));
     background-repeat: repeat;
-    background-position: 50%;
-    background-size: clamp(40px, 3.33vw, 42px) clamp(40px, 3.33vw, 42px);
-    animation: gridScroll 4s linear infinite;
-
-    /* background-image:
-    repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 1px, transparent 40px),
-    repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 1px, transparent 40px);
-    background-size: 100% 100%;
-    background-repeat: repeat; */
-  }
-}
-
-
-
-@keyframes gridScroll {
-  0% {
     background-position: 0 0;
+    background-size: var(--grid-size) var(--grid-size);
+    animation: gridScroll 4s linear infinite;
   }
-  100% {
-    background-position: 40px 40px;
+
+  @keyframes gridScroll {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: var(--grid-size) var(--grid-size);
+    }
   }
 }
 
@@ -114,7 +108,18 @@
   }
 
   .header-title {
-    @apply flex justify-center items-center text-[28px] md:text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px]
+    @apply flex justify-center items-center text-[28px] md:text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px];
+    z-index: 0;
+  }
+  .header-title::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    bottom: 10px;
+    right: 2px;
+    z-index: -1;
   }
 
   .illustration-anim {
@@ -127,11 +132,11 @@
   }
   
   .skill-header {
-    @apply flex font-semibold w-[150px] justify-start items-start text-2xl;
+    @apply flex font-semibold w-[110px] justify-start items-start lg:text-2xl text-lg;
   }
   
   .skill-grid {
-    @apply grid grid-cols-3 gap-2 p-2 grow text-lg;
+    @apply grid grid-cols-3 gap-2 p-1 grow lg:text-lg text-[12px];
   }
   
   .projects-card {
@@ -209,8 +214,30 @@
   .dropdown-out {
     animation: dropdownSlideOut 0.5s ease-out forwards;
     /* pointer-events: none; */
-    
   }
+
+  .button-anim {
+    position: relative; 
+    display: inline-block; 
+    overflow: hidden; 
+    border-radius: 3rem;
+  }
+
+  .button-anim:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-image: linear-gradient(130deg,hsla(0,0%,100%,0) 25%,hsla(0,0%,100%,.5) 50%,hsla(0,0%,100%,0) 75%);
+    transition: .5s
+  }
+  .button-anim:hover:before {
+    left: 100%
+  }
+
 }
 
 html {

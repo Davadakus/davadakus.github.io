@@ -17,13 +17,15 @@ function SkillTable() {
 
         <li className="skill-section">
           <h2 className="skill-header">BackEnd</h2>
-          <ul className="skill-grid ">
+          <ul className="skill-grid">
             <li>Python</li>
             <li>Java</li>
             <li>JavaScript</li>
             <li>PostgreSQL</li>
             <li>MySQL</li>
             <li>FastAPI</li>
+            <li>Node.js</li>
+            <li>Express.js</li>
           </ul>
         </li>
         
