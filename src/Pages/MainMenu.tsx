@@ -181,7 +181,6 @@ function MainMenu() {
                       <p>Replicating Discord's layout and DM functionality; experimenting full-stack development</p>
                       <p>React + Vite for Frontend; Node.js and Express.js for backend</p>
                       <p>Able to send messages and view chat history </p>
-                      <p>Links below show just the frontend implementation for now</p>
 
                       <br></br>
                       <div className="text-tiny">
@@ -231,6 +230,10 @@ function MainMenu() {
                     <Button
                       link="https://www.youtube.com/watch?v=Cik_anyDUuw"
                       path="Artwork/DropDown/YouTube.png"
+                    />
+                    <Button
+                      link="https://discord-demo-black.vercel.app/"
+                      path="Artwork/DropDown/Website.png"
                     />
                   </div>
 

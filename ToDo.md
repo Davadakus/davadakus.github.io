@@ -14,7 +14,7 @@
     - About section: needs more things beside the avatar
     - Game section: could have fragments of irenes weapon
     - Illustration Section: Could have effect on illust when hovered
-7. Add small offcentered rectangle behind h1's to make them pop 
+
 
 
 
@@ -65,7 +65,7 @@ Sections:
 - ~~Games: Irene facing the right with a controller at hand~~
 - ~~About: Archetto Peace Signs :3~~
 - Other Projects: OC with glasses idk <-- future maybe
-
+7. ~~Add small offcentered rectangle behind h1's to make them pop ~~
 
 
 # Goal/Brainstorm
