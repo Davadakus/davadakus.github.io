@@ -1,7 +1,6 @@
 # Accessing the Page
 https://lynlinling.vercel.app/
 https://davadakus.github.io/
-https://lynlinling.vercel.app/
 
 # Setup
 `npm run dev` - to run local ver.  
