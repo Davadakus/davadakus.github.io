@@ -199,6 +199,10 @@ function MainMenu() {
                       link="https://youtu.be/Iu_dQNK4H24"
                       path="Artwork/DropDown/YouTube.png"
                     />
+                    <Button
+                      link="https://discord-demo-black.vercel.app/"
+                      path="Artwork/DropDown/Website.png"
+                    />
                   </div>
                 </div>
                 <div className="projects-card-image">
@@ -230,10 +234,6 @@ function MainMenu() {
                     <Button
                       link="https://www.youtube.com/watch?v=Cik_anyDUuw"
                       path="Artwork/DropDown/YouTube.png"
-                    />
-                    <Button
-                      link="https://discord-demo-black.vercel.app/"
-                      path="Artwork/DropDown/Website.png"
                     />
                   </div>
 
