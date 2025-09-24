@@ -1,10 +1,18 @@
-// This is your reusable component
-function SectionHeader({ children }) {
-  return (
-    <p className='flex justify-center items-center text-[35px] mb-[30px] font-semibold border border-transparent relative'>
-      {children}
-    </p>
-  );
+import { ReactNode } from "react";
+
+interface SectionHeaderProps{
+  id: string;
+  stickerSrc?: string;
+  children: ReactNode
 }
 
-export default SectionHeader;
+export default function SectionHeader({ id, stickerSrc, children }: SectionHeaderProps) {
+  return (
+    <div className="flex justify-center items-center">
+      <div id={id} className='header-title'>
+        {children}
+        <img src={stickerSrc} draggable="false" className='header-sticker-2 wiggle-left -translate-x-30 sm:-translate-x-40 '/>
+      </div>
+    </div>
+  );
+}

@@ -140,11 +140,11 @@
   }
   
   .projects-card {
-    @apply flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto
+    @apply flex flex-wrap flex-row justify-center max-w-[2000px] gap-6 mx-auto
   }
 
   .projects-card-reverse {
-    @apply flex flex-wrap-reverse justify-center max-w-[2000px] gap-6 mx-auto
+    @apply flex flex-wrap-reverse flex-row-reverse justify-center max-w-[2000px] gap-6 mx-auto
   }
 
   .projects-card-image {
