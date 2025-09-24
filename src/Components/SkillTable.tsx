@@ -21,11 +21,15 @@ function SkillTable() {
             <li>Python</li>
             <li>Java</li>
             <li>JavaScript</li>
-            <li>PostgreSQL</li>
-            <li>MySQL</li>
             <li>FastAPI</li>
             <li>Node.js</li>
             <li>Express.js</li>
+            <li>Next.js</li>
+            <li>NextAuth.js</li>
+            <li>tRPC</li>
+            <li>PostgreSQL</li>
+            <li>Prisma</li>
+            <li>MySQL</li>
           </ul>
         </li>
         

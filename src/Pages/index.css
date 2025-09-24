@@ -95,6 +95,21 @@
 
 
 @layer components {
+  /* h1 {
+    position: relative;
+    z-index: 3;
+  }
+  h1::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    bottom: 10px;
+    right: 2px;
+    z-index: -1;
+  } */
+  
   .header-section {
     @apply relative flex-col py-[50px] overflow-clip
   }
@@ -140,11 +155,11 @@
   }
   
   .projects-card {
-    @apply flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto
+    @apply flex flex-wrap flex-row justify-center max-w-[2000px] gap-6 mx-auto
   }
 
   .projects-card-reverse {
-    @apply flex flex-wrap-reverse justify-center max-w-[2000px] gap-6 mx-auto
+    @apply flex flex-wrap-reverse flex-row-reverse justify-center max-w-[2000px] gap-6 mx-auto
   }
 
   .projects-card-image {
