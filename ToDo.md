@@ -6,6 +6,7 @@
 15. Add another section in about like a button to do an anim. of going to extra details (maybe)
 18. Home button go to top page without scrolling
 19. Have the illustration just focus on one artwork. Have it so that you press a button left or right
+20. Make buttons for each type of social media? (Website button, yt button, etc)
 
 
 
