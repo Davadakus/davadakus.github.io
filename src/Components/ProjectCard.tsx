@@ -8,6 +8,7 @@ interface ProjectCardProps {
   role: string;
   tech: string;
   reverse?: boolean;
+  website?: string;
   children: ReactNode
 }
 
@@ -17,18 +18,21 @@ export default function ProjectCard({
   description,
   role,
   tech,
+  reverse = false,
+  website,
   children,
-  reverse = false
 }: ProjectCardProps) {
   return (
     <div className ={`${reverse ? "projects-card-reverse" : "projects-card"}`} >
       <div className="projects-card-image">
-        <img src={imageSrc} draggable="false" className="object-contain"/>
+        <a href={website} target="_blank" rel="noopener noreferrer">
+          <img src={imageSrc} draggable="false" className="object-contain"/>
+        </a>
       </div>
       <div className="projects-card-body">
         <div className={`flex-auto ${reverse ? "text-end" : ""}`}>
-          <h1 className="text-header mb-3">{title}</h1>
-          <div className="text-body block">
+          <h1 className={`text-header mb-3 flex ${reverse ? "flex-row-reverse" : ""}`}>{title}</h1>
+          <div className="text-body block whitespace-pre-line">
             {description}
             <div className="text-tiny block my-5">
               <p><strong>Role: </strong>{role}</p>
