@@ -59,6 +59,8 @@ export default function About(){
                   <p className='text-body'>I want to create games and draw characters I like.</p>
                     <br />
                   <p className="text-header2">Twitter/X</p>
+                  
+                  
                   <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
               </div>

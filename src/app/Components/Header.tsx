@@ -1,6 +1,9 @@
+"use client"
+
 import React from "react"
 import { useState, useEffect } from "react";
 import Button from "./Button";
+import Link from "next/link";
 
 function Header() {
     const Menu = ["Illustrations", "Games", "About", "Other Projects"];
@@ -21,9 +24,12 @@ function Header() {
         <div className={`fixed top-0 left-0 max-w-[40px] z-20 m-3 transition-opacity duration-500 ease-in-out
           ${showButton ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}>
-          <a href="/"> 
+          <Link href="/">
             <img src="Artwork/DropDown/home.png" alt="Home" />
-          </a>
+          </Link>
+          {/* <a href="/"> 
+            <img src="Artwork/DropDown/home.png" alt="Home" />
+          </a> */}
         </div>
         
         
@@ -38,7 +44,7 @@ function Header() {
                 <ul>
                   {Menu.map((menu) => (
                     <li key={menu} className="group mx-4 py-2 transition-all duration-300 -translate-x-2">
-                      <a className="inline-flex items-center transition-transform group-hover:translate-x-2 group-hover:text-rose-900 ease-out" href={`/#${menu.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setOpen(false)}>
+                      <a className="inline-flex items-center transition-transform group-hover:translate-x-2 group-hover:text-rose-900 ease-out" href={`#${menu.toLowerCase().replace(/\s+/g, '-')}`} onClick={() => setOpen(false)}>
                         
                         {/* The # serves as a page marker to let you move to that section of the page
                             The $'' means that you are processing JS Code */}
