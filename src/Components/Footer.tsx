@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react"
 
 function Footer() {
@@ -6,19 +7,20 @@ function Footer() {
             <div className="flex flex-col py-5 pb-2">
                 <ul className="flex flex-row py-4 space-x-3">
                     <li>
-                        <a href="#illustrations">Illustrations</a>
+                        <Link href="/#illustrations">Illustrations </Link>
+                        {/* <a href="#illustrations">Illustrations</a> */}
                     </li>
                     <li>
-                        <a href="#games">Games</a>
+                        <Link href="/#games">Games </Link>
                     </li>
                     <li>
-                        <a href="#about">About</a>
+                        <Link href="/#about">About </Link>
                     </li>
                     <li>
-                        <a href="#other-projects">Other Projects</a>
+                        <Link href="/#other-projects">Other Projects </Link>
                     </li>
                     <li>
-                        <a href="contact">Contact</a>
+                        <Link href="/contact">Contact </Link>
                     </li>
                 </ul>
                 <p>© 2025 LynLinLing</p>
