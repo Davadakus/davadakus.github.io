@@ -1,7 +1,6 @@
 "use client"
 
-import React, { useEffect } from 'react';
-import { useState } from "react"
+import React from 'react';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import LandingView from '../Sections/LandingView';
