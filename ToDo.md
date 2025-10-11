@@ -7,7 +7,6 @@
 18. Home button go to top page without scrolling
 19. Have the illustration just focus on one artwork. Have it so that you press a button left or right
 20. Make buttons for each type of social media? (Website button, yt button, etc)
-21. Fix Image tags for vercel deployment
 22. For some reason the new line for the project cards not working as intended after migrating to next, unsure why
 
 
@@ -56,6 +55,7 @@
 - ~~About text~~
 - ~~Other projects texts~~
 - ~~Other Project images~~
+21. ~~Fix Image tags for vercel deployment~~
 
 
 1. ~~Create Animated Banner ~~
