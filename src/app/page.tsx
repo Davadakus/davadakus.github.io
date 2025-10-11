@@ -11,18 +11,6 @@ import OtherProjects from '../Sections/OtherProjects';
 // import Magnifier from '../Components/Magnifier';
 
 function MainMenu() {
-  // const Menu = ["Illustration", "Games", "About", "Other Projects"];
-  // const [open, setOpen] = useState(false);
-  // const [showOverlay, setShowOverlay] = useState(false);
-
-
-  //   const [count, setCount] = useState(0)
-    // useEffect(() => {
-    //   if (window.twttr) {
-    //     window.twttr.widgets.load();
-    //   }
-    //     }, []);
-
     return (
       <>
         <Header/>
@@ -34,8 +22,6 @@ function MainMenu() {
           <OtherProjects />
           <Footer/>
         </div>
-
-      
       </>
       
     )

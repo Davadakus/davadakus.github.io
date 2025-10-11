@@ -1,20 +1,14 @@
 import { useState } from "react";
 import SkillTable from "../Components/SkillTable";
 import Image from "next/image";
+import SectionHeader from "@/Components/SectionHeader";
 
 export default function About(){
     const [showOverlay, setShowOverlay] = useState(false);
     
     return(
         <div className ='header-section'>
-            {/* <SectionHeader>About</SectionHeader> */}
-            <div className="flex justify-center items-center">
-              <div id="about" className='header-title'>
-                About
-                <Image src="/Artwork/Chibi/ChibiAbout2.webp" draggable="false" width={150} height={150} alt="sticker" className='header-sticker-2 wiggle-right translate-x-28 sm:translate-x-35'/>
-              </div>
-            </div>
-
+            <SectionHeader id="about" stickerSrc="/Artwork/Chibi/ChibiAbout2.webp" reverse={false}>About</SectionHeader>
             <div className="absolute flex flex-wrap flex-row w-full h-[1200px] lg:h-[800px] z-10">
                 <div className="flex w-[45%] h-[800px]"></div>
                 {/* <div className="flex w-full flex-row-reverse lg:flex-row lg:w-[50%] h-[800px]"> */}
@@ -38,7 +32,7 @@ export default function About(){
                         </div>
                         <div>
                           <p className='text-header font-semibold'>Technical Skills</p>
-                          <SkillTable/>
+                          <SkillTable />
                         </div>
                       </div>
                   </div>

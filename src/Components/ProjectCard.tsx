@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import Button from "./Button";
+import Image from 'next/image'
 
 interface ProjectCardProps {
   imageSrc: string;
@@ -26,7 +26,13 @@ export default function ProjectCard({
     <div className ={`${reverse ? "projects-card-reverse" : "projects-card"}`} >
       <div className="projects-card-image">
         <a href={website} target="_blank" rel="noopener noreferrer">
-          <img src={imageSrc} draggable="false" className="object-contain"/>
+          <Image
+            src={imageSrc}
+            alt="button-icon"
+            draggable="false"
+            width={900}
+            height={500}
+            />
         </a>
       </div>
       <div className="projects-card-body">

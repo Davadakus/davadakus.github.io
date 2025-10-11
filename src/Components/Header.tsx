@@ -4,6 +4,7 @@ import React from "react"
 import { useState, useEffect } from "react";
 import Button from "./Button";
 import Link from "next/link";
+import Image from 'next/image'
 
 function Header() {
     const Menu = ["Illustrations", "Games", "About", "Other Projects"];
@@ -25,10 +26,16 @@ function Header() {
           ${showButton ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}>
           <Link href="/">
-            <img src="Artwork/DropDown/home.png" alt="Home" />
+            {/* <img src="/Artwork/DropDown/home.png" alt="Home" /> */}
+            <Image
+              src="/Artwork/DropDown/home.png"
+              alt="home"
+              width={40}
+              height={40}
+            />
           </Link>
           {/* <a href="/"> 
-            <img src="Artwork/DropDown/home.png" alt="Home" />
+            <img src="/Artwork/DropDown/home.png" alt="Home" />
           </a> */}
         </div>
         
@@ -64,13 +71,13 @@ function Header() {
                     <li className="mb-1">
                       <Button
                         link="https://x.com/LyNLinLing"
-                        path="Artwork/DropDown/Twitter.png"
+                        path="/Artwork/DropDown/Twitter.png"
                       />
                     </li>
                     <li className="mb-1">
                       <Button
                         link="https://github.com/Davadakus"
-                        path="Artwork/DropDown/GitHub.png"
+                        path="/Artwork/DropDown/GitHub.png"
                       />
                     </li>
                   </ul>
