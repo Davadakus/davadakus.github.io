@@ -1,17 +1,19 @@
+import SectionHeader from "@/Components/SectionHeader";
+import Image from 'next/image'
+
 export default function Games(){
     return(
         <div className ='header-section bg-zinc-300 animated-grid'>
-           {/* <SectionHeader>Games</SectionHeader> */}
-            <div className="flex justify-center items-center">
-              <div id="games" className='header-title'>
-                Games
-                <img src="Artwork/Chibi/ChibiGame.webp" draggable="false" className='header-sticker-2 wiggle-left -translate-x-30 sm:-translate-x-40 '/>
-              </div>
-            </div>
-
+           <SectionHeader id="games" stickerSrc="/Artwork/Chibi/ChibiGame.webp" reverse={true}>Games</SectionHeader>
             <div className ="flex flex-wrap justify-center max-w-[2000px] gap-6 mx-auto">
               <div className="projects-card-image">
-                <img src="Artwork/GamePreview/ProjectIrene_Preview_1.png" draggable="false" className="object-contain"/>
+                <Image
+                  src="/Artwork/GamePreview/ProjectIrene_Preview_1.png"
+                  alt="button-icon"
+                  draggable="false"
+                  width={900}
+                  height={500}
+                  />
               </div>
               <div className="projects-card-body">
                 <div className="flex-auto">

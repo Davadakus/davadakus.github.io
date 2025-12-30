@@ -1,19 +1,14 @@
 import { useState } from "react";
 import SkillTable from "../Components/SkillTable";
+import Image from "next/image";
+import SectionHeader from "@/Components/SectionHeader";
 
 export default function About(){
     const [showOverlay, setShowOverlay] = useState(false);
     
     return(
         <div className ='header-section'>
-            {/* <SectionHeader>About</SectionHeader> */}
-            <div className="flex justify-center items-center">
-              <div id="about" className='header-title'>
-                About
-                <img src="Artwork/Chibi/ChibiAbout2.webp" draggable="false" className='header-sticker-2 wiggle-right translate-x-28 sm:translate-x-35'/>
-              </div>
-            </div>
-
+            <SectionHeader id="about" stickerSrc="/Artwork/Chibi/ChibiAbout2.webp" reverse={false}>About</SectionHeader>
             <div className="absolute flex flex-wrap flex-row w-full h-[1200px] lg:h-[800px] z-10">
                 <div className="flex w-[45%] h-[800px]"></div>
                 {/* <div className="flex w-full flex-row-reverse lg:flex-row lg:w-[50%] h-[800px]"> */}
@@ -37,7 +32,7 @@ export default function About(){
                         </div>
                         <div>
                           <p className='text-header font-semibold'>Technical Skills</p>
-                          <SkillTable/>
+                          <SkillTable />
                         </div>
                       </div>
                   </div>
@@ -46,8 +41,8 @@ export default function About(){
 
             <div className='flex flex-wrap justify-evenly text-xl h-[1250px] lg:h-[800px] max-w-[1000px] mx-auto'>
               <div className='flex relative w-[500px] max-h-[800px]'>
-                <img src="Artwork/About/MeText.png" draggable="false" className='absolute object-contain w-[200px] translate-x-2 wiggle'/>
-                <img src="Artwork/LynLinLing.webp" draggable="false" className='object-contain translate-x-5'/>
+                <Image src="/Artwork/About/MeText.png" draggable="false" width={150} height={150} alt="subtext" className='absolute object-contain w-[200px] translate-x-2 wiggle'/>
+                <Image src="/Artwork/LynLinLing.webp" draggable="false" width={500} height={800} alt="avatar" className='object-contain translate-x-5'/>
                 {/* <Magnifier src="Artwork/LynLinLing.webp" zoom={2} className="translate-x-5" /> */}
               </div>
               <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
@@ -55,10 +50,12 @@ export default function About(){
                   <p className='text-header'>LynLinLing/Davadakus</p>
                   <p className='text-subheader'>Game Developer, Artist, and Software Developer</p>
                     <br />
-                  <p className='text-body'>I'm a software developer learning Web Development</p>
+                  <p className='text-body'>I&apos;m a software developer learning Web Development</p>
                   <p className='text-body'>I want to create games and draw characters I like.</p>
                     <br />
                   <p className="text-header2">Twitter/X</p>
+                  
+                  
                   <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
               </div>
