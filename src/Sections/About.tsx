@@ -14,18 +14,18 @@ export default function About(){
               </div>
             </div>
 
-            <div className="absolute flex flex-wrap flex-row w-full h-[1200px] lg:h-[800px] z-10">
+            <div className="absolute flex pointer-events-none flex-wrap flex-row w-full h-[1200px] lg:h-[800px] z-10">
                 <div className="flex w-[45%] h-[800px]"></div>
                 {/* <div className="flex w-full flex-row-reverse lg:flex-row lg:w-[50%] h-[800px]"> */}
                 <div className={`flex flex-row lg:flex-row lg:w-[55%] w-full lg:h-[800px] h-[250px] transition duration-500 ease-in-out items-center ${
                                   showOverlay ? 'translate-x-0' : 'translate-x-[calc(100%-60px)]'}`}>
                   <button
                     onClick={() => setShowOverlay(!showOverlay)}
-                    className="bg-zinc-400 text-white h-fit w-[62px] lg:py-2 lg:px-4 p-0 rounded hover:bg-zinc-800 lg:text-[52px] text-[32px]">
+                    className="bg-zinc-400 text-white h-fit w-[62px] lg:py-2 lg:px-4 p-0 rounded hover:bg-zinc-800 lg:text-[52px] text-[32px] pointer-events-auto">
                       {showOverlay ? ">" : "<"}
                   </button>
 
-                  <div className={`flex flex-grow bg-white items-center lg:justify-start justify-center lg:p-12 p-5 rounded-xl`}>
+                  <div className={`flex flex-grow bg-white items-center lg:justify-start justify-center lg:p-12 p-5 rounded-xl `}>
                     <div className='text-center flex gap-5 lg:flex-col flex-row items-center '>
                         <div>
                           <p className='text-header font-semibold mb-2'>Education</p>
@@ -50,17 +50,28 @@ export default function About(){
                 <img src="Artwork/LynLinLing.webp" draggable="false" className='object-contain translate-x-5'/>
                 {/* <Magnifier src="Artwork/LynLinLing.webp" zoom={2} className="translate-x-5" /> */}
               </div>
-              <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
+              <div className='flex flex-col relative z-5 items-start text-center pt-10 w-[500px] max-h-[800px]'>
                 <div className='text-center'>
                   <p className='text-header'>LynLinLing/Davadakus</p>
-                  <p className='text-subheader'>Game Developer, Artist, and Software Developer</p>
+                  <p className='text-subheader'>Software Developer, Game Developer, and Artist </p>
                     <br />
-                  <p className='text-body'>I'm a software developer learning Web Development</p>
-                  <p className='text-body'>I want to create games and draw characters I like.</p>
+                  <p className='text-body'>I'm a software developer primarily focused on Front-End Web Development but have done Full-Stack projects. </p>
+                    <br />
+                  <p className='text-body'> My strengths are at React, Typescript, Node, Next.js, and PostGreSQL but flexible in other languages. Basic undertsanding of software architecture and scalability (ex.kubernetes)</p>
+                    <br />
+                  <p className='text-body'>Currently interning for startup <a className='font-bold underline' href="https://www.collageapp.com.au/" target="_blank" rel="noopener noreferrer">Collage</a> as a Frontend Developer, Looking for work to start my career</p>
+                    <br />
+                  <p className='text-body'>I make games and draw characters as a hobby, I wanted to make a website that I can express my hobbies as well as my portfolio</p>
                     <br />
                   <p className="text-header2">Twitter/X</p>
-                  <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+                  <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
+                 {/* <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
+                  <div className='text-center'>
+                    <p className='text-header'>Experience</p>
+                  <p className='text-subheader'>Collage </p>
+                  </div>
+                 </div> */}
               </div>
             </div>
           </div>
