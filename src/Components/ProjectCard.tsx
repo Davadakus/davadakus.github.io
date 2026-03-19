@@ -24,7 +24,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className ={`${reverse ? "projects-card-reverse" : "projects-card"}`} >
-      <div className="projects-card-image">
+      <div className={`projects-card-image ${reverse ? "order-1 md:order-none" : ""}`}>
         <a href={website} target="_blank" rel="noopener noreferrer">
           <img src={imageSrc} draggable="false" className="object-contain"/>
         </a>
