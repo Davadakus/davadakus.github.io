@@ -21,7 +21,7 @@ export default function About(){
                                   showOverlay ? 'translate-x-0' : 'translate-x-[calc(100%-60px)]'}`}>
                   <button
                     onClick={() => setShowOverlay(!showOverlay)}
-                    className="bg-zinc-400 text-white h-fit w-[62px] py-1 px-5 rounded hover:bg-zinc-800 lg:text-[52px] text-[32px] pointer-events-auto">
+                    className="bg-zinc-400/50 text-white h-fit w-[62px] py-1 px-5 rounded hover:bg-zinc-800/50 lg:text-[52px] text-[32px] pointer-events-auto">
                       {showOverlay ? ">" : "<"}
                   </button>
 
