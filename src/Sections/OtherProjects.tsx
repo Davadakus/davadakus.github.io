@@ -34,7 +34,8 @@ export default function OtherProjects(){
                 imageSrc="Artwork/OtherProject/DiscordDemo.png"
                 description="Replicating Discord's layout and DM functionality; experimenting full-stack development
                       React + Vite for Frontend; Node.js and Express.js for backend
-                      Able to send messages and view chat history"
+                      Able to send messages and view chat history
+                      (Only frontend page hosted)"
                 role="Fullstack"
                 tech="React, TailWindCSS, Vite, Express.js, Node.js, GitHub"
                 reverse={true}

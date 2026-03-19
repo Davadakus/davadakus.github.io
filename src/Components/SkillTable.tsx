@@ -9,7 +9,6 @@ function SkillTable() {
             <li>React</li>
             <li>JavaScript</li>
             <li>TailWindCSS</li>
-            <li>JavaScript</li>
             <li>React Routers</li>
             <li>Three.js</li>
           </ul>
