@@ -13,9 +13,9 @@ export default function OtherProjects(){
             </div>
             <div className="space-y-20">
               <ProjectCard 
-                title="AirTable Clone"
-                imageSrc="Artwork/OtherProject/AirTableClone.png"
-                description={`Recreating small parts of the AirTable website using the T3 Stack including: Login, Create and Manipulate Table, and Different Users
+                title="CloudTable"
+                imageSrc="Artwork/OtherProject/CloudTable.png"
+                description={`Made a table app using the T3 Stack including: Login, Create and Manipulate Table, and Different Users
                 \nImplemented google's authentication and functioning backend, database, frontend using T3 deployed on Vercel
                 `}
                 role="Fullstack"
