@@ -20,11 +20,11 @@ export default function OtherProjects(){
                 `}
                 role="Fullstack"
                 tech="React, TailwindCSS, T3 Stack(Next.js, NextAuth.js, tRPC. Prisma), PostGreSQL"
-                website="https://air-table-prototype.vercel.app/"
+                website="https://cloud-table-prototype.vercel.app/"
                 reverse={false}
               >
                 <Button
-                  link="https://air-table-prototype.vercel.app/"
+                  link="https://cloud-table-prototype.vercel.app/"
                   path="Artwork/DropDown/Website.png"
                 />
               </ProjectCard>
