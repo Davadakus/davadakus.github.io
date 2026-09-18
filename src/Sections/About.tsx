@@ -14,9 +14,8 @@ export default function About(){
               </div>
             </div>
 
-            <div className="absolute flex pointer-events-none flex-wrap flex-row w-full h-[1200px] lg:h-[800px] z-10">
+            {/* {/* <div className="absolute flex pointer-events-none flex-wrap flex-row w-full h-[1200px] lg:h-[800px] z-10">
                 <div className="flex w-[45%] h-[800px]"></div>
-                {/* <div className="flex w-full flex-row-reverse lg:flex-row lg:w-[50%] h-[800px]"> */}
                 <div className={`flex flex-row lg:flex-row lg:w-[55%] w-full lg:h-[800px] h-[250px] transition duration-500 ease-in-out items-center ${
                                   showOverlay ? 'translate-x-0' : 'translate-x-[calc(100%-60px)]'}`}>
                   <button
@@ -42,36 +41,24 @@ export default function About(){
                       </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-            <div className='flex flex-wrap justify-evenly text-xl h-[1250px] lg:h-[800px] max-w-[1000px] mx-auto'>
-              <div className='flex relative w-[500px] max-h-[800px]'>
-                <img src="Artwork/About/MeText.png" draggable="false" className='absolute object-contain w-[200px] translate-x-2 wiggle'/>
-                <img src="Artwork/LynLinLing.webp" draggable="false" className='object-contain translate-x-5'/>
-                {/* <Magnifier src="Artwork/LynLinLing.webp" zoom={2} className="translate-x-5" /> */}
+            <div className='flex flex-wrap justify-evenly text-xl max-w-[2000px] mx-auto'>
+              <div className='flex relative'>
+                <img src="Artwork/Lyn.webp" draggable="false" className='object-cover'/>
               </div>
-              <div className='flex flex-col relative z-5 items-start text-center pt-10 w-[500px] max-h-[800px]'>
+              <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
                 <div className='text-center'>
                   <p className='text-header'>LynLinLing/Davadakus</p>
-                  <p className='text-subheader'>Software Developer, Game Developer, and Artist </p>
+                  <p className='text-subheader'>Software Developer & Artist</p>
                     <br />
-                  <p className='text-body'>I'm a software developer primarily focused on Front-End Web Development but have done Full-Stack projects. </p>
-                    <br />
-                  <p className='text-body'> My strengths are at React, Typescript, Node, Next.js, and PostGreSQL but flexible in other languages. Basic undertsanding of software architecture and scalability (ex.kubernetes)</p>
-                    <br />
-                  <p className='text-body'>Currently interning for startup <a className='font-bold underline' href="https://www.collageapp.com.au/" target="_blank" rel="noopener noreferrer">Collage</a> as a Frontend Developer, Looking for work to start my career</p>
-                    <br />
-                  <p className='text-body'>I make games and draw characters as a hobby, I wanted to make a website that I can express my hobbies as well as my portfolio</p>
+                  <p className='text-body'>My passion is in Software Development and Illustration.</p>
+                  <p className='text-body'>This portfolio is a collection of past projects and artworks I've worked on</p>
+                  <p className='text-body'>My favourite game is Arknights as that is the motif of my design</p>
                     <br />
                   <p className="text-header2">Twitter/X</p>
                   <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
                 </div>
-                 {/* <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
-                  <div className='text-center'>
-                    <p className='text-header'>Experience</p>
-                  <p className='text-subheader'>Collage </p>
-                  </div>
-                 </div> */}
               </div>
             </div>
           </div>
