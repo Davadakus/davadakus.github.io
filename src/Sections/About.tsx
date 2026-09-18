@@ -43,21 +43,23 @@ export default function About(){
                 </div>
               </div> */}
 
-            <div className='flex flex-wrap justify-evenly text-xl max-w-[2000px] mx-auto'>
+            <div className='flex flex-wrap justify-center text-xl max-w-[2000px] mx-auto gap-10'>
               <div className='flex relative'>
-                <img src="Artwork/Lyn.webp" draggable="false" className='object-cover'/>
+                <img src="Artwork/Lyn.webp" draggable="false" className='object-cover size-[400px]'/>
               </div>
-              <div className='flex items-start justify-center text-center pt-10 w-[500px] max-h-[800px]'>
-                <div className='text-center'>
-                  <p className='text-header'>LynLinLing/Davadakus</p>
-                  <p className='text-subheader'>Software Developer & Artist</p>
-                    <br />
-                  <p className='text-body'>My passion is in Software Development and Illustration.</p>
-                  <p className='text-body'>This portfolio is a collection of past projects and artworks I've worked on</p>
-                  <p className='text-body'>My favourite game is Arknights as that is the motif of my design</p>
-                    <br />
-                  <p className="text-header2">Twitter/X</p>
-                  <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+              <div className='flex items-start justify-center text-center pt-10 '>
+                <div className='text-left space-y-5'>
+                  <div>
+                    <p className='text-header'>LynLinLing/Davadakus</p>
+                    <p className='text-subheader'>Software Developer & Artist</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className='text-body'>My passion is in Software Development and Illustration.</p>
+                    <p className='text-body'>This portfolio is a collection of past projects and artworks I've worked on</p>
+                    <p className='text-body'>My favourite game is Arknights as that is the motif of my design</p>
+                  </div>
+                  {/* <p className="text-header2">Twitter/X</p>
+                  <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script> */}
                 </div>
               </div>
             </div>
