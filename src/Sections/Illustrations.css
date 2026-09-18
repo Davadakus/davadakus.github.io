@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer components {
+  .illustration-anim {
+    @apply max-w-[380px] min-w-[120px] w-full h-full object-cover rounded-4xl transition-transform duration-1000 ease-out;
+  }
+
+  .hover\:tilt:hover {
+    transform: rotate(3deg);
+  }
+}

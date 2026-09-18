@@ -1,6 +1,7 @@
 import React from "react"
 import { useState, useEffect } from "react";
 import Button from "./Button";
+import "./Header.css";
 
 function Header() {
     const Menu = ["Illustrations", "Games", "About", "Other Projects"];

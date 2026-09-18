@@ -1,0 +1,23 @@
+@layer components {
+  .button-anim {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 3rem;
+  }
+
+  .button-anim:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-image: linear-gradient(130deg,hsla(0,0%,100%,0) 25%,hsla(0,0%,100%,.5) 50%,hsla(0,0%,100%,0) 75%);
+    transition: .5s
+  }
+  .button-anim:hover:before {
+    left: 100%
+  }
+}

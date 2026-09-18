@@ -1,3 +1,5 @@
+import "./Illustrations.css";
+
 export default function Illustrations(){
     return(
         <div className ='header-section'>

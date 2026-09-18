@@ -1,0 +1,38 @@
+@keyframes dropdownSlideIn {
+  0% {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    max-height: 600px;
+    margin-top: 60px;
+  }
+}
+
+@keyframes dropdownSlideOut {
+  0% {
+    max-height: 600px;
+    margin-top: 60px;
+  }
+  99% {
+    opacity: 1;
+  }
+  100% {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+  }
+}
+
+@layer components {
+  .dropdown-in {
+    animation: dropdownSlideIn 0.5s ease-out forwards;
+  }
+  .dropdown-out {
+    animation: dropdownSlideOut 0.5s ease-out forwards;
+  }
+}

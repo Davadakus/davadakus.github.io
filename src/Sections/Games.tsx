@@ -1,3 +1,5 @@
+import "../Components/ProjectCard.css";
+
 export default function Games(){
     return(
         <div className ='header-section bg-zinc-300 animated-grid'>

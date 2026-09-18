@@ -53,63 +53,7 @@
   }
 }
 
-/* @keyframes tilt {
-  0%{
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-3deg);
-  }
-} */
-
-@keyframes dropdownSlideIn {
-  0% {
-    max-height: 0;
-    margin-top: 0;
-    opacity: 0;
-  }
-  1% {
-    opacity: 1;
-  }
-  100% {
-    max-height: 600px;
-    margin-top: 60px;
-  }
-}
-
-@keyframes dropdownSlideOut {
-  0% {
-    max-height: 600px;
-    margin-top: 60px;
-  }
-  99% {
-    opacity: 1;
-  }
-  100% {
-    max-height: 0;
-    margin-top: 0;
-    opacity: 0;
-  }
-}
-
-
-
 @layer components {
-  /* h1 {
-    position: relative;
-    z-index: 3;
-  }
-  h1::before {
-    content: "";
-    background-color: white;
-    position: absolute;
-    height: 10px;
-    width: 100%;
-    bottom: 10px;
-    right: 2px;
-    z-index: -1;
-  } */
-  
   .header-section {
     @apply relative flex-col py-[50px] overflow-clip
   }
@@ -137,51 +81,10 @@
     z-index: -1;
   }
 
-  .illustration-anim {
-    @apply max-w-[380px] min-w-[120px] w-full h-full object-cover rounded-4xl transition-transform duration-1000 ease-out
-  }
-  
-
-  .skill-section {
-    @apply flex flex-row flex-wrap items-start border-b-2 border-black ;
-  }
-  
-  .skill-header {
-    @apply flex font-semibold w-[110px] justify-start items-start lg:text-2xl text-lg;
-  }
-  
-  .skill-grid {
-    @apply grid grid-cols-3 gap-2 p-1 grow lg:text-lg text-[12px];
-  }
-  
-  .projects-card {
-    @apply flex flex-wrap flex-row justify-center max-w-[2000px] gap-6 mx-auto
-  }
-
-  .projects-card-reverse {
-    @apply flex flex-wrap-reverse flex-row-reverse justify-center max-w-[2000px] gap-6 mx-auto
-  }
-
-  .projects-card-image {
-    @apply w-[90%] md:w-[45%]
-  }
-  
-  .projects-card-body {
-    @apply flex flex-col w-[85%] md:w-[45%] gap-10 flex-wrap
-  }
-
-  .projects-link {
-    @apply flex flex-row gap-3 
-  }
-  
-  .projects-link-reverse {
-    @apply flex flex-row-reverse gap-3 
-  }
-
   .text-header {
     @apply font-semibold text-2xl md:text-3xl
   }
-  
+
   .text-header2 {
     @apply font-semibold text-lg md:text-xl
   }
@@ -189,7 +92,7 @@
   .text-subheader {
     @apply text-sm md:text-base
   }
-  
+
   .text-body {
     @apply text-base md:text-xl
   }
@@ -197,7 +100,6 @@
   .text-tiny {
     @apply text-sm md:text-base
   }
-  
 
   .animated-grid {
     background-image:
@@ -207,7 +109,7 @@
     background-repeat: repeat;
     animation: gridScroll 4s linear infinite;
   }
-  
+
   .wiggle-right {
     animation: wiggle-right 5s ease-in-out infinite;
   }
@@ -217,42 +119,6 @@
   .wiggle {
     animation: wiggle 5s ease-in-out infinite;
   }
-
-
-  .hover\:tilt:hover {
-    transform: rotate(3deg);
-  }
-  .dropdown-in {
-    animation: dropdownSlideIn 0.5s ease-out forwards;
-    /* pointer-events: auto; */
-  }
-  .dropdown-out {
-    animation: dropdownSlideOut 0.5s ease-out forwards;
-    /* pointer-events: none; */
-  }
-
-  .button-anim {
-    position: relative; 
-    display: inline-block; 
-    overflow: hidden; 
-    border-radius: 3rem;
-  }
-
-  .button-anim:before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -100%;
-    background-image: linear-gradient(130deg,hsla(0,0%,100%,0) 25%,hsla(0,0%,100%,.5) 50%,hsla(0,0%,100%,0) 75%);
-    transition: .5s
-  }
-  .button-anim:hover:before {
-    left: 100%
-  }
-
 }
 
 html {

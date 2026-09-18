@@ -1,3 +1,5 @@
+import "./SkillTable.css";
+
 // This is your reusable component
 function SkillTable() {
   return (

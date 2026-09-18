@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Button from "./Button";
+import "./ProjectCard.css";
 
 interface ProjectCardProps {
   imageSrc: string;
