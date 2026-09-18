@@ -22,7 +22,7 @@ function Footer() {
                         <a href="/contact">Contact</a>
                     </li>
                 </ul>
-                <p>© 2025 LynLinLing</p>
+                <p>© 2026 LynLinLing</p>
             </div>
         </footer>
     )

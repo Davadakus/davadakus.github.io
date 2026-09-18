@@ -13,18 +13,18 @@ export default function OtherProjects(){
             </div>
             <div className="space-y-20">
               <ProjectCard 
-                title="AirTable Clone"
-                imageSrc="Artwork/OtherProject/AirTableClone.png"
-                description={`Recreating small parts of the AirTable website using the T3 Stack including: Login, Create and Manipulate Table, and Different Users
+                title="CloudTable"
+                imageSrc="Artwork/OtherProject/CloudTable.png"
+                description={`Made a table app using the T3 Stack including: Login, Create and Manipulate Table, and Different Users
                 \nImplemented google's authentication and functioning backend, database, frontend using T3 deployed on Vercel
                 `}
                 role="Fullstack"
                 tech="React, TailwindCSS, T3 Stack(Next.js, NextAuth.js, tRPC. Prisma), PostGreSQL"
-                website="https://air-table-prototype.vercel.app/"
+                website="https://cloud-table-prototype.vercel.app/"
                 reverse={false}
               >
                 <Button
-                  link="https://air-table-prototype.vercel.app/"
+                  link="https://cloud-table-prototype.vercel.app/"
                   path="Artwork/DropDown/Website.png"
                 />
               </ProjectCard>
@@ -34,7 +34,8 @@ export default function OtherProjects(){
                 imageSrc="Artwork/OtherProject/DiscordDemo.png"
                 description="Replicating Discord's layout and DM functionality; experimenting full-stack development
                       React + Vite for Frontend; Node.js and Express.js for backend
-                      Able to send messages and view chat history"
+                      Able to send messages and view chat history
+                      (Only frontend page hosted)"
                 role="Fullstack"
                 tech="React, TailWindCSS, Vite, Express.js, Node.js, GitHub"
                 reverse={true}
