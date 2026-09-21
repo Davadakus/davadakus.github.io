@@ -43,20 +43,20 @@ export default function About(){
                 </div>
               </div> */}
 
-            <div className='flex flex-wrap justify-center text-xl max-w-[2000px] mx-auto gap-10'>
-              <div className='flex relative'>
-                <img src="Artwork/Lyn.webp" draggable="false" className='object-cover size-[400px]'/>
+            <div className='flex flex-wrap justify-center text-xl gap-10 max-w-[1400px] px-5 mx-auto'>
+              <div className='flex relative size-[400px]'>
+                <img src="Artwork/Lyn.webp" draggable="false" className='object-cover '/>
               </div>
-              <div className='flex items-start justify-center text-center pt-10 '>
+              <div className='flex flex-1 basis-[600px] items-start justify-center text-center pt-10 max-w-[1000px]'>
                 <div className='text-left space-y-5'>
                   <div>
                     <p className='text-header'>LynLinLing/Davadakus</p>
                     <p className='text-subheader'>Software Developer & Artist</p>
                   </div>
-                  <div className="space-y-1">
-                    <p className='text-body'>My passion is in Software Development and Illustration.</p>
-                    <p className='text-body'>This portfolio is a collection of past projects and artworks I've worked on</p>
-                    <p className='text-body'>My favourite game is Arknights as that is the motif of my design</p>
+                  <div className="space-y-3 text-neutral-600">
+                    <p className='text-body'>I'm a software developer currently looking for experience. I'm most experienced in the frontend side of development but also comfortable working on full-stack projects. My personal interest is creating software with satisfying design </p>
+                    <p className='text-body'>This portfolio showcases my past projects and also a catalog of illustrations showcasing my art journey. My favourite game is Arknights and a lot of my inspirations are taken from their style of design</p>
+                    <p className='text-body'></p>
                   </div>
                   {/* <p className="text-header2">Twitter/X</p>
                   <a className="twitter-timeline text-base" href="https://twitter.com/LyNLinLing?ref_src=twsrc%5Etfw" target="_blank" rel="noopener noreferrer">Tweets by LyNLinLing</a> <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script> */}
