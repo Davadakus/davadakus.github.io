@@ -7,6 +7,7 @@ import Illustrations from '../Sections/Illustrations';
 import Games from '../Sections/Games';
 import About from '../Sections/About';
 import OtherProjects from '../Sections/OtherProjects';
+import Experience from '../Sections/Experience';
 // import Magnifier from '../Components/Magnifier';
 
 function MainMenu() {
@@ -28,8 +29,9 @@ function MainMenu() {
         <div className='flex-col'> 
           <LandingView />
           <Illustrations />
-          <Games />
+          {/* <Games /> */}
           <About />
+          <Experience />
           <OtherProjects />
           <Footer/>
         

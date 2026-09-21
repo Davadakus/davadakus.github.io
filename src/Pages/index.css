@@ -67,7 +67,7 @@
   }
 
   .header-title {
-    @apply flex justify-center items-center text-[28px] md:text-[35px] mb-[35px] font-semibold border border-transparent relative scroll-mt-[100px];
+    @apply flex justify-center items-center text-[28px] md:text-[35px] mb-[50px] font-semibold border border-transparent relative scroll-mt-[100px];
     z-index: 0;
   }
   .header-title::before {

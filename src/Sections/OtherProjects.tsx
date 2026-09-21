@@ -11,7 +11,7 @@ export default function OtherProjects(){
                 {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
               </div>
             </div>
-            <div className="space-y-20">
+            <div className="max-w-[1400px] px-5 mx-auto space-y-20">
               <ProjectCard 
                 title="CloudTable"
                 imageSrc="Artwork/OtherProject/CloudTable.png"

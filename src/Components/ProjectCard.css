@@ -2,19 +2,19 @@
 
 @layer components {
   .projects-card {
-    @apply flex flex-wrap flex-row justify-center max-w-[2000px] gap-6 mx-auto;
+    @apply relative flex flex-row justify-center gap-6 items-center bg-neutral-700 p-5 max-h-[420px];
   }
 
   .projects-card-reverse {
-    @apply flex flex-wrap-reverse flex-row-reverse justify-center max-w-[2000px] gap-6 mx-auto;
+    @apply flex flex-wrap-reverse flex-row-reverse justify-center gap-6;
   }
 
   .projects-card-image {
-    @apply w-[90%] md:w-[45%];
+    @apply aspect-16/9 w-[800px] shrink-0 flex items-center -translate-x-10 -translate-y-8;
   }
 
   .projects-card-body {
-    @apply flex flex-col w-[85%] md:w-[45%] gap-10 flex-wrap;
+    @apply flex flex-1 flex-col gap-10 flex-wrap text-white;
   }
 
   .projects-link {

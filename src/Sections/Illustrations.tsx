@@ -2,7 +2,7 @@ import "./Illustrations.css";
 
 export default function Illustrations(){
     return(
-        <div className ='header-section'>
+        <div className ='header-section bg-zinc-300 animated-grid'>
             <div className="flex justify-center items-center">
               
               {/* <SectionHeader>Illustrations</SectionHeader> */}
