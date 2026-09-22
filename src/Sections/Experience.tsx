@@ -9,7 +9,7 @@ export default function Experience(){
                 Experience
               </div>
             </div>
-            <div className=" max-w-[1400px] px-5 mx-auto h-[200px] bg-amber-100/30">
+            <div className=" max-w-[1600px] px-5 mx-auto h-[200px] bg-amber-100/30">
                 <div className="flex overflow-x-auto w-full">
                 
                 

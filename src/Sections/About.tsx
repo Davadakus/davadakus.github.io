@@ -43,7 +43,7 @@ export default function About(){
                 </div>
               </div> */}
 
-            <div className='flex flex-wrap justify-center text-xl gap-10 max-w-[1400px] px-5 mx-auto'>
+            <div className='flex flex-wrap justify-center text-xl gap-10 max-w-[1600px] px-5 mx-auto'>
               <div className='flex relative size-[400px]'>
                 <img src="Artwork/Lyn.webp" draggable="false" className='object-cover '/>
               </div>
