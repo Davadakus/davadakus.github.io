@@ -34,7 +34,6 @@ export default function ProjectCard({
   return (
     <div className="flex flex-col">
       <div className={`flex bg-neutral-800 p-1 pl-4 transition-opacity duration-300 ease-out ${details ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-        
         <button className="flex items-center text-sm cursor-pointer text-white" onClick={() => setDetails((prev) => !prev)}> Details <MdOutlineArrowDropDown size={25} /> </button>
       </div>
       <div className ={`${reverse ? "projects-card-reverse" : "projects-card"} ${details ? "" : "max-h-[420px]"}`} >
@@ -47,16 +46,16 @@ export default function ProjectCard({
           <div className={`flex-col ${reverse ? "text-end" : ""}`}>
             <div className={`duration-300 ease-out ${details ? "" : "-translate-x-12"}`}>
               <h1 className={`font-semibold flex transition-[font-size] duration-300 ease-out ${reverse ? "flex-row-reverse" : ""} ${details ? "text-4xl" : "text-7xl"}`}>{title}</h1>
-              <h2 className={`transition-[font-size] duration-300 ease-out ${details ? "text-xl mb-4" : "text-3xl"}`}> Full Stack </h2>
+              <h2 className={`transition-[font-size] duration-300 ease-out ${details ? "text-xl" : "text-3xl"}`}> Full Stack </h2>
             </div>
             <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${details ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}>
               <div className="overflow-hidden">
-                <div className="text-body block whitespace-pre-line">
+                <div className="text-body block whitespace-pre-line my-4">
                   {description}
-                  <div className="text-tiny block my-5">
+                  {/* <div className="text-tiny block my-5">
                     <p><strong>Role: </strong>{role}</p>
                     <p><strong>Tech: </strong>{tech}</p>
-                  </div>
+                  </div> */}
                 </div>
                 <Branch imageSrc="public/Artwork/arknights_guard.webp" role="Full-Stack" trait="" tech={[]} />
               </div>

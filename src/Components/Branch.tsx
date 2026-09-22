@@ -13,9 +13,6 @@ interface BranchProps {
   children?: ReactNode
 }
 
-
-
-
 export default function Branch({
   imageSrc,
   role,
@@ -29,10 +26,13 @@ export default function Branch({
   
   return (
     <div className="flex flex-col">
-        <div className="flex flex-row items-center gap-4 p-4 bg-neutral-800  text-2xl">
+        <div className="relative flex flex-row items-center gap-4 p-4 bg-neutral-800  text-2xl">
             <img src={imageSrc} draggable="false" className="object-contain size-20"/>
               <VerticalDivider/>
             <div>{role}</div>
+            <div className="absolute bottom-3 right-3 text-right">
+              <button className="flex items-center text-sm cursor-pointer" onClick={() => setDetails((prev) => !prev)}> <MdOutlineArrowDropDown size={25} /> </button>
+            </div>
         </div>
     </div>
 
