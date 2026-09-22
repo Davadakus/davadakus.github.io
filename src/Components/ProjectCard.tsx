@@ -37,9 +37,9 @@ export default function ProjectCard({
         <button className="flex items-center text-sm cursor-pointer text-white" onClick={() => setDetails((prev) => !prev)}> Details <MdOutlineArrowDropDown size={25} /> </button>
       </div>
       <div className ={`${reverse ? "projects-card-reverse" : "projects-card"} ${details ? "" : "max-h-[420px]"}`} >
-        <div className={`projects-card-image ${reverse ? "order-1 md:order-none" : ""} ${details ? "scale-115" : "-translate-x-12 -translate-y-10"}`}>
-          <a href={website} target="_blank" rel="noopener noreferrer">
-            <img src={imageSrc} draggable="false" className="w-full h-full object-contain"/>
+        <div className={`projects-card-image ${reverse ? "order-1 md:order-none" : ""} ${details ? "flex-[1.3]" : "flex-1 -translate-x-12 -translate-y-10"}`}>
+          <a href={website} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
+            <img src={imageSrc} draggable="false" className="w-full h-full object-cover"/>
           </a>
         </div>
         <div className="projects-card-body">

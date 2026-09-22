@@ -10,7 +10,7 @@
   }
 
   .projects-card-image {
-    @apply aspect-16/9 flex-1 flex items-center transition-transform duration-500 ease-out mx-5;
+    @apply aspect-16/9 flex-1 flex items-center transition-[translate,flex-grow] duration-500 ease-out;
   }
 
   .projects-card-body {
