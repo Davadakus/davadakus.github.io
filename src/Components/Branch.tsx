@@ -1,5 +1,6 @@
 import React, { ReactNode, useState } from "react";
 import Button from "./Button";
+import VerticalDivider from "./VerticalDivider";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import "./ProjectCard.css";
 
@@ -27,9 +28,10 @@ export default function Branch({
   const [details, setDetails] = useState<boolean>(false);
   
   return (
-    <div className="flex flex-col px-2 py-4 bg-neutral-800 w-[200px]">
-        <div className="flex flex-row">
-            <img src={imageSrc} draggable="false" className="w-full h-full object-contain"/>
+    <div className="flex flex-col">
+        <div className="flex flex-row items-center gap-4 p-4 bg-neutral-800  text-2xl">
+            <img src={imageSrc} draggable="false" className="object-contain size-20"/>
+              <VerticalDivider/>
             <div>{role}</div>
         </div>
     </div>
