@@ -3,13 +3,14 @@ import Button from "./Button";
 import VerticalDivider from "./VerticalDivider";
 import DropdownContainer from "./DropdownContainer";
 import "./ProjectCard.css";
-import Tech from "./Tech";
+import TechSquare from "./Tech";
+import { Role, RoleDefinitions } from "../data/roles";
+import { Tech } from "../data/tech";
 
 interface BranchProps {
   imageSrc: string;
-  role: string;
-  trait: string;
-  tech?: String[];
+  role: Role;
+  tech?: Tech[];
   reverse?: boolean
   children?: ReactNode
 }
@@ -17,7 +18,6 @@ interface BranchProps {
 export default function Branch({
   imageSrc,
   role,
-  trait,
   tech,
   reverse = false,
   children,
@@ -32,16 +32,16 @@ export default function Branch({
             <div className="flex flex-row items-center gap-4 text-2xl mb-4">
               <img src={imageSrc} draggable="false" className="object-contain size-20"/>
               <VerticalDivider/>
-              <div>{role}</div>
+              <div>{RoleDefinitions[role].name}</div>
             </div>  
 
             {details &&
               <div className="text-xl mb-4">
                 <div className="text-neutral-500">
-                  Trait
+                  Role
                 </div>
                 <div className="">
-                  Trait Explanation
+                  {RoleDefinitions[role].description}
                 </div>
               </div>
             }
@@ -52,12 +52,9 @@ export default function Branch({
                 </div>
               }
               <div className="flex flex-wrap gap-4 py-2 text-xl">
-                <Tech>
-                  React
-                </Tech>
-                <Tech>
-                  React
-                </Tech>
+                {tech?.map((t) => (
+                  <TechSquare key={t} tech={t} />
+                ))}
               </div>
             </div>
           

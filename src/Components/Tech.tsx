@@ -1,21 +1,17 @@
-import React, { ReactNode } from "react";
-import Button from "./Button";
-import VerticalDivider from "./VerticalDivider";
-import DropdownContainer from "./DropdownContainer";
-import "./ProjectCard.css";
+import React from "react";
+import { Tech as TechType, TechDefinitions } from "../data/tech";
 
 interface TechProps {
-  children: ReactNode
+  tech: TechType;
 }
 
 export default function Tech({
-
-  children,
+  tech,
 }: TechProps) {
 
   return (
     <div className="rounded bg-gray-300 text-black p-1">
-        {children}
+        {TechDefinitions[tech].name}
     </div>
 
   );

@@ -3,6 +3,8 @@ import Button from "./Button";
 import "./ProjectCard.css";
 import Branch from "./Branch";
 import DropdownContainer from "./DropdownContainer";
+import { Role } from "../data/roles";
+import { Tech } from "../data/tech";
 
 interface ProjectCardProps {
   imageSrc: string;
@@ -51,7 +53,7 @@ export default function ProjectCard({
                         <p><strong>Tech: </strong>{tech}</p>
                       </div> */}
                     </div>
-                    <Branch imageSrc="public/Artwork/arknights_guard.webp" role="Full-Stack" trait="" tech={[]} />
+                    <Branch imageSrc="public/Artwork/arknights_guard.webp" role={Role.FullStack} tech={[Tech.React, Tech.TailwindCSS]} />
                   </div>
                 </div>
               </div>
