@@ -6,6 +6,7 @@ import "./ProjectCard.css";
 import TechSquare from "./Tech";
 import { Role, RoleDefinitions } from "../data/roles";
 import { Tech } from "../data/tech";
+import HorizontalDivider from "./HorizontalDivider";
 
 interface BranchProps {
   imageSrc: string;
