@@ -1,5 +1,7 @@
 import Button from "../Components/Button";
 import ProjectCard from "../Components/ProjectCard";
+import { Role } from "../data/roles";
+import { Tech } from "../data/tech";
 
 export default function OtherProjects(){
     return(
@@ -18,8 +20,8 @@ export default function OtherProjects(){
                 description={`Made a table app using the T3 Stack including: Login, Create and Manipulate Table, and Different Users
                 \nImplemented google's authentication and functioning backend, database, frontend using T3 deployed on Vercel
                 `}
-                role="Fullstack"
-                tech="React, TailwindCSS, T3 Stack(Next.js, NextAuth.js, tRPC. Prisma), PostGreSQL"
+                role={Role.FullStack}
+                techList={[Tech.React, Tech.TailwindCSS, Tech.T3Stack, Tech.NextJS, Tech.NextAuthJS, Tech.TRPC, Tech.Prisma, Tech.PostgreSQL]}
                 website="https://cloud-table-prototype.vercel.app/"
                 reverse={false}
               >
@@ -36,8 +38,8 @@ export default function OtherProjects(){
                       React + Vite for Frontend; Node.js and Express.js for backend
                       Able to send messages and view chat history
                       (Only frontend page hosted)"
-                role="Fullstack"
-                tech="React, TailWindCSS, Vite, Express.js, Node.js, GitHub"
+                role={Role.FullStack}
+                techList={[Tech.React, Tech.TailwindCSS, Tech.Vite, Tech.ExpressJS, Tech.NodeJS, Tech.GitHub]}
                 reverse={true}
               >
                 <Button
@@ -59,8 +61,8 @@ export default function OtherProjects(){
                 imageSrc="Artwork/OtherProject/BeaconVisualizer.png"
                 description="A React Project me and my friend made for a Hackathon in 24 Hours
                       Simulates live tracking of a beacon travelling in a rocket displaying relevant data"
-                role="Website design & layout, simulation of beacon, and managing simulated data"
-                tech="React, TailWindCSS, Vite, D3.js, Three.js, GitHub"
+                role={Role.FrontEnd}
+                techList={[Tech.React, Tech.TailwindCSS, Tech.Vite, Tech.D3, Tech.ThreeJS, Tech.GitHub]}
                 reverse={false}
               >
                 <Button
@@ -80,8 +82,8 @@ export default function OtherProjects(){
                       Allows you to upload your class materials PDF to an AI Tutor (Gemini) and group them
                       The AI generates questions for users to test themselves
                       You can ask the AI regarding specific questions on screen and will give you feedback"
-                role="Frontend Lead, designing and development of webpages, features, and code review"
-                tech="React, TailWindCSS, Vite, FastAPI, Docker, GitHub"
+                role={Role.FrontEnd}
+                techList={[Tech.React, Tech.TailwindCSS, Tech.Vite, Tech.FastAPI, Tech.Docker, Tech.GitHub]}
                 reverse={true}
               >
                 <Button
@@ -95,8 +97,8 @@ export default function OtherProjects(){
                 imageSrc="Artwork/OtherProject/Haato's Diary.png"
                 description="An open-source, fan-made, visual novel I had a small hand in
                       First experience working with others through GitHub Forks and coordinating through a trello board"
-                role="Implement some translations for Japanese Users"
-                tech="Python, RenPy"
+                role={Role.GameDev}
+                techList={[Tech.Python, Tech.RenPy]}
                 reverse={false}
               >
                 <Button

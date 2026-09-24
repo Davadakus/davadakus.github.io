@@ -10,8 +10,8 @@ interface ProjectCardProps {
   imageSrc: string;
   title: string;
   description: string;
-  role: string;
-  tech: string;
+  role: Role;
+  techList: Tech[];
   reverse?: boolean;
   website?: string;
   children: ReactNode
@@ -22,7 +22,7 @@ export default function ProjectCard({
   title,
   description,
   role,
-  tech,
+  techList,
   reverse = false,
   website,
   children,
@@ -53,7 +53,7 @@ export default function ProjectCard({
                         <p><strong>Tech: </strong>{tech}</p>
                       </div> */}
                     </div>
-                    <Branch imageSrc="public/Artwork/arknights_guard.webp" role={Role.FullStack} tech={[Tech.React, Tech.TailwindCSS]} />
+                    <Branch imageSrc="public/Artwork/arknights_guard.webp" role={role} techList={techList} />
                   </div>
                 </div>
               </div>

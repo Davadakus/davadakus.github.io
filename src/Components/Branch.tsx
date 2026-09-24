@@ -11,7 +11,7 @@ import HorizontalDivider from "./HorizontalDivider";
 interface BranchProps {
   imageSrc: string;
   role: Role;
-  tech?: Tech[];
+  techList?: Tech[];
   reverse?: boolean
   children?: ReactNode
 }
@@ -19,7 +19,7 @@ interface BranchProps {
 export default function Branch({
   imageSrc,
   role,
-  tech,
+  techList,
   reverse = false,
   children,
 }: BranchProps) {
@@ -52,10 +52,13 @@ export default function Branch({
                   Tech
                 </div>
               }
-              <div className="flex flex-wrap gap-4 py-2 text-xl">
-                {tech?.map((t) => (
+              <div className={`flex gap-4 py-2 text-xl items-center ${details ? "flex-wrap" : "flex-nowrap overflow-hidden"}`}>
+                {(details ? techList : techList?.slice(0, 3))?.map((t) => (
                   <TechSquare key={t} tech={t} />
                 ))}
+                {!details && techList && techList.length > 3 &&
+                  <div className="text-neutral-500">...</div>
+                }
               </div>
             </div>
           

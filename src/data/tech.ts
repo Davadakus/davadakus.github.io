@@ -12,6 +12,7 @@ export enum Tech {
   TailwindCSS = "TailwindCSS",
   ReactRouter = "ReactRouter",
   ThreeJS = "ThreeJS",
+  D3 = "D3",
 
   Python = "Python",
   Java = "Java",
@@ -76,6 +77,11 @@ export const TechDefinitions: Record<Tech, TechDefinition> = {
     name: "Three.js",
     category: Category.FrontEnd,
     link: "https://threejs.org",
+  },
+  [Tech.D3]: {
+    name: "D3.js",
+    category: Category.FrontEnd,
+    link: "https://d3js.org",
   },
 
   // Back-End
