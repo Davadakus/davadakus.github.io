@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React, { ReactNode, useEffect, useRef } from "react";
 import DropdownButton from "./DropdownButton";
 import useDetails from "./useDetails";
 
@@ -13,10 +13,21 @@ export default function DropdownContainer({
   buttonLabel,
   children,
 }: DropdownContainerProps) {
-  const { details, toggleDetails } = useDetails();
+  const { details, toggleDetails, closeDetails } = useDetails();
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Close when the user clicks anywhere outside this dropdown
+  useEffect(() => {
+    if (!details) return;
+    const handlePointerDown = (e: PointerEvent) => {
+      if (!containerRef.current?.contains(e.target as Node)) closeDetails();
+    };
+    document.addEventListener("pointerdown", handlePointerDown);
+    return () => document.removeEventListener("pointerdown", handlePointerDown);
+  }, [details]);
 
   return (
-    <div className={`relative ${className}`}>
+    <div ref={containerRef} className={`relative ${className}`}>
       <div className={`flex bg-neutral-800 p-1 pl-4 transition-opacity duration-300 ease-out ${details ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
         <DropdownButton onClick={toggleDetails} label={buttonLabel} expanded />
       </div>
