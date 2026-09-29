@@ -12,7 +12,7 @@ export default function Tech({
 }: TechProps) {
 
   return (
-    <div className={`rounded bg-gray-300 text-black p-1 text-lg ${className}`}>
+    <div className={`rounded bg-gray-300 text-black p-1 text-lg select-none ${className}`}>
         {TechDefinitions[tech].name}
     </div>
 
