@@ -42,7 +42,7 @@ export default function Branch({
           className="overflow-hidden transition-[height] duration-300 ease-out motion-reduce:transition-none"
           style={{ height }}
         >
-          <div ref={contentRef} className={`flex flex-col p-4 ${details ? "bg-neutral-900/70" : "bg-neutral-900"} `}>
+          <div ref={contentRef} className={`flex flex-col p-4 ${details ? "bg-neutral-900/50" : "bg-neutral-900"} `}>
 
             <div className="flex flex-row items-center gap-4 text-2xl mb-4">
               <img src={imageSrc} draggable="false" className="object-contain size-20"/>

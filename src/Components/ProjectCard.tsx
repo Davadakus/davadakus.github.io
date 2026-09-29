@@ -32,7 +32,7 @@ export default function ProjectCard({
     <DropdownContainer className="flex flex-col">
       {(details) => (
         <>
-          <div className ={`${reverse ? "projects-card-reverse" : "projects-card"} ${details ? "bg-neutral-800/80" : "max-h-[420px]"}`} >
+          <div className ={`${reverse ? "projects-card-reverse" : "projects-card"} ${details ? "bg-neutral-900/80" : "bg-neutral-700 max-h-[420px]"}`} >
             <div className={`projects-card-image ${reverse ? "order-1 md:order-none" : ""} ${details ? "flex-[1.3]" : "flex-1 -translate-x-12 -translate-y-10"}`}>
               <a href={website} target="_blank" rel="noopener noreferrer" className="block w-full h-full">
                 <img src={imageSrc} draggable="false" className="w-full h-full object-cover"/>
