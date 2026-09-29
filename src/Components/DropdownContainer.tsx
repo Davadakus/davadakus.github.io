@@ -28,7 +28,7 @@ export default function DropdownContainer({
 
   return (
     <div ref={containerRef} className={`relative ${className}`}>
-      <div className={`flex bg-neutral-800 p-1 pl-4 transition-opacity duration-300 ease-out ${details ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
+      <div className={`relative z-10 flex bg-neutral-800 p-1 pl-4 shadow-lg shadow-black/50 transition-opacity duration-300 ease-out ${details ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
         <DropdownButton onClick={toggleDetails} label={buttonLabel} expanded />
       </div>
       {children(details, toggleDetails)}
