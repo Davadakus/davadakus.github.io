@@ -23,7 +23,6 @@ export default function OtherProjects(){
                 role={Role.FullStack}
                 techList={[Tech.React, Tech.TailwindCSS, Tech.T3Stack, Tech.NextJS, Tech.NextAuthJS, Tech.TRPC, Tech.Prisma, Tech.PostgreSQL]}
                 linkList={["https://youtu.be/Iu_dQNK4H24", "https://cloud-table-prototype.vercel.app/"]}
-                website="https://cloud-table-prototype.vercel.app/"
                 reverse={false}
               />
               
