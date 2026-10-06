@@ -48,10 +48,6 @@ export default function ProjectCard({
                   <div className="overflow-hidden">
                     <div className="text-body block whitespace-pre-line my-4">
                       {description}
-                      {/* <div className="text-tiny block my-5">
-                        <p><strong>Role: </strong>{role}</p>
-                        <p><strong>Tech: </strong>{tech}</p>
-                      </div> */}
                     </div>
                     <Branch imageSrc="public/Artwork/arknights_guard.webp" role={role} techList={techList} />
                   </div>
