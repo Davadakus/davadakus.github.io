@@ -33,7 +33,7 @@ export default function DropdownContainer({
       </div>
       {children(details, toggleDetails)}
       {!details && (
-        <div className="absolute bottom-3 right-3 text-right text-white">
+        <div className="absolute bottom-3 right-3 text-right text-white transition-opacity duration-300 delay-300 ease-out starting:opacity-0">
           <DropdownButton onClick={toggleDetails} showLabel={false} expanded={details} />
         </div>
       )}
