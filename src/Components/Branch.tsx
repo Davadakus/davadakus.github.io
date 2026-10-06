@@ -7,19 +7,22 @@ import TechSquare from "./Tech";
 import { Role, RoleDefinitions } from "../data/roles";
 import { Tech } from "../data/tech";
 import HorizontalDivider from "./HorizontalDivider";
+import Link from "./Link";
 
 interface BranchProps {
   imageSrc: string;
   role: Role;
   techList?: Tech[];
-  reverse?: boolean
-  children?: ReactNode
+  linkList?: string[];
+  reverse?: boolean;
+  children?: ReactNode;
 }
 
 export default function Branch({
   imageSrc,
   role,
   techList,
+  linkList,
   reverse = false,
   children,
 }: BranchProps) {
@@ -42,25 +45,28 @@ export default function Branch({
           className="overflow-hidden transition-[height] duration-300 ease-out motion-reduce:transition-none"
           style={{ height }}
         >
-          <div ref={contentRef} className={`flex flex-col p-4 ${details ? "bg-neutral-900/50" : "bg-neutral-900"} `}>
+          <div ref={contentRef} className={`flex flex-col p-4 space-y-4 ${details ? "bg-neutral-900/50" : "bg-neutral-900"} `}>
 
-            <div className="flex flex-row items-center gap-4 text-2xl mb-4">
+            <div className="flex flex-row items-center gap-4 text-2xl">
               <img src={imageSrc} draggable="false" className="object-contain size-20"/>
               <VerticalDivider/>
               <div>{RoleDefinitions[role].name}</div>
             </div>  
 
+            {/* Role */}
             {details &&
-              <div className="text-xl mb-4 transition-opacity duration-300 ease-out starting:opacity-0">
+              <div className="text-xl transition-opacity duration-300 ease-out starting:opacity-0">
                 <div className="text-neutral-500">
                   Role
                 </div>
-                <div className="">
+                <div>
                   {RoleDefinitions[role].description}
                 </div>
               </div>
             }
             <div>
+
+            {/* Tech */}
               {details &&
                 <div className="text-neutral-500 text-xl transition-opacity duration-300 ease-out starting:opacity-0">
                   Tech
@@ -75,6 +81,20 @@ export default function Branch({
                 }
               </div>
             </div>
+
+            {/* Links */}
+              {details &&
+            <div>
+                <div className="text-neutral-500 text-xl transition-opacity duration-300 ease-out starting:opacity-0">
+                  Links
+                </div>
+              <div className="flex flex-wrap gap-4 py-2 text-3xl items-center">
+                {linkList?.map((url) => (
+                  <Link key={url} url={url} className="transition-opacity duration-300 ease-out starting:opacity-0" />
+                ))}
+              </div>
+            </div>
+              }
           
           </div>
           

@@ -22,14 +22,10 @@ export default function OtherProjects(){
                 `}
                 role={Role.FullStack}
                 techList={[Tech.React, Tech.TailwindCSS, Tech.T3Stack, Tech.NextJS, Tech.NextAuthJS, Tech.TRPC, Tech.Prisma, Tech.PostgreSQL]}
+                linkList={["https://youtu.be/Iu_dQNK4H24", "https://cloud-table-prototype.vercel.app/"]}
                 website="https://cloud-table-prototype.vercel.app/"
                 reverse={false}
-              >
-                <Button
-                  link="https://cloud-table-prototype.vercel.app/"
-                  path="Artwork/DropDown/Website.png"
-                />
-              </ProjectCard>
+              />
               
               <ProjectCard 
                 title="Recreating Discord (2025)"
@@ -40,21 +36,9 @@ export default function OtherProjects(){
                       (Only frontend page hosted)"
                 role={Role.FullStack}
                 techList={[Tech.React, Tech.TailwindCSS, Tech.Vite, Tech.ExpressJS, Tech.NodeJS, Tech.GitHub]}
+                linkList={["https://github.com/Davadakus/discord-demo", "https://cloud-table-prototype.vercel.app/", "https://discord-demo-black.vercel.app/"]}
                 reverse={true}
-              >
-                <Button
-                  link="https://github.com/Davadakus/discord-demo"
-                  path="Artwork/DropDown/GitHub.png"
-                />
-                <Button
-                  link="https://youtu.be/Iu_dQNK4H24"
-                  path="Artwork/DropDown/YouTube.png"
-                />
-                <Button
-                  link="https://discord-demo-black.vercel.app/"
-                  path="Artwork/DropDown/Website.png"
-                />
-              </ProjectCard>
+              />
 
               <ProjectCard 
                 title="Beacon Visualizer (2024)"
@@ -63,17 +47,9 @@ export default function OtherProjects(){
                       Simulates live tracking of a beacon travelling in a rocket displaying relevant data"
                 role={Role.FrontEnd}
                 techList={[Tech.React, Tech.TailwindCSS, Tech.Vite, Tech.D3, Tech.ThreeJS, Tech.GitHub]}
+                linkList={["https://github.com/Davadakus/ANT61Hackathon", "https://www.youtube.com/watch?v=Cik_anyDUuw", "https://discord-demo-black.vercel.app/"]}
                 reverse={false}
-              >
-                <Button
-                  link="https://github.com/Davadakus/ANT61Hackathon"
-                  path="Artwork/DropDown/GitHub.png"
-                />
-                <Button
-                  link="https://www.youtube.com/watch?v=Cik_anyDUuw"
-                  path="Artwork/DropDown/YouTube.png"
-                />
-              </ProjectCard>
+              />
 
               <ProjectCard 
                 title="Game Based Learning Website (2024)"
@@ -84,13 +60,9 @@ export default function OtherProjects(){
                       You can ask the AI regarding specific questions on screen and will give you feedback"
                 role={Role.FrontEnd}
                 techList={[Tech.React, Tech.TailwindCSS, Tech.Vite, Tech.FastAPI, Tech.Docker, Tech.GitHub]}
+                linkList={["https://youtu.be/gqQlONmrvE4"]}
                 reverse={true}
-              >
-                <Button
-                  link="https://youtu.be/gqQlONmrvE4"
-                  path="Artwork/DropDown/YouTube.png"
-                />
-              </ProjectCard>
+              />
 
               <ProjectCard 
                 title="Haato's Diary (2022)"
@@ -99,17 +71,9 @@ export default function OtherProjects(){
                       First experience working with others through GitHub Forks and coordinating through a trello board"
                 role={Role.GameDev}
                 techList={[Tech.Python, Tech.RenPy]}
+                linkList={["https://wws-haato.itch.io/haatos-diary", "https://www.youtube.com/watch?v=tRLvKY_WZwU", "https://discord-demo-black.vercel.app/"]}
                 reverse={false}
-              >
-                <Button
-                  link="https://wws-haato.itch.io/haatos-diary"
-                  path="Artwork/DropDown/Website.png"
-                />
-                <Button
-                  link="https://www.youtube.com/watch?v=tRLvKY_WZwU"
-                  path="Artwork/DropDown/YouTube.png"
-                />
-              </ProjectCard>
+              />
             </div>
           </div>
     );

@@ -12,9 +12,9 @@ interface ProjectCardProps {
   description: string;
   role: Role;
   techList: Tech[];
+  linkList?: string[];
   reverse?: boolean;
   website?: string;
-  children: ReactNode
 }
 
 export default function ProjectCard({
@@ -23,9 +23,9 @@ export default function ProjectCard({
   description,
   role,
   techList,
+  linkList,
   reverse = false,
   website,
-  children,
 }: ProjectCardProps) {
 
   return (
@@ -49,14 +49,10 @@ export default function ProjectCard({
                     <div className="text-body block whitespace-pre-line my-4">
                       {description}
                     </div>
-                    <Branch imageSrc="public/Artwork/arknights_guard.webp" role={role} techList={techList} />
+                    <Branch imageSrc="public/Artwork/arknights_guard.webp" role={role} techList={techList} linkList={linkList} />
                   </div>
                 </div>
               </div>
-
-              {/* <div className={`${reverse ? "projects-link-reverse" : "projects-link"}`}>
-                {children}
-              </div> */}
             </div>
           </div>
         </>
