@@ -35,7 +35,7 @@ export default function OtherProjects(){
                       (Only frontend page hosted)"
                 role={Role.FullStack}
                 techList={[Tech.React, Tech.TailwindCSS, Tech.Vite, Tech.ExpressJS, Tech.NodeJS, Tech.GitHub]}
-                linkList={["https://github.com/Davadakus/discord-demo", "https://cloud-table-prototype.vercel.app/", "https://discord-demo-black.vercel.app/"]}
+                linkList={["https://github.com/Davadakus/discord-demo", "https://discord-demo-black.vercel.app/"]}
                 reverse={true}
               />
 
