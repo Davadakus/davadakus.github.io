@@ -26,10 +26,25 @@ export default function DropdownContainer({
     return () => document.removeEventListener("pointerdown", handlePointerDown);
   }, [details]);
 
+  const handleClick = (e: React.MouseEvent) => {
+    // Only the innermost dropdown reacts, so nested dropdowns don't toggle their parents
+    e.stopPropagation();
+    // Buttons and links handle their own clicks
+    if ((e.target as HTMLElement).closest("button, a")) return;
+    if (window.getSelection()?.toString()) return;
+    toggleDetails();
+  };
+
   return (
-    <div ref={containerRef} className={`relative ${className}`}>
-      <div className={`relative z-10 flex bg-neutral-800 p-1 pl-4 shadow-lg shadow-black/50 transition-opacity duration-300 ease-out ${details ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-        <DropdownButton onClick={toggleDetails} label={buttonLabel} expanded />
+    <div ref={containerRef} className={`relative ${className} ${details ? "" : "cursor-pointer"}`} onClick={handleClick}>
+      <div
+        className={`relative z-10 flex bg-neutral-800 p-1 pl-4 shadow-lg shadow-black/50 transition-opacity duration-300 ease-out ${details ? "opacity-100" : "opacity-0 cursor-default"}`}
+        // While hidden, swallow clicks so the invisible bar doesn't open the dropdown
+        onClick={(e) => !details && e.stopPropagation()}
+      >
+        <div inert={!details}>
+          <DropdownButton onClick={toggleDetails} label={buttonLabel} expanded />
+        </div>
       </div>
       {children(details, toggleDetails)}
       {!details && (
