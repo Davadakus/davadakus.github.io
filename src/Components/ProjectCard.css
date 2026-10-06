@@ -6,7 +6,7 @@
   }
 
   .projects-card-reverse {
-    @apply flex flex-wrap-reverse flex-row-reverse justify-center gap-6;
+    @apply relative flex flex-row-reverse justify-center gap-6 items-center p-6;
   }
 
   .projects-card-image {
