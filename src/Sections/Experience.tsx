@@ -1,5 +1,7 @@
 import Button from "../Components/Button";
 import ProjectCard from "../Components/ProjectCard";
+import Timeline from "../Components/Timeline";
+import timelineSvg from "../assets/Untitled-1.svg";
 
 export default function Experience(){
     return(
@@ -10,10 +12,7 @@ export default function Experience(){
               </div>
             </div>
             <div className=" max-w-[1600px] px-5 mx-auto h-[200px] bg-amber-100/30">
-                <div className="flex overflow-x-auto w-full">
-                
-                
-                </div>
+                <Timeline imageSrc={timelineSvg}/>
             </div>
           </div>
     );
