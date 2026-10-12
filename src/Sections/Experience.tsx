@@ -1,4 +1,6 @@
 import Button from "../Components/Button";
+import DragScroll from "../Components/DragScroll";
+import ExperienceCard from "../Components/ExperienceCard";
 import ProjectCard from "../Components/ProjectCard";
 import Timeline from "../Components/Timeline";
 import timelineSvg from "../assets/Untitled-1.svg";
@@ -11,8 +13,18 @@ export default function Experience(){
                 Experience
               </div>
             </div>
-            <div className=" max-w-[1600px] px-5 mx-auto h-[200px] bg-amber-100/30">
-                <Timeline imageSrc={timelineSvg}/>
+            <div className=" max-w-[1600px] px-5 mx-auto flex-1 bg-red-300/20 flex flex-col">
+                <div className="bg-neutral-600 mb-4">
+                  Header Section
+                </div>
+                <DragScroll className="bg-amber-500/20">
+                  <div className="w-max flex items-start gap-10 py-10">
+                    <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="University" subtitle="Projects" count={5} />
+                    <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="Collage" subtitle="Internship" count={12} />
+                  </div>
+                </DragScroll>
+                
+                {/* <Timeline imageSrc={timelineSvg}/> */}
             </div>
           </div>
     );
