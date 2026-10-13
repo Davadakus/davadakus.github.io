@@ -10,8 +10,8 @@ interface ExperienceProps {
 
 function ExperienceCard({ imageSrc, title, subtitle, count }: ExperienceProps) {
   return (
-    <div className="flex flex-col max-w-[420px] bg-neutral-100">
-        <div className="w-full aspect-[3/1] overflow-hidden">
+    <div className="flex flex-col max-w-[560px] bg-neutral-100">
+        <div className="w-full aspect-[8/3] overflow-hidden">
             <img src={imageSrc} draggable="false" className="w-full h-full object-cover scale-150"/>
         </div>
         

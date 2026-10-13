@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { TransformWrapper, TransformComponent, type ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
 
 interface DragScrollProps {
@@ -14,6 +14,7 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
   const transformRef = useRef<ReactZoomPanPinchRef>(null);
   // Where the wheel is heading, so quick wheel ticks add up instead of restarting from mid-animation
   const wheel = useRef({ target: 0, lastTime: 0 });
+  const [scale, setScale] = useState(1);
 
   // Registered natively because React's onWheel is passive and can't preventDefault
   useEffect(() => {
@@ -25,19 +26,22 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
       const wrapper = instance?.wrapperComponent;
       const content = instance?.contentComponent;
       if (!instance || !wrapper || !content) return;
+      // Ctrl/⌘ + wheel (or trackpad pinch) is left to the library to zoom
+      if (e.ctrlKey || e.metaKey) return;
 
-      const minX = Math.min(0, wrapper.clientWidth - content.offsetWidth);
+      const { positionX, positionY, scale } = instance.state;
+      const minX = Math.min(0, wrapper.clientWidth - content.offsetWidth * scale);
       // Nothing to scroll, so let the page handle the wheel
       if (minX === 0) return;
       e.preventDefault();
 
       const w = wheel.current;
-      if (e.timeStamp - w.lastTime > WHEEL_ANIMATION) w.target = instance.state.positionX;
+      if (e.timeStamp - w.lastTime > WHEEL_ANIMATION) w.target = positionX;
       w.lastTime = e.timeStamp;
 
       const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
       w.target = Math.max(minX, Math.min(0, w.target - delta));
-      transformRef.current?.setTransform(w.target, 0, 1, WHEEL_ANIMATION, "easeOut");
+      transformRef.current?.setTransform(w.target, positionY, scale, WHEEL_ANIMATION, "easeOut");
     }
 
     container.addEventListener("wheel", onWheel, { passive: false });
@@ -45,22 +49,36 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
   }, []);
 
   return (
-    <div ref={containerRef} className={`cursor-grab active:cursor-grabbing select-none ${className}`}>
-      <TransformWrapper
-        ref={transformRef}
-        // Fixed at 1x: this is a horizontal scroller, not a zoomable canvas
-        minScale={1}
-        maxScale={1}
-        wheel={{ disabled: true }}
-        pinch={{ disabled: true }}
-        doubleClick={{ disabled: true }}
-        panning={{ lockAxisY: true }}
-      >
-        <TransformComponent wrapperClass="!w-full" contentClass="!w-max">
-          {children}
-        </TransformComponent>
-      </TransformWrapper>
-    </div>
+      <div ref={containerRef} className={`relative cursor-grab active:cursor-grabbing select-none ${className}`}>
+        <TransformWrapper
+          ref={transformRef}
+          minScale={0.5}
+          initialScale={1}
+          maxScale={4}
+          // Plain wheel scrolls sideways (handled above); Ctrl/⌘ + wheel (or trackpad pinch) zooms
+          wheel={{ activationKeys: ["Control", "Meta"] }}
+          doubleClick={{ disabled: true }}
+          // Zoom jumps straight to the new scale instead of animating (and doesn't overshoot past min/max)
+          zoomAnimation={{ disabled: true }}
+          // Horizontal only: no vertical panning, and zoom keeps the strip vertically centred
+          panning={{ lockAxisY: true }}
+          onTransform={(_, state) => setScale(state.scale)}
+        >
+        {({ zoomIn, zoomOut, resetTransform }) => (
+          <>
+            <TransformComponent wrapperClass="!w-full" contentClass="!w-max">
+              {children}
+            </TransformComponent>
+            
+            <div className="absolute z-10 bottom-2 right-2 flex items-center gap-1 text-lg cursor-default">
+              <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomOut(0.1)} aria-label="Zoom out">−</button>
+              <button className="h-8 px-2 bg-neutral-900/70 text-white text-sm" onClick={() => resetTransform(0)} aria-label="Reset zoom">{Math.round(scale * 100)}%</button>
+              <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomIn(0.1)} aria-label="Zoom in">+</button>
+            </div>
+          </>
+      )}
+        </TransformWrapper>
+      </div>
   );
 }
 

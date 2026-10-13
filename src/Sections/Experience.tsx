@@ -13,12 +13,12 @@ export default function Experience(){
                 Experience
               </div>
             </div>
-            <div className=" max-w-[1600px] px-5 mx-auto flex-1 bg-red-300/20 flex flex-col">
-                <div className="bg-neutral-600 mb-4">
-                  Header Section
+            <div className=" max-w-[1600px] px-5 mx-auto flex-1 bg-white flex flex-col">
+                <div className="mb-4 pt-8 pl-8 text-sm text-neutral-600">
+                  // Experience
                 </div>
                 <DragScroll className="bg-amber-500/20">
-                  <div className="w-max flex items-start gap-10 py-10">
+                  <div className="w-full flex items-start gap-10 py-10 px-5">
                     <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="University" subtitle="Projects" count={5} />
                     <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="Collage" subtitle="Internship" count={12} />
                   </div>
