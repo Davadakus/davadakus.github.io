@@ -6,14 +6,9 @@ interface DragScrollProps {
   className?: string;
 }
 
-// How long the content takes to glide to a new wheel position, in ms
-const WHEEL_ANIMATION = 200;
-
 function DragScroll({ children, className = "" }: DragScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const transformRef = useRef<ReactZoomPanPinchRef>(null);
-  // Where the wheel is heading, so quick wheel ticks add up instead of restarting from mid-animation
-  const wheel = useRef({ target: 0, lastTime: 0 });
   const [scale, setScale] = useState(1);
   // How far the content is scrolled: 0 = fully left, 1 = fully right
   const [progress, setProgress] = useState(0);
@@ -39,13 +34,10 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
       // Nothing to scroll; returning (rather than clamping to 0) leaves a zoomed-out strip where it is
       if (minX === 0) return;
 
-      const w = wheel.current;
-      if (e.timeStamp - w.lastTime > WHEEL_ANIMATION) w.target = positionX;
-      w.lastTime = e.timeStamp;
-
       const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      w.target = Math.max(minX, Math.min(0, w.target - delta));
-      transformRef.current?.setTransform(w.target, positionY, scale, WHEEL_ANIMATION, "easeOut");
+      // Jumps with no animation, so fast wheeling can't cut a glide short partway through
+      const x = Math.max(minX, Math.min(0, positionX - delta));
+      transformRef.current?.setTransform(x, positionY, scale, 0);
     }
 
     container.addEventListener("wheel", onWheel, { passive: false });
