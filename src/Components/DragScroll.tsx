@@ -70,7 +70,7 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
               {children}
             </TransformComponent>
             
-            <div className="absolute z-10 bottom-2 right-2 flex items-center gap-1 text-lg cursor-default">
+            <div className="absolute bottom-2 right-2 flex items-center gap-1 text-lg cursor-default">
               <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomOut(0.1)} aria-label="Zoom out">−</button>
               <button className="h-8 px-2 bg-neutral-900/70 text-white text-sm" onClick={() => resetTransform(0)} aria-label="Reset zoom">{Math.round(scale * 100)}%</button>
               <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomIn(0.1)} aria-label="Zoom in">+</button>
