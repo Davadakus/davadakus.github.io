@@ -3,10 +3,9 @@ import { TransformWrapper, TransformComponent, type ReactZoomPanPinchRef } from 
 
 interface DragScrollProps {
   children: React.ReactNode;
-  className?: string;
 }
 
-function DragScroll({ children, className = "" }: DragScrollProps) {
+function DragScroll({ children = "" }: DragScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const transformRef = useRef<ReactZoomPanPinchRef>(null);
   const [scale, setScale] = useState(1);
@@ -45,7 +44,7 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
   }, []);
 
   return (
-      <div ref={containerRef} className={`relative cursor-grab active:cursor-grabbing select-none ${className}`}>
+      <div ref={containerRef} className="relative cursor-grab active:cursor-grabbing select-none min-h-[360px] pt-5 pb-20 flex items-center">
         <TransformWrapper
           ref={transformRef}
           minScale={0.5}
@@ -58,6 +57,9 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
           zoomAnimation={{ disabled: true }}
           // Horizontal only: no vertical panning, and zoom keeps the strip vertically centred
           panning={{ lockAxisY: true }}
+          // The content's left edge never moves right of the strip's left edge, so the first card is as far left as it goes
+          maxPositionX={0}
+          // Dragging can pull a little past either end (% of the strip's width) before it rubber-bands back
           onTransform={(ref, state) => {
             setScale(state.scale);
             const wrapper = ref.instance.wrapperComponent;
@@ -74,7 +76,7 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
             </TransformComponent>
             
             {/* Click-through so dragging still works along the bottom strip; only the controls catch the pointer */}
-            <div className="absolute bottom-2 inset-x-2 flex items-center justify-between pointer-events-none">
+            <div className="absolute bottom-5 inset-x-8 flex items-center justify-between pointer-events-none">
               <div className="relative flex bg-blue-400/50 w-30 h-5 rounded-xl items-center">
                 {/* Slides from 0.25rem in on the left to 0.25rem in on the right (2.5rem thumb + 0.5rem of padding) */}
                 <div

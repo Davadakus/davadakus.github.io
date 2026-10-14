@@ -8,24 +8,26 @@ import timelineSvg from "../assets/Untitled-1.svg";
 export default function Experience(){
     return(
         <div className ='header-section bg-zinc-300 animated-grid'>
-            <div className="flex justify-center items-center">
-              <div id="other-projects" className='header-title'>
-                Experience
-              </div>
+          <div className="flex justify-center items-center">
+            <div id="other-projects" className='header-title'>
+              Experience
             </div>
-            <div className=" max-w-[1600px] px-5 mx-auto flex-1 bg-white flex flex-col">
+          </div>
+          <div className=" max-w-[1600px] mx-auto flex-1 px-5 flex flex-col">
+              <div className="bg-neutral-200">
                 <div className="mb-4 pt-8 pl-8 text-sm text-neutral-600">
                   // Experience
                 </div>
-                <DragScroll className="bg-amber-500/20">
-                  <div className="w-full flex items-start gap-10 py-20 px-5">
+                <DragScroll>
+                  <div className="w-full flex items-start gap-10 px-5">
                     <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="University" subtitle="Projects" count={5} />
                     <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="Collage" subtitle="Internship" count={12} />
                   </div>
                 </DragScroll>
+              </div>
 
-                {/* <Timeline imageSrc={timelineSvg}/> */}
-            </div>
+              {/* <Timeline imageSrc={timelineSvg}/> */}
           </div>
+        </div>
     );
 }
