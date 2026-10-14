@@ -23,7 +23,7 @@ export default function Experience(){
                     <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="Collage" subtitle="Internship" count={12} />
                   </div>
                 </DragScroll>
-                
+
                 {/* <Timeline imageSrc={timelineSvg}/> */}
             </div>
           </div>

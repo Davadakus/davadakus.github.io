@@ -15,6 +15,8 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
   // Where the wheel is heading, so quick wheel ticks add up instead of restarting from mid-animation
   const wheel = useRef({ target: 0, lastTime: 0 });
   const [scale, setScale] = useState(1);
+  // How far the content is scrolled: 0 = fully left, 1 = fully right
+  const [progress, setProgress] = useState(0);
 
   // Registered natively because React's onWheel is passive and can't preventDefault
   useEffect(() => {
@@ -22,18 +24,20 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
     if (!container) return;
 
     function onWheel(e: WheelEvent) {
+      // Ctrl/⌘ + wheel (or trackpad pinch) is left to the library to zoom
+      if (e.ctrlKey || e.metaKey) return;
+      // The strip always owns the wheel, even with nothing to scroll, so the page never moves under the cursor
+      e.preventDefault();
+
       const instance = transformRef.current?.instance;
       const wrapper = instance?.wrapperComponent;
       const content = instance?.contentComponent;
       if (!instance || !wrapper || !content) return;
-      // Ctrl/⌘ + wheel (or trackpad pinch) is left to the library to zoom
-      if (e.ctrlKey || e.metaKey) return;
 
       const { positionX, positionY, scale } = instance.state;
       const minX = Math.min(0, wrapper.clientWidth - content.offsetWidth * scale);
-      // Nothing to scroll, so let the page handle the wheel
+      // Nothing to scroll; returning (rather than clamping to 0) leaves a zoomed-out strip where it is
       if (minX === 0) return;
-      e.preventDefault();
 
       const w = wheel.current;
       if (e.timeStamp - w.lastTime > WHEEL_ANIMATION) w.target = positionX;
@@ -62,7 +66,14 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
           zoomAnimation={{ disabled: true }}
           // Horizontal only: no vertical panning, and zoom keeps the strip vertically centred
           panning={{ lockAxisY: true }}
-          onTransform={(_, state) => setScale(state.scale)}
+          onTransform={(ref, state) => {
+            setScale(state.scale);
+            const wrapper = ref.instance.wrapperComponent;
+            const content = ref.instance.contentComponent;
+            if (!wrapper || !content) return;
+            const minX = Math.min(0, wrapper.clientWidth - content.offsetWidth * state.scale);
+            setProgress(minX === 0 ? 0 : Math.max(0, Math.min(1, state.positionX / minX)));
+          }}
         >
         {({ zoomIn, zoomOut, resetTransform }) => (
           <>
@@ -70,10 +81,21 @@ function DragScroll({ children, className = "" }: DragScrollProps) {
               {children}
             </TransformComponent>
             
-            <div className="absolute bottom-2 right-2 flex items-center gap-1 text-lg cursor-default">
-              <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomOut(0.1)} aria-label="Zoom out">−</button>
-              <button className="h-8 px-2 bg-neutral-900/70 text-white text-sm" onClick={() => resetTransform(0)} aria-label="Reset zoom">{Math.round(scale * 100)}%</button>
-              <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomIn(0.1)} aria-label="Zoom in">+</button>
+            {/* Click-through so dragging still works along the bottom strip; only the controls catch the pointer */}
+            <div className="absolute bottom-2 inset-x-2 flex items-center justify-between pointer-events-none">
+              <div className="relative flex bg-blue-400/50 w-30 h-5 rounded-xl items-center">
+                {/* Slides from 0.25rem in on the left to 0.25rem in on the right (2.5rem thumb + 0.5rem of padding) */}
+                <div
+                  className="absolute rounded-xl bg-blue-700 w-10 h-4"
+                  style={{ left: `calc(0.25rem + ${progress} * (100% - 3rem))` }}
+                >
+                </div>
+              </div>
+              <div className="flex items-center gap-1 text-lg cursor-default pointer-events-auto">
+                <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomOut(0.1)} aria-label="Zoom out">−</button>
+                <button className="h-8 px-2 bg-neutral-900/70 text-white text-sm" onClick={() => resetTransform(0)} aria-label="Reset zoom">{Math.round(scale * 100)}%</button>
+                <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomIn(0.1)} aria-label="Zoom in">+</button>
+              </div>
             </div>
           </>
       )}
