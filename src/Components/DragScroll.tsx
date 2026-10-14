@@ -44,12 +44,12 @@ function DragScroll({ children = "" }: DragScrollProps) {
   }, []);
 
   return (
-      <div ref={containerRef} className="relative cursor-grab active:cursor-grabbing select-none min-h-[360px] pt-5 pb-20 flex items-center">
+      <div ref={containerRef} className="relative cursor-grab active:cursor-grabbing select-none flex min-h-[360px]">
         <TransformWrapper
           ref={transformRef}
           minScale={0.5}
           initialScale={1}
-          maxScale={4}
+          maxScale={2}
           // Plain wheel scrolls sideways (handled above); Ctrl/⌘ + wheel (or trackpad pinch) zooms
           wheel={{ activationKeys: ["Control", "Meta"] }}
           doubleClick={{ disabled: true }}
@@ -71,7 +71,10 @@ function DragScroll({ children = "" }: DragScrollProps) {
         >
         {({ zoomIn, zoomOut, resetTransform }) => (
           <>
-            <TransformComponent wrapperClass="!w-full" contentClass="!w-max">
+            {/* The library sizes both boxes to fit their content, which crops anything zoomed past the cards' own height.
+                Instead the viewport stretches to the strip's full height, and the content fills it with the cards centred,
+                so zooming grows the cards into the whole strip (the controls below just float over them) */}
+            <TransformComponent wrapperClass="!w-full !h-auto self-stretch" contentClass="!w-max !h-full items-center">
               {children}
             </TransformComponent>
             

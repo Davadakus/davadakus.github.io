@@ -19,7 +19,7 @@ export default function Experience(){
                   // Experience
                 </div>
                 <DragScroll>
-                  <div className="w-full flex items-start gap-10 px-5">
+                  <div className="w-full flex items-start gap-10 px-5 pt-5 pb-15">
                     <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="University" subtitle="Projects" count={5} />
                     <ExperienceCard imageSrc={"Artwork/OtherProject/CloudTable.png"} title="Collage" subtitle="Internship" count={12} />
                   </div>
