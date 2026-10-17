@@ -44,7 +44,7 @@ function DragScroll({ children = "" }: DragScrollProps) {
   }, []);
 
   return (
-      <div ref={containerRef} className="relative cursor-grab active:cursor-grabbing select-none flex min-h-[360px]">
+      <div ref={containerRef} className="relative cursor-grab active:cursor-grabbing select-none flex min-h-[460px]">
         <TransformWrapper
           ref={transformRef}
           minScale={0.5}
@@ -74,11 +74,18 @@ function DragScroll({ children = "" }: DragScrollProps) {
             {/* The library sizes both boxes to fit their content, which crops anything zoomed past the cards' own height.
                 Instead the viewport stretches to the strip's full height, and the content fills it with the cards centred,
                 so zooming grows the cards into the whole strip (the controls below just float over them) */}
-            <TransformComponent wrapperClass="!w-full !h-auto self-stretch" contentClass="!w-max !h-full items-center">
+            <TransformComponent wrapperClass="!w-full !h-auto self-stretch" contentClass="!w-max !h-full items-center" infinite={true}>
               {children}
             </TransformComponent>
             
             {/* Click-through so dragging still works along the bottom strip; only the controls catch the pointer */}
+            
+            
+
+            
+            {/* <div className="absolute flex bg-neutral-200 p-2 mt-3 ml-8 text-sm text-neutral-600">
+              // Experience
+            </div> */}
             <div className="absolute bottom-5 inset-x-8 flex items-center justify-between pointer-events-none">
               <div className="relative flex bg-blue-400/50 w-30 h-5 rounded-xl items-center">
                 {/* Slides from 0.25rem in on the left to 0.25rem in on the right (2.5rem thumb + 0.5rem of padding) */}
