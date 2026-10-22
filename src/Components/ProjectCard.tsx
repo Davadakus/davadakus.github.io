@@ -47,7 +47,7 @@ export default function ProjectCard({
                     <div className="text-body block whitespace-pre-line my-4">
                       {description}
                     </div>
-                    <Branch imageSrc="public/Artwork/arknights_guard.webp" role={role} techList={techList} linkList={linkList} />
+                    <Branch role={role} techList={techList} linkList={linkList} />
                   </div>
                 </div>
               </div>

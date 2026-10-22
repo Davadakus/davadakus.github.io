@@ -10,7 +10,6 @@ import HorizontalDivider from "./HorizontalDivider";
 import Link from "./Link";
 
 interface BranchProps {
-  imageSrc: string;
   role: Role;
   techList?: Tech[];
   linkList?: string[];
@@ -19,7 +18,6 @@ interface BranchProps {
 }
 
 export default function Branch({
-  imageSrc,
   role,
   techList,
   linkList,
@@ -48,7 +46,7 @@ export default function Branch({
           <div ref={contentRef} className={`flex flex-col p-4 space-y-4 ${details ? "bg-neutral-900/50" : "bg-neutral-900"} `}>
 
             <div className="flex flex-row items-center gap-4 text-2xl">
-              <img src={imageSrc} draggable="false" className="object-contain size-20"/>
+              <img src={RoleDefinitions[role].image} draggable="false" className="object-contain size-20"/>
               <VerticalDivider/>
               <div>{RoleDefinitions[role].name}</div>
             </div>  
