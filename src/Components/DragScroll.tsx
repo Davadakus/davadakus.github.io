@@ -44,7 +44,7 @@ function DragScroll({ children = "" }: DragScrollProps) {
   }, []);
 
   return (
-      <div ref={containerRef} className="relative cursor-grab active:cursor-grabbing select-none flex min-h-[460px]">
+      <div ref={containerRef} className="relative cursor-grab active:cursor-grabbing select-none flex min-h-[500px]">
         <TransformWrapper
           ref={transformRef}
           minScale={0.5}
