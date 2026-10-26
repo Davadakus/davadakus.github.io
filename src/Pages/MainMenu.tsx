@@ -14,6 +14,8 @@ function MainMenu() {
   // const Menu = ["Illustration", "Games", "About", "Other Projects"];
   // const [open, setOpen] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
+  // The Experience timeline node that's filtering Other Projects (null shows every project)
+  const [selectedNode, setSelectedNode] = useState<string | null>(null);
 
 
     const [count, setCount] = useState(0)
@@ -31,8 +33,8 @@ function MainMenu() {
           <Illustrations />
           {/* <Games /> */}
           <About />
-          <Experience />
-          <OtherProjects />
+          <Experience selectedNode={selectedNode} onSelectNode={setSelectedNode} />
+          <OtherProjects selectedNode={selectedNode} onClearNode={() => setSelectedNode(null)} />
           <Footer/>
         
         </div>

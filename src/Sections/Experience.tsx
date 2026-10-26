@@ -1,10 +1,10 @@
+import { useRef } from "react";
 import Button from "../Components/Button";
 import DragScroll from "../Components/DragScroll";
 import ExperienceCard from "../Components/ExperienceCard";
-import ProjectCard from "../Components/ProjectCard";
 import Timeline from "../Components/Timeline";
+import { nodeProjects } from "../data/projects";
 import timelineSvg from "../assets/Untitled-1.svg";
-import experienceTimelineSvg from "../assets/Asset 6.svg";
 import experienceTimelineRaw from "../assets/Asset 6.svg?raw";
 
 // Each node's centre as a fraction of the SVG's width, read straight from the Illustrator export
@@ -20,7 +20,23 @@ const experiences = [
   { imageSrc: "Artwork/OtherProject/CloudTable.png", title: "TBD", subtitle: "TBD", date: "TBD", count: "?" },
 ];
 
-export default function Experience(){
+interface ExperienceProps {
+  selectedNode: string | null;
+  onSelectNode: (node: string | null) => void;
+}
+
+export default function Experience({ selectedNode, onSelectNode }: ExperienceProps){
+    // Where the pointer went down, so a drag that ends over a node isn't mistaken for a click
+    const pointerStart = useRef({ x: 0, y: 0 });
+
+    function onTimelineClick(e: React.MouseEvent) {
+      if (Math.hypot(e.clientX - pointerStart.current.x, e.clientY - pointerStart.current.y) > 5) return;
+      // Nodes are found by their Illustrator layer name; the exported id is "_1-1" since ids can't start with a digit
+      const node = (e.target as Element).closest("[data-name]")?.getAttribute("data-name");
+      // Clicking the selected node again clears the filter
+      if (node && node in nodeProjects) onSelectNode(node === selectedNode ? null : node);
+    }
+
     return(
         <div className ='header-section bg-zinc-300 animated-grid'>
           <div className="flex justify-center items-center">
@@ -51,9 +67,14 @@ export default function Experience(){
                         </div>
                       ))}
                     </div>
-                    {/* draggable off so grabbing the image pans the strip rather than starting a native image drag.
-                        The SVG only has a viewBox (no width/height), so without an explicit width the browser falls back to ~300px */}
-                    <img src={experienceTimelineSvg} alt="Experience timeline" draggable={false} className="w-full max-w-none h-auto mt-5" />
+                    <div
+                      role="img"
+                      aria-label="Experience timeline"
+                      className="mt-5"
+                      onPointerDown={(e) => { pointerStart.current = { x: e.clientX, y: e.clientY }; }}
+                      onClick={onTimelineClick}
+                      dangerouslySetInnerHTML={{ __html: experienceTimelineRaw }}
+                    />
                   </div>
                   </div>
                 </DragScroll>
