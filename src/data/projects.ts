@@ -63,7 +63,7 @@ export const projects: Project[] = [
 // Keyed by the node's layer name in Illustrator (data-name="1-1" in the exported SVG)
 export const nodeProjects: Record<string, string[]> = {
   // Test: the first three projects
-  "1-1": ["CloudTable", "Recreating Discord (2025)", "Beacon Visualizer (2024)"],
-  "1-2": [],
+  "1-1": ["Haato's Diary (2022)", "Game Based Learning Website (2024)",  "Beacon Visualizer (2024)", "Recreating Discord (2025)"],
+  "1-2": ["CloudTable",],
   "1-3": [],
 };

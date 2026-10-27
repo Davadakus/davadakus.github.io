@@ -11,7 +11,7 @@ export default function Tech({
   tech,
   className = "",
 }: TechProps) {
-  const { name, description, link } = TechDefinitions[tech];
+  const { name, description} = TechDefinitions[tech];
   const ref = useRef<HTMLAnchorElement>(null);
   // Viewport position of the tooltip; rendered in a portal so overflow-hidden parents can't clip it
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
@@ -26,7 +26,6 @@ export default function Tech({
     <>
       <a
         ref={ref}
-        href={link}
         target="_blank"
         rel="noopener noreferrer"
         draggable="false"
