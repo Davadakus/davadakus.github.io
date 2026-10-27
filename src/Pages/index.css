@@ -120,7 +120,3 @@
     animation: wiggle 5s ease-in-out infinite;
   }
 }
-
-html {
-  scroll-behavior: smooth;
-}
