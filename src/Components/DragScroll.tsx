@@ -87,10 +87,10 @@ function DragScroll({ children = "" }: DragScrollProps) {
               // Experience
             </div> */}
             <div className="absolute bottom-5 inset-x-8 flex items-center justify-between pointer-events-none">
-              <div className="relative flex bg-blue-400/50 w-30 h-5 rounded-xl items-center">
+              <div className="relative flex bg-red-400/50 w-30 h-5 rounded-xl items-center">
                 {/* Slides from 0.25rem in on the left to 0.25rem in on the right (2.5rem thumb + 0.5rem of padding) */}
                 <div
-                  className="absolute rounded-xl bg-blue-700 w-10 h-4"
+                  className="absolute rounded-xl bg-red-500 w-10 h-4"
                   style={{ left: `calc(0.25rem + ${progress} * (100% - 3rem))` }}
                 >
                 </div>

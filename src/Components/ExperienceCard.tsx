@@ -17,7 +17,7 @@ function ExperienceCard({ imageSrc, title, subtitle, date, count }: ExperiencePr
         </div>
         
         <div className="flex flex-row pr-2 py-2 items-center justify-between">
-            <div className="flex flex-col pl-2 gap-2 border-l-4 border-blue-500">
+            <div className="flex flex-col pl-2 gap-2 border-l-4 border-red-500">
                 <div className="flex flex-col">
                     <div className="font-semibold text-xl">
                         {title}

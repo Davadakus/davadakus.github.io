@@ -23,12 +23,6 @@ export default function OtherProjects({ selectedNode, onClearNode }: OtherProjec
               </div>
             </div>
             <div className="max-w-[1600px] px-5 mx-auto space-y-20">
-              {selectedNode &&
-                <div className="flex items-center gap-4 text-neutral-600">
-                  <div>// Showing projects for {selectedNode}</div>
-                  <button className="underline cursor-pointer" onClick={onClearNode}>Show all</button>
-                </div>
-              }
               {selectedNode && shown.length === 0 &&
                 <div className="text-neutral-600">No projects for this node yet</div>
               }
