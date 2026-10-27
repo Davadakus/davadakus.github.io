@@ -6,6 +6,7 @@ import Timeline from "../Components/Timeline";
 import { nodeProjects } from "../data/projects";
 import timelineSvg from "../assets/Untitled-1.svg";
 import experienceTimelineRaw from "../assets/Asset 6.svg?raw";
+import fingerSvg from "../assets/Finger.svg";
 
 // Each node's centre as a fraction of the SVG's width, read straight from the Illustrator export
 // so the cards follow the circles whenever the artwork is re-exported
@@ -13,6 +14,14 @@ const timelineWidth = Number(experienceTimelineRaw.match(/viewBox="[\d.\s-]+?\s(
 const nodePositions = [...new Set(
   [...experienceTimelineRaw.matchAll(/<circle[^>]*\scx="([\d.]+)"/g)].map(m => Number(m[1]))
 )].sort((a, b) => a - b).map(cx => cx / timelineWidth);
+
+// The same, but by node name ("1-1" → its circle's centre), so the selection marker can find a specific node
+const namedNodePositions: Record<string, number> = Object.fromEntries(
+  [...new DOMParser().parseFromString(experienceTimelineRaw, "image/svg+xml").querySelectorAll("[data-name]")]
+    .map(group => [group.getAttribute("data-name"), group.querySelector("circle")?.getAttribute("cx")])
+    .filter(([, cx]) => cx)
+    .map(([name, cx]) => [name, Number(cx) / timelineWidth])
+);
 
 const experiences = [
   { imageSrc: "Artwork/OtherProject/CloudTable.png", title: "University", subtitle: "Projects", date: "2021-2024", count: "5" },
@@ -75,6 +84,24 @@ export default function Experience({ selectedNode, onSelectNode }: ExperiencePro
                       onClick={onTimelineClick}
                       dangerouslySetInnerHTML={{ __html: experienceTimelineRaw }}
                     />
+                    {/* Points up at the selected node. The row is always there so selecting a node doesn't shift the layout;
+                        sized from --card so it shrinks with everything else (40px at full size) */}
+                    <div className="relative h-[calc(var(--card)/14*42/36)] mt-2">
+                      {/* One finger per node, always mounted and just hidden when not selected, so both selecting and
+                          deselecting are plain transitions (an unmounted element would vanish with no exit animation).
+                          Hidden it sits down-right of the node, so it slides in from there and back out the same way */}
+                      {Object.keys(nodeProjects).filter(node => node in namedNodePositions).map(node => (
+                        <img
+                          key={node}
+                          src={fingerSvg}
+                          alt=""
+                          draggable={false}
+                          className={`absolute -translate-y-7 w-15 pointer-events-none transition duration-150 ease-out
+                                      ${node === selectedNode ? "opacity-100 -translate-x-1/2" : "opacity-0 translate-x-[calc(-50%+42px)] translate-y-4"}`}
+                          style={{ left: `${namedNodePositions[node] * 100}%` }}
+                        />
+                      ))}
+                    </div>
                   </div>
                   </div>
                 </DragScroll>
