@@ -20,7 +20,9 @@ function DragScroll({ children = "" }: DragScrollProps) {
     function onWheel(e: WheelEvent) {
       // Ctrl/⌘ + wheel (or trackpad pinch) is left to the library to zoom
       if (e.ctrlKey || e.metaKey) return;
-      // The strip always owns the wheel, even with nothing to scroll, so the page never moves under the cursor
+      // Vertical wheeling is left alone so the page scrolls past the strip as normal; it's panned by dragging instead.
+      // Only a sideways trackpad swipe moves it
+      if (Math.abs(e.deltaY) >= Math.abs(e.deltaX)) return;
       e.preventDefault();
 
       const instance = transformRef.current?.instance;
@@ -33,9 +35,8 @@ function DragScroll({ children = "" }: DragScrollProps) {
       // Nothing to scroll; returning (rather than clamping to 0) leaves a zoomed-out strip where it is
       if (minX === 0) return;
 
-      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-      // Jumps with no animation, so fast wheeling can't cut a glide short partway through
-      const x = Math.max(minX, Math.min(0, positionX - delta));
+      // Jumps with no animation, so fast swiping can't cut a glide short partway through
+      const x = Math.max(minX, Math.min(0, positionX - e.deltaX));
       transformRef.current?.setTransform(x, positionY, scale, 0);
     }
 
@@ -50,7 +51,7 @@ function DragScroll({ children = "" }: DragScrollProps) {
           minScale={0.5}
           initialScale={1}
           maxScale={2}
-          // Plain wheel scrolls sideways (handled above); Ctrl/⌘ + wheel (or trackpad pinch) zooms
+          // Plain wheel scrolls the page and a sideways swipe pans (handled above); Ctrl/⌘ + wheel (or trackpad pinch) zooms
           wheel={{ activationKeys: ["Control", "Meta"] }}
           doubleClick={{ disabled: true }}
           // Zoom jumps straight to the new scale instead of animating (and doesn't overshoot past min/max)
