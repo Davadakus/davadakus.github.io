@@ -8,6 +8,15 @@ export type Project = ComponentProps<typeof ProjectCard>;
 // Shared by Other Projects (which lists them all) and the Experience timeline (which picks some per node)
 export const projects: Project[] = [
   {
+    title: "Animaga Guidebook",
+    imageSrc: "Artwork/OtherProject/animaga.png",
+    description: `In charge of redesigning the map & making it interactible for users for easy access and redesigned parts the UI
+                `,
+    role: Role.FrontEnd,
+    techList: [Tech.React, Tech.TailwindCSS, Tech.Illustrator, Tech.Figma],
+    linkList: ["https://guide.animaga.com.au/"],
+  },
+  {
     title: "CloudTable",
     imageSrc: "Artwork/OtherProject/CloudTable.png",
     description: `Made a table app using the T3 Stack including: Login, Create and Manipulate Table, and Different Users
@@ -64,6 +73,6 @@ export const projects: Project[] = [
 export const nodeProjects: Record<string, string[]> = {
   // Test: the first three projects
   "1-1": ["Haato's Diary (2022)", "Game Based Learning Website (2024)",  "Beacon Visualizer (2024)", "Recreating Discord (2025)"],
-  "1-2": ["CloudTable",],
+  "1-2": ["CloudTable", "Animaga Guidebook"],
   "1-3": [],
 };

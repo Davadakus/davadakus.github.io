@@ -41,6 +41,8 @@ export enum Tech {
   ClipStudioPaint = "ClipStudioPaint",
   Photoshop = "Photoshop",
   PremierePro = "PremierePro",
+  Illustrator = "Illustrator",
+  Figma = "Figma",
   FLStudio = "FLStudio",
   Ableton = "Ableton",
 }
@@ -209,6 +211,16 @@ export const TechDefinitions: Record<Tech, TechDefinition> = {
   [Tech.PremierePro]: {
     name: "Premiere Pro",
     description: "Adobe’s professional video editing software.",
+    category: Category.Utility,
+  },
+  [Tech.Illustrator]: {
+    name: "Illustrator",
+    description: "Adobe’s vector drawing software.",
+    category: Category.Utility,
+  },
+  [Tech.Figma]: {
+    name: "Figma",
+    description: "Design canvas for making UI prototypes",
     category: Category.Utility,
   },
   [Tech.FLStudio]: {
