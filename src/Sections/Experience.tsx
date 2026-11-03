@@ -90,19 +90,29 @@ export default function Experience({ selectedNode, onSelectNode }: ExperiencePro
                       <img src={experienceTimelineSrc} alt="Experience timeline" draggable={false} className="block w-full" />
                       {/* Same viewBox as the artwork, so everything in here is placed in the export's own units */}
                       <svg viewBox={`0 0 ${timelineWidth} ${timelineHeight}`} className="absolute inset-0 size-full overflow-visible">
+                        <defs>
+                          {/* Dark glow around the ripple. The filter area is widened so the blur isn't cut off at the ring's edges */}
+                          <filter id="node-ripple-glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feDropShadow dx="0" dy="0" stdDeviation="3" floodColor="#000" floodOpacity="0.6" />
+                          </filter>
+                        </defs>
                         {ripples.map(({ id, node }) => {
                           const { cx, cy, r } = timelineNodes.find(n => n.name === node)!;
                           return (
-                            <motion.circle
+                            <motion.g
                               key={id}
-                              cx={cx} cy={cy} r={r}
-                              fill="none" stroke="#fff" strokeWidth={3}
+                              fill="none"
+                              filter="url(#node-ripple-glow)"
                               className="pointer-events-none"
                               initial={{ scale: 1, opacity: 1 }}
                               animate={{ scale: 1.8, opacity: 0 }}
                               transition={{ duration: 0.5, ease: [0.2, 0.6, 0.3, 1] }}
                               onAnimationComplete={() => setRipples(rs => rs.filter(ripple => ripple.id !== id))}
-                            />
+                            >
+                              {/* A wider black ring under the white one, so it shows as a thin black border on both edges */}
+                              <circle cx={cx} cy={cy} r={r} stroke="#000" strokeWidth={5} />
+                              <circle cx={cx} cy={cy} r={r} stroke="#fff" strokeWidth={3} />
+                            </motion.g>
                           );
                         })}
                         {/* Invisible hit areas over each node that has projects to filter by */}
