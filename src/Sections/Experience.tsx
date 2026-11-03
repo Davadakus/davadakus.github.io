@@ -1,27 +1,28 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { motion } from "motion/react";
 import Button from "../Components/Button";
 import DragScroll from "../Components/DragScroll";
 import ExperienceCard from "../Components/ExperienceCard";
 import Timeline from "../Components/Timeline";
 import { nodeProjects } from "../data/projects";
 import timelineSvg from "../assets/Untitled-1.svg";
+import experienceTimelineSrc from "../assets/Asset 6.svg";
 import experienceTimelineRaw from "../assets/Asset 6.svg?raw";
 import fingerSvg from "../assets/Finger.svg";
 
-// Each node's centre as a fraction of the SVG's width, read straight from the Illustrator export
-// so the cards follow the circles whenever the artwork is re-exported
-const timelineWidth = Number(experienceTimelineRaw.match(/viewBox="[\d.\s-]+?\s([\d.]+)\s[\d.]+"/)?.[1]);
-const nodePositions = [...new Set(
-  [...experienceTimelineRaw.matchAll(/<circle[^>]*\scx="([\d.]+)"/g)].map(m => Number(m[1]))
-)].sort((a, b) => a - b).map(cx => cx / timelineWidth);
-
-// The same, but by node name ("1-1" → its circle's centre), so the selection marker can find a specific node
-const namedNodePositions: Record<string, number> = Object.fromEntries(
-  [...new DOMParser().parseFromString(experienceTimelineRaw, "image/svg+xml").querySelectorAll("[data-name]")]
-    .map(group => [group.getAttribute("data-name"), group.querySelector("circle")?.getAttribute("cx")])
-    .filter(([, cx]) => cx)
-    .map(([name, cx]) => [name, Number(cx) / timelineWidth])
-);
+// The Illustrator export is drawn as a plain image; React only owns a transparent overlay of the same size, so nodes are
+// read straight from the export (by their layer name, "1-1") and everything follows the circles whenever it's re-exported
+const timelineDoc = new DOMParser().parseFromString(experienceTimelineRaw, "image/svg+xml");
+const [, , timelineWidth, timelineHeight] = timelineDoc.documentElement.getAttribute("viewBox")!.split(/\s+/).map(Number);
+// Each node's outer circle, in SVG units, left to right
+const timelineNodes = [...timelineDoc.querySelectorAll("g[data-name]")]
+  .flatMap(group => {
+    const circle = group.querySelector("circle");
+    if (!circle) return [];
+    const attr = (name: string) => Number(circle.getAttribute(name));
+    return [{ name: group.getAttribute("data-name")!, cx: attr("cx"), cy: attr("cy"), r: attr("r") }];
+  })
+  .sort((a, b) => a.cx - b.cx);
 
 const experiences = [
   { imageSrc: "Artwork/OtherProject/CloudTable.png", title: "University", subtitle: "Projects", date: "2021-2024", count: "5" },
@@ -37,13 +38,19 @@ interface ExperienceProps {
 export default function Experience({ selectedNode, onSelectNode }: ExperienceProps){
     // Where the pointer went down, so a drag that ends over a node isn't mistaken for a click
     const pointerStart = useRef({ x: 0, y: 0 });
+    // Rings currently expanding out of a node; each removes itself when its animation ends, so fast clicks can overlap
+    const [ripples, setRipples] = useState<{ id: number; node: string }[]>([]);
+    const nextRippleId = useRef(0);
 
-    function onTimelineClick(e: React.MouseEvent) {
-      if (Math.hypot(e.clientX - pointerStart.current.x, e.clientY - pointerStart.current.y) > 5) return;
-      // Nodes are found by their Illustrator layer name; the exported id is "_1-1" since ids can't start with a digit
-      const node = (e.target as Element).closest("[data-name]")?.getAttribute("data-name");
+    function selectNode(node: string) {
+      setRipples(rs => [...rs, { id: nextRippleId.current++, node }]);
       // Clicking the selected node again clears the filter
-      if (node && node in nodeProjects) onSelectNode(node === selectedNode ? null : node);
+      onSelectNode(node === selectedNode ? null : node);
+    }
+
+    function onNodeClick(e: React.MouseEvent, node: string) {
+      if (Math.hypot(e.clientX - pointerStart.current.x, e.clientY - pointerStart.current.y) > 5) return;
+      selectNode(node);
     }
 
     return(
@@ -71,34 +78,69 @@ export default function Experience({ selectedNode, onSelectNode }: ExperiencePro
                         centred over its circle at any width; translate pulls it back by half its own width */}
                     <div className="grid grid-cols-[minmax(0,1fr)]">
                       {experiences.map((exp, i) => (
-                        <div key={i} className="[grid-area:1/1] justify-self-start -translate-x-1/2" style={{ marginLeft: `${nodePositions[i] * 100}%` }}>
+                        <div key={i} className="[grid-area:1/1] justify-self-start -translate-x-1/2" style={{ marginLeft: `${timelineNodes[i].cx / timelineWidth * 100}%` }}>
                           <ExperienceCard {...exp} />
                         </div>
                       ))}
                     </div>
                     <div
-                      role="img"
-                      aria-label="Experience timeline"
-                      className="mt-5"
+                      className="relative mt-5"
                       onPointerDown={(e) => { pointerStart.current = { x: e.clientX, y: e.clientY }; }}
-                      onClick={onTimelineClick}
-                      dangerouslySetInnerHTML={{ __html: experienceTimelineRaw }}
-                    />
+                    >
+                      <img src={experienceTimelineSrc} alt="Experience timeline" draggable={false} className="block w-full" />
+                      {/* Same viewBox as the artwork, so everything in here is placed in the export's own units */}
+                      <svg viewBox={`0 0 ${timelineWidth} ${timelineHeight}`} className="absolute inset-0 size-full overflow-visible">
+                        {ripples.map(({ id, node }) => {
+                          const { cx, cy, r } = timelineNodes.find(n => n.name === node)!;
+                          return (
+                            <motion.circle
+                              key={id}
+                              cx={cx} cy={cy} r={r}
+                              fill="none" stroke="#fff" strokeWidth={3}
+                              className="pointer-events-none"
+                              initial={{ scale: 1, opacity: 1 }}
+                              animate={{ scale: 1.8, opacity: 0 }}
+                              transition={{ duration: 0.5, ease: [0.2, 0.6, 0.3, 1] }}
+                              onAnimationComplete={() => setRipples(rs => rs.filter(ripple => ripple.id !== id))}
+                            />
+                          );
+                        })}
+                        {/* Invisible hit areas over each node that has projects to filter by */}
+                        {timelineNodes.filter(({ name }) => name in nodeProjects).map(({ name, cx, cy, r }) => (
+                          <circle
+                            key={name}
+                            cx={cx} cy={cy} r={r}
+                            fill="transparent"
+                            className="cursor-pointer outline-none"
+                            role="button"
+                            tabIndex={0}
+                            aria-label={`Show projects from node ${name}`}
+                            aria-pressed={name === selectedNode}
+                            onClick={(e) => onNodeClick(e, name)}
+                            onKeyDown={(e) => {
+                              if (e.key !== "Enter" && e.key !== " ") return;
+                              e.preventDefault();
+                              selectNode(name);
+                            }}
+                          />
+                        ))}
+                      </svg>
+                    </div>
                     {/* Points up at the selected node. The row is always there so selecting a node doesn't shift the layout;
                         sized from --card so it shrinks with everything else (40px at full size) */}
                     <div className="relative h-[calc(var(--card)/14*42/36)] mt-2">
                       {/* One finger per node, always mounted and just hidden when not selected, so both selecting and
                           deselecting are plain transitions (an unmounted element would vanish with no exit animation).
                           Hidden it sits down-right of the node, so it slides in from there and back out the same way */}
-                      {Object.keys(nodeProjects).filter(node => node in namedNodePositions).map(node => (
+                      {timelineNodes.filter(({ name }) => name in nodeProjects).map(({ name, cx }) => (
                         <img
-                          key={node}
+                          key={name}
                           src={fingerSvg}
                           alt=""
                           draggable={false}
                           className={`absolute -translate-y-7 w-15 pointer-events-none transition duration-150 ease-out
-                                      ${node === selectedNode ? "opacity-100 -translate-x-1/2" : "opacity-0 translate-x-[calc(-50%+42px)] translate-y-4"}`}
-                          style={{ left: `${namedNodePositions[node] * 100}%` }}
+                                      ${name === selectedNode ? "opacity-100 -translate-x-1/2" : "opacity-0 translate-x-[calc(-50%+42px)] translate-y-4"}`}
+                          style={{ left: `${cx / timelineWidth * 100}%` }}
                         />
                       ))}
                     </div>
