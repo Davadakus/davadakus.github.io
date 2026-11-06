@@ -1,5 +1,3 @@
-import React, { ReactNode } from "react";
-import Button from "./Button";
 import "./ProjectCard.css";
 import Branch from "./Branch";
 import DropdownContainer from "./DropdownContainer";
@@ -31,14 +29,14 @@ export default function ProjectCard({
       {(details) => (
         <>
           <div className ={`${reverse ? "projects-card-reverse" : "projects-card"} ${details ? "bg-neutral-900/80" : "bg-neutral-700 max-h-[420px]"}`} >
-            <div className={`projects-card-image ${details ? "flex-[1.3]" : `flex-1 -translate-y-10 ${reverse ? "translate-x-12" : "-translate-x-12"}`}`}>
+            <div className={`projects-card-image ${details ? "flex-[1.3]" : `flex-1 -translate-y-10`}`}>
               <div className="block w-full h-full">
                 <img src={imageSrc} draggable="false" className="w-full h-full object-cover"/>
               </div>
             </div>
             <div className="projects-card-body">
-              <div className={`flex-col `}>
-                <div className={`duration-300 ease-out ${details ? "" : reverse ? "translate-x-12" : "-translate-x-12"}`}>
+              <div className={`flex-col`}>
+                <div className={`duration-300 ease-out ${details ? "" : "p-6"}`}>
                   <h1 className={`font-semibold flex transition-[font-size] duration-300 ease-out } ${details ? "text-4xl" : "text-7xl"}`}>{title}</h1>
                   <h2 className={`transition-[font-size] duration-300 ease-out text-neutral-400 ${details ? "text-xl" : "text-3xl"}`}> {RoleDefinitions[role].name} </h2>
                 </div>
