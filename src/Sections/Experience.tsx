@@ -3,7 +3,6 @@ import { motion } from "motion/react";
 import Button from "../Components/Button";
 import DragScroll from "../Components/DragScroll";
 import ExperienceCard from "../Components/ExperienceCard";
-import Timeline from "../Components/Timeline";
 import { nodeProjects } from "../data/projects";
 import timelineSvg from "../assets/Untitled-1.svg";
 import experienceTimelineSrc from "../assets/Asset 6.svg";
@@ -66,17 +65,13 @@ export default function Experience({ selectedNode, onSelectNode }: ExperiencePro
                   // Experience
                 </div>
                 <DragScroll>
-                  {/* Stacked so the timeline sits under the cards instead of beside them (the drag content lays its children out in a row) */}
                   {/* --card matches ExperienceCard's width (w-[80vw] max-w-[560px]) and everything else is sized from it,
                       so on narrow screens the timeline and gaps shrink along with the cards.
                       Side padding is half a card, so a card centred on an end circle still fits inside the content instead of
                       hanging past the drag limit. The inner width (1545px at full size) sets the timeline's size and circle spacing */}
                   <div className="[--card:min(90vw,560px)] px-[calc(var(--card)/2)] pt-15 pb-10">
                   <div className="flex flex-col w-[calc(var(--card)*1545/450)] sm:w-[calc(var(--card)*1545/560)]">
-                    {/* All cards share one grid cell so the row keeps the tallest card's height, while each is placed independently.
-                        A percentage margin is relative to this row's width, which matches the image's, so every card stays
-                        centred over its circle at any width; translate pulls it back by half its own width */}
-                    <div className="grid grid-cols-[minmax(0,1fr)]">
+                    <div className="grid">
                       {experiences.map((exp, i) => (
                         <div key={i} className="[grid-area:1/1] justify-self-start -translate-x-1/2" style={{ marginLeft: `${timelineNodes[i].cx / timelineWidth * 100}%` }}>
                           <ExperienceCard {...exp} />
@@ -158,8 +153,6 @@ export default function Experience({ selectedNode, onSelectNode }: ExperiencePro
                   </div>
                 </DragScroll>
               </div>
-
-              {/* <Timeline imageSrc={timelineSvg}/> */}
           </div>
         </div>
     );
