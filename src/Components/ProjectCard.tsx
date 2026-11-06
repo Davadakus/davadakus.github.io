@@ -35,7 +35,7 @@ export default function ProjectCard({
               </div>
             </div>
             <div className="projects-card-body">
-              <div className={`flex-col`}>
+              <div className="flex-col">
                 <div className={`duration-300 ease-out ${details ? "" : "p-6"}`}>
                   <h1 className={`font-semibold flex transition-[font-size] duration-300 ease-out } ${details ? "text-4xl" : "text-7xl"}`}>{title}</h1>
                   <h2 className={`transition-[font-size] duration-300 ease-out text-neutral-400 ${details ? "text-xl" : "text-3xl"}`}> {RoleDefinitions[role].name} </h2>
