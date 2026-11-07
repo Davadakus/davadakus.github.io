@@ -1,0 +1,35 @@
+import Button from "../Components/Button";
+import ProjectCard from "../Components/ProjectCard";
+import { nodeProjects, projects } from "../data/projects";
+
+interface OtherProjectsProps {
+  // Experience timeline node to filter by; null shows every project
+  selectedNode: string | null;
+  onClearNode: () => void;
+}
+
+export default function OtherProjects({ selectedNode, onClearNode }: OtherProjectsProps){
+    const shown = selectedNode
+      ? projects.filter((project) => nodeProjects[selectedNode]?.includes(project.title))
+      : projects;
+
+    return(
+        <div className ='header-section bg-zinc-300 animated-grid'>
+           {/* <SectionHeader>Other Projects</SectionHeader> */}
+            <div className="flex justify-center items-center">
+              <div id="career" className='header-title'>
+                Career
+              </div>
+            </div>
+            <div className="max-w-[1600px] px-5 mx-auto space-y-20">
+              {selectedNode && shown.length === 0 &&
+                <div className="text-neutral-600">No projects for this node yet</div>
+              }
+              {/* Alternating sides down the page */}
+              {shown.map((project, i) => (
+                <ProjectCard key={project.title} {...project} reverse={i % 2 === 1} />
+              ))}
+            </div>
+          </div>
+    );
+}

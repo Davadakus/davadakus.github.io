@@ -62,7 +62,7 @@ export default function Experience({ selectedNode, onSelectNode }: ExperiencePro
           <div className=" max-w-[1600px] mx-auto flex-1 px-5 flex flex-col">
               <div className="bg-neutral-200">
                 <div className="mb-4 pt-8 pl-8 text-sm text-neutral-600">
-                  // Experience
+                  // Select a node_
                 </div>
                 <DragScroll>
                   {/* --card matches ExperienceCard's width (w-[80vw] max-w-[560px]) and everything else is sized from it,
