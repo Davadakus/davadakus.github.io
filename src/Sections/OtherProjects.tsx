@@ -1,13 +1,13 @@
 import { useState } from "react";
 import ProjectCard from "../Components/molecule/ProjectCard";
 import { nodeProjects, projects } from "../data/projects";
-import { collageProjects, nodeProjects as collageNodeProjects } from "../data/collage";
+import { careerProjects, nodeProjects as careerNodeProjects } from "../data/career";
 import ProjectSelector, { ProjectMode } from "../Components/molecule/ProjectSelector";
 
 // Each selector tab shows its own dataset, with its own timeline-node mapping
-const datasets = {
+const ExperienceTable = {
   projects: { items: projects, nodes: nodeProjects },
-  career: { items: collageProjects, nodes: collageNodeProjects },
+  career: { items: careerProjects, nodes: careerNodeProjects },
 };
 
 interface OtherProjectsProps {
@@ -18,26 +18,25 @@ interface OtherProjectsProps {
 
 export default function OtherProjects({ selectedNode, onClearNode }: OtherProjectsProps){
     const [mode, setMode] = useState<ProjectMode>("projects");
-    const { items, nodes } = datasets[mode];
-    const shown = selectedNode
+    const { items, nodes } = ExperienceTable[mode];
+    const display = selectedNode
       ? items.filter((project) => nodes[selectedNode]?.includes(project.title))
-      : items;
+      : items; // have it display none when nothing is selected, dummy text instead
 
     return(
         <div className ='header-section bg-zinc-300 animated-grid'>
             <div className="flex justify-center items-center">
               <div id="other-projects" className='header-title'>
-                Other Projects
+                Project & Career Display
               </div>
             </div>
             <div className="max-w-[1600px] px-5 mx-auto">
               <ProjectSelector value={mode} onChange={setMode} />
               <div className="space-y-20">
-                {selectedNode && shown.length === 0 &&
-                  <div className="text-neutral-600">No projects for this node yet</div>
+                {selectedNode && display.length === 0 &&
+                  <div className="text-neutral-600">No projects/career for this node</div>
                 }
-                {/* Alternating sides down the page */}
-                {shown.map((project, i) => (
+                {display.map((project, i) => (
                   <ProjectCard key={project.title} {...project} reverse={i % 2 === 1} />
                 ))}
               </div>

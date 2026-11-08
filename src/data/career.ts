@@ -5,7 +5,7 @@ import { Tech } from "./tech";
 
 export type Project = ComponentProps<typeof ProjectCard>;
 
-export const collageProjects: Project[] = [ 
+export const careerProjects: Project[] = [ 
     {
         title: "Collage Induction Project",
         imageSrc: "Artwork/OtherProject/animaga.png",
