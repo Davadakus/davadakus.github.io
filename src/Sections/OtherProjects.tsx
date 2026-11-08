@@ -30,7 +30,7 @@ export default function OtherProjects({ selectedNode, onClearNode }: OtherProjec
                 Project & Career Display
               </div>
             </div>
-            <div className="max-w-[1600px] px-5 mx-auto">
+            <div className="max-w-[1600px] px-5 mx-auto bg-white/40 border-red-500 border-2 p-6">
               <ProjectSelector value={mode} onChange={setMode} />
               <div className="space-y-20">
                 {selectedNode && display.length === 0 &&
