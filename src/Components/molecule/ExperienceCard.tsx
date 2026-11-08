@@ -1,5 +1,5 @@
 import React from "react";
-import "./Button.css";
+import "../atom/Button.css";
 
 interface ExperienceProps {
   imageSrc: string;

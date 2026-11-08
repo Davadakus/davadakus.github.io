@@ -1,13 +1,13 @@
 import React, { ReactNode, useEffect, useRef, useState } from "react";
-import Button from "./Button";
-import VerticalDivider from "./VerticalDivider";
-import DropdownContainer from "./DropdownContainer";
-import "./ProjectCard.css";
-import TechSquare from "./Tech";
-import { Role, RoleDefinitions } from "../data/roles";
-import { Tech } from "../data/tech";
-import HorizontalDivider from "./HorizontalDivider";
-import Link from "./Link";
+import Button from "../atom/Button";
+import VerticalDivider from "../atom/VerticalDivider";
+import DropdownContainer from "../template/DropdownContainer";
+import "../molecule/ProjectCard.css";
+import TechSquare from "../molecule/Tech";
+import { Role, RoleDefinitions } from "../../data/roles";
+import { Tech } from "../../data/tech";
+import HorizontalDivider from "../atom/HorizontalDivider";
+import Link from "../atom/Link";
 
 interface BranchProps {
   role: Role;

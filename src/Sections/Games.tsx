@@ -1,4 +1,4 @@
-import "../Components/ProjectCard.css";
+import "../Components/molecule/ProjectCard.css";
 
 export default function Games(){
     return(

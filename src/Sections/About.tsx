@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SkillTable from "../Components/SkillTable";
+import SkillTable from "../Components/atom/SkillTable";
 
 export default function About(){
     const [showOverlay, setShowOverlay] = useState(false);

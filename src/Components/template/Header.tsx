@@ -1,6 +1,6 @@
 import React from "react"
 import { useState, useEffect } from "react";
-import Button from "./Button";
+import Button from "../atom/Button";
 import "./Header.css";
 
 function Header() {

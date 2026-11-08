@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { getLinkInfo } from "../data/link";
+import { getLinkInfo } from "../../data/link";
 
 interface LinkProps {
   url: string;

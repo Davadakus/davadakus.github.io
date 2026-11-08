@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useState } from "react"
-import Header from '../Components/Header';
-import Footer from '../Components/Footer';
+import Header from '../Components/template/Header';
+import Footer from '../Components/template/Footer';
 import LandingView from '../Sections/LandingView';
 import Illustrations from '../Sections/Illustrations';
 import Games from '../Sections/Games';

@@ -1,6 +1,6 @@
 import React from "react"
-import Header from "../Components/Header";
-import Footer from "../Components/Footer";
+import Header from "../Components/template/Header";
+import Footer from "../Components/template/Footer";
 
 export default function Contact() {
     return (

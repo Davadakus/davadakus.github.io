@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import ProjectCard from "../Components/ProjectCard";
+import ProjectCard from "../Components/molecule/ProjectCard";
 import { Role } from "./roles";
 import { Tech } from "./tech";
 

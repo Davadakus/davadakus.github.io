@@ -1,8 +1,8 @@
 import { useRef, useState } from "react";
 import { motion } from "motion/react";
-import Button from "../Components/Button";
-import DragScroll from "../Components/DragScroll";
-import ExperienceCard from "../Components/ExperienceCard";
+import Button from "../Components/atom/Button";
+import DragScroll from "../Components/template/DragScroll";
+import ExperienceCard from "../Components/molecule/ExperienceCard";
 import { nodeProjects } from "../data/projects";
 import timelineSvg from "../assets/Untitled-1.svg";
 import experienceTimelineSrc from "../assets/Asset 6.svg";

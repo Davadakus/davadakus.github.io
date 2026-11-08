@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProjectCard from "../Components/ProjectCard";
+import ProjectCard from "../Components/molecule/ProjectCard";
 import { nodeProjects, projects } from "../data/projects";
 import { collageProjects, nodeProjects as collageNodeProjects } from "../data/collage";
 import ProjectSelector, { ProjectMode } from "../Components/molecule/ProjectSelector";
@@ -25,11 +25,9 @@ export default function OtherProjects({ selectedNode, onClearNode }: OtherProjec
 
     return(
         <div className ='header-section bg-zinc-300 animated-grid'>
-           {/* <SectionHeader>Other Projects</SectionHeader> */}
             <div className="flex justify-center items-center">
               <div id="other-projects" className='header-title'>
                 Other Projects
-                {/* <img src="Artwork/Chibi/ChibiGame.webp" className='absolute max-w-[150px] -translate-x-40'/> */}
               </div>
             </div>
             <div className="max-w-[1600px] px-5 mx-auto">

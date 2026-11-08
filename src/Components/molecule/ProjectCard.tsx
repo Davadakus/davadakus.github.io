@@ -1,8 +1,8 @@
 import "./ProjectCard.css";
-import Branch from "./Branch";
-import DropdownContainer from "./DropdownContainer";
-import { Role, RoleDefinitions } from "../data/roles";
-import { Tech } from "../data/tech";
+import Branch from "../organism/Branch";
+import DropdownContainer from "../template/DropdownContainer";
+import { Role, RoleDefinitions } from "../../data/roles";
+import { Tech } from "../../data/tech";
 
 interface ProjectCardProps {
   imageSrc: string;

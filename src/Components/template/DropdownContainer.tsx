@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useRef } from "react";
-import DropdownButton from "./DropdownButton";
-import useDetails from "./useDetails";
+import DropdownButton from "../molecule/DropdownButton";
+import useDetails from "../useDetails";
 
 interface DropdownContainerProps {
   className?: string;

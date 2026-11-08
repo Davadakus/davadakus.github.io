@@ -1,5 +1,5 @@
-import Button from "../Components/Button";
-import ProjectCard from "../Components/ProjectCard";
+import Button from "../Components/atom/Button";
+import ProjectCard from "../Components/molecule/ProjectCard";
 import { nodeProjects, projects } from "../data/projects";
 
 interface OtherProjectsProps {

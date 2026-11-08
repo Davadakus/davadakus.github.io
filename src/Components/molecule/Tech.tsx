@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Tech as TechType, TechDefinitions } from "../data/tech";
+import { Tech as TechType, TechDefinitions } from "../../data/tech";
 
 interface TechProps {
   tech: TechType;
