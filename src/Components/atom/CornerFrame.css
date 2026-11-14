@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@layer components {
+  /* Outline over the parent; when expanded it also wraps the dropdown header above */
+  .corner-frame {
+    @apply absolute inset-0 pointer-events-none ring-2 ring-red-500 transition-[top] duration-100 ease-out;
+  }
+
+  .corner-frame.expanded {
+    top: calc(-1 * var(--dropdown-header-h));
+  }
+
+  /* Small red squares centered on the frame's four corners */
+  .corner-frame-corner {
+    --corner-size: 10px;
+    @apply absolute bg-red-500;
+    width: var(--corner-size);
+    height: var(--corner-size);
+  }
+
+  .corner-frame-corner.top-left     { top: 0; left: 0;     translate: -100% -100%; }
+  .corner-frame-corner.top-right    { top: 0; right: 0;    translate: 100% -100%; }
+  .corner-frame-corner.bottom-left  { bottom: 0; left: 0;  translate: -100% 100%; }
+  .corner-frame-corner.bottom-right { bottom: 0; right: 0; translate: 100% 100%; }
+}

@@ -1,5 +1,6 @@
 import "./ProjectCard.css";
 import Branch from "../organism/Branch";
+import CornerFrame from "../atom/CornerFrame";
 import DropdownContainer from "../template/DropdownContainer";
 import { Role, RoleDefinitions } from "../../data/roles";
 import { Tech } from "../../data/tech";
@@ -28,7 +29,8 @@ export default function ProjectCard({
     <DropdownContainer className="flex flex-col">
       {(details) => (
         <>
-          <div className ={`${reverse ? "projects-card-reverse" : "projects-card"} ${details ? "bg-neutral-900/80" : "bg-neutral-700 max-h-[420px]"}`} >
+          <div className ={`${reverse ? "projects-card-reverse" : "projects-card"} ${details ? "z-20 bg-neutral-900/80" : "bg-neutral-700 max-h-[420px]"}`} >
+            <CornerFrame expanded={details} />
             <div className={`projects-card-image ${details ? "flex-[1.3]" : `flex-1 -translate-y-10`}`}>
               <div className="block w-full h-full">
                 <img src={imageSrc} draggable="false" className="w-full h-full object-cover"/>
