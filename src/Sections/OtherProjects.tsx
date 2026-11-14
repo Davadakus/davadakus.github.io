@@ -21,7 +21,7 @@ export default function OtherProjects({ selectedNode, onClearNode }: OtherProjec
     const { items, nodes } = ExperienceTable[mode];
     const display = selectedNode
       ? items.filter((project) => nodes[selectedNode]?.includes(project.title))
-      : items; // have it display none when nothing is selected, dummy text instead
+      : []; // have it display none when nothing is selected, dummy text instead
 
     return(
         <div className ='header-section bg-zinc-300 animated-grid'>
@@ -30,17 +30,23 @@ export default function OtherProjects({ selectedNode, onClearNode }: OtherProjec
                 Project & Career Display
               </div>
             </div>
-            <div className="max-w-[1600px] px-5 mx-auto p-6">
-              <ProjectSelector value={mode} onChange={setMode} />
-              <div className="space-y-20">
-                {selectedNode && display.length === 0 &&
-                  <div className="text-neutral-600">No projects/career for this node</div>
-                }
-                {display.map((project, i) => (
-                  <ProjectCard key={project.title} {...project} reverse={i % 2 === 1} />
-                ))}
+            {!selectedNode ? 
+              <div className="max-w-[1600px] px-5 mx-auto p-6">
+                <div className="text-neutral-600">Select a Node</div>
               </div>
-            </div>
+            : 
+              <div className="max-w-[1600px] px-5 mx-auto p-6">
+                <ProjectSelector value={mode} onChange={setMode} />
+                <div className="space-y-20">
+                  {selectedNode && display.length === 0 &&
+                    <div className="text-neutral-600">No projects/career for this node</div>
+                  }
+                  {display.map((project, i) => (
+                    <ProjectCard key={project.title} {...project} reverse={i % 2 === 1} />
+                  ))}
+                </div>
+              </div>
+            }
           </div>
     );
 }
