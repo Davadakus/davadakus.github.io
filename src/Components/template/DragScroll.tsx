@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import { FiMinus } from "react-icons/fi";
+import { IoMdAdd } from "react-icons/io";
 import { TransformWrapper, TransformComponent, type ReactZoomPanPinchRef } from "react-zoom-pan-pinch";
 
 interface DragScrollProps {
@@ -60,6 +62,9 @@ function DragScroll({ children = "" }: DragScrollProps) {
           panning={{ lockAxisY: true }}
           // The content's left edge never moves right of the strip's left edge, so the first card is as far left as it goes
           maxPositionX={0}
+          autoAlignment={{ sizeX: 1000,
+            animationType: "easeInQuad"
+           }}  
           // Dragging can pull a little past either end (% of the strip's width) before it rubber-bands back
           onTransform={(ref, state) => {
             setScale(state.scale);
@@ -78,16 +83,7 @@ function DragScroll({ children = "" }: DragScrollProps) {
             <TransformComponent wrapperClass="!w-full !h-auto self-stretch" contentClass="!w-max !h-full items-center" infinite={true}>
               {children}
             </TransformComponent>
-            
-            {/* Click-through so dragging still works along the bottom strip; only the controls catch the pointer */}
-            
-            
-
-            
-            {/* <div className="absolute flex bg-neutral-200 p-2 mt-3 ml-8 text-sm text-neutral-600">
-              // Experience
-            </div> */}
-            <div className="absolute bottom-5 inset-x-8 flex items-center justify-between pointer-events-none">
+            <div className="absolute bottom-7 inset-x-8 flex items-center justify-between pointer-events-none">
               <div className="relative flex bg-red-400/50 w-30 h-5 rounded-xl items-center">
                 {/* Slides from 0.25rem in on the left to 0.25rem in on the right (2.5rem thumb + 0.5rem of padding) */}
                 <div
@@ -96,10 +92,10 @@ function DragScroll({ children = "" }: DragScrollProps) {
                 >
                 </div>
               </div>
-              <div className="flex items-center gap-1 text-lg cursor-default pointer-events-auto">
-                <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomOut(0.1)} aria-label="Zoom out">−</button>
-                <button className="h-8 px-2 bg-neutral-900/70 text-white text-sm" onClick={() => resetTransform(0)} aria-label="Reset zoom">{Math.round(scale * 100)}%</button>
-                <button className="size-8 bg-neutral-900/70 text-white" onClick={() => zoomIn(0.1)} aria-label="Zoom in">+</button>
+              <div className="flex items-center gap-4 text-neutral-900/70 cursor-default pointer-events-auto ">
+                <button className="hover:text-black cursor-pointer" onClick={() => zoomOut(0.1)} aria-label="Zoom out"><FiMinus size={30} /></button>
+                <button className=" hover:text-black cursor-pointer text-xl" onClick={() => resetTransform(0)} aria-label="Reset zoom">{Math.round(scale * 100)}%</button>
+                <button className="hover:text-black cursor-pointer" onClick={() => zoomIn(0.1)} aria-label="Zoom in"><IoMdAdd size={30} /></button>
               </div>
             </div>
           </>
