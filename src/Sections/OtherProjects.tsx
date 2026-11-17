@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import ProjectCard from "../Components/molecule/ProjectCard";
 import { nodeProjects, projects } from "../data/projects";
 import { careerProjects, nodeProjects as careerNodeProjects } from "../data/career";
@@ -26,8 +27,15 @@ export default function OtherProjects({ selectedNode, onClearNode }: OtherProjec
     return(
         <div className ='header-section bg-zinc-300 animated-grid'>
             
+            <AnimatePresence mode="wait">
             {selectedNode &&
-              <div>
+              <motion.div
+                key={selectedNode}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 40}}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
                 <div className="grid grid-cols-[1fr_auto_1fr] items-center max-w-[1600px] px-5 mx-auto">
                   <div />
                   <div id="other-projects" className='header-title'>
@@ -48,8 +56,9 @@ export default function OtherProjects({ selectedNode, onClearNode }: OtherProjec
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             }
+            </AnimatePresence>
           </div>
     );
 }
